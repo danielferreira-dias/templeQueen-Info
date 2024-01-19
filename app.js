@@ -263,6 +263,18 @@ function createNewSections(mainSection, subSection, subContainer) {
                         const textParagraph = document.createElement("p");
                         textParagraph.textContent = contentDisplay.featureContent[j].content;
                         contentDiv.appendChild(textParagraph);
+                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
+                        // Check if numberOfTexts is defined
+                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
+
+                        for (let i = 0; i < numberOfString; i++) {
+
+                            contentDiv.classList.add("content-div-class-flex-text");
+                            const textParagraph = document.createElement("p");
+                            textParagraph.textContent = contentDisplay.featureContent[j].content[i];
+
+                            contentDiv.appendChild(textParagraph);
+                        }
                     }
 
                     singularDiv.appendChild(contentDiv);
