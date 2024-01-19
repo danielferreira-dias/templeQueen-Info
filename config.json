@@ -1,0 +1,361 @@
+{
+    "Info": {
+        "Sections_Quantity": 6,
+        "Section": [
+            {
+                "Title": "Symbol Payout",
+                "Type": "Title",
+                "sectionType": "symbolPayout",
+                "layoutStyle": "grid-template-columns: repeat(2, 1fr); gap: 16px;",
+                "SubSection": [
+                    {
+                        "Layout": "grid",
+                        "displayContent": [
+                            {
+                                "Layout": "flex",
+                                "layoutStyle": "flex-direction: row;",
+                                "symbolQuantity": 10,
+                                "symbols": [
+                                    {
+                                        "item1": {
+                                            "Type": "img",
+                                            "src": "images/symbols/1.png"
+                                        },
+                                        "item2": {
+                                            "multipliers": [
+                                                "x5",
+                                                "x4",
+                                                "x3"
+                                            ],
+                                            "values": [
+                                                "5,00",
+                                                "1,50",
+                                                "0.50"
+                                            ],
+                                            "Layout": "flex",
+                                            "layoutStyle": "flex-direction: column;"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Line Layout",
+                "sectionType": "lineLayout",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "Layout": "grid",
+                        "displayContent": [
+                            {
+                                "Layout": "flex",
+                                "layoutStyle": "flex-direction: row;",
+                                "lineQuantity": 10,
+                                "lineRows": 3,
+                                "lineCols": 5,
+                                "lines": {
+                                    "Type": "img",
+                                    "src": "images/lines/1.png",
+                                    "formation": [
+                                        [
+                                            1,
+                                            1,
+                                            1,
+                                            1,
+                                            1
+                                        ],
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        [
+                                            2,
+                                            2,
+                                            2,
+                                            2,
+                                            2
+                                        ],
+                                        [
+                                            0,
+                                            1,
+                                            2,
+                                            1,
+                                            0
+                                        ],
+                                        [
+                                            2,
+                                            1,
+                                            0,
+                                            1,
+                                            2
+                                        ],
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        [
+                                            2,
+                                            2,
+                                            1,
+                                            2,
+                                            2
+                                        ],
+                                        [
+                                            1,
+                                            2,
+                                            2,
+                                            2,
+                                            1
+                                        ],
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        [
+                                            1,
+                                            0,
+                                            1,
+                                            0,
+                                            1
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Rules",
+                "sectionType": "Rules",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "Layout": "flex",
+                        "displayContent": [
+                            {
+                                "Layout": "flex",
+                                "layoutStyle": "flex-direction: row;",
+                                "wording": [
+                                    {
+                                        "Type": "text",
+                                        "Text": "Puntata Minima: 0.20\u20AC."
+                                    },
+                                    {
+                                        "Type": "text",
+                                        "Text": "Puntata Massima: 20.00\u20AC."
+                                    },
+                                    {
+                                        "Type": "text",
+                                        "Text": "The Max win is 5000x the bet.",
+                                        "Text": "This Game has a theoretical RTP of 94.08%",
+                                        "Text": "The FREE SPINS purchase RTP is 94.08%",
+                                        "Text": "In case of malfunction, the play and the eventual win will be canceled."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Main Game",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "row",
+                        "justifyContent": "center",
+                        "numberFeatures": 2,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "70%",
+                                "quanitityContent": 2,
+                                "featureContent": [
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    },
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/symbols/9.png"
+                                        ],
+                                        "direction": "row"
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "70%",
+                                "quanitityContent": 2,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 2,
+                                        "url": [
+                                            "images/symbols/9.png",
+                                            "images/symbols/10.png"
+                                        ],
+                                        "direction": "row"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Bonus",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "row",
+                        "justifyContent": "center",
+                        "numberFeatures": 1,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "70%",
+                                "quanitityContent": 3,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/symbols/1.png"
+                                        ],
+                                        "direction": "column"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    },
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Feature",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "row",
+                        "justifyContent": "center",
+                        "numberFeatures": 3,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "70%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/symbols/1.png"
+                                        ],
+                                        "direction": "column"
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "90%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "70%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/symbols/1.png"
+                                        ],
+                                        "direction": "column"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "row",
+                        "justifyContent": "center",
+                        "numberFeatures": 1,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "90%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "text",
+                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+
+        {
+            "version": "1.0.0",
+            "configurations": [
+                {
+                    "type": "age",
+                    "request": "launch",
+                    "name": "AGE Debug",
+                    "program": "${workspaceFolder}/control.slam",
+                    "stopOnEntry": false
+                },
+                {
+                    "type": "age",
+                    "request": "attach",
+                    "name": "AGE Remote Debug",
+                    "host": "${command:GetIPPort}",
+                    "stopOnEntry": false
+                }
+            ]
+        }
+        
