@@ -57,7 +57,7 @@ function createHTMLFromJSON() {
                     createSymbolSection(subSection, subContainer)
 
                     // Line Layout Section
-                    createLineLayoutSection(subSection, subContainer)
+                    createLineLayoutSection(container, subSection, subContainer)
 
                     // Rule Section
                     createRuleSection(subSection, subContainer)
@@ -108,7 +108,6 @@ function createSymbolSection(subSection, subContainer) {
 
                 contentDisplay.symbols.forEach((content) => {
 
-
                     // Symbol Div Config
                     const leftDiv = document.createElement("div");
                     leftDiv.classList.add("image-container-symbol");
@@ -147,11 +146,11 @@ function createSymbolSection(subSection, subContainer) {
 };
 
 // Call The Function to create Line Layout Section
-function createLineLayoutSection(subSection, subContainer) {
+function createLineLayoutSection(mainSection, subSection, subContainer) {
     if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
         subSection.displayContent.forEach((contentDisplay) => {
 
-            // Adds a Div to each Symbol
+            // Adds a Div to each Line
             for (let n = 0; n < contentDisplay.lineQuantity; n++) {
                 const displayContent = document.createElement("div");
                 const color = "#" + getRandomColor()
@@ -193,10 +192,29 @@ function createLineLayoutSection(subSection, subContainer) {
                     displayContent.style.flexDirection = "column";
                 }
                 subContainer.appendChild(displayContent)
-
             }
+
+
+
         })
     }
+    if (subSection.lineTextContent && Array.isArray(subSection.lineTextContent)) {
+        subSection.lineTextContent.forEach((contentLineDisplay) => {
+            const linetContent = document.createElement("div");
+            linetContent.classList.add("line-layout-text")
+
+
+            for (let j = 0; j < contentLineDisplay.content.length; j++) {
+                const textParagraph = document.createElement("p");
+                textParagraph.textContent = contentLineDisplay.content[j]
+
+                linetContent.appendChild(textParagraph)
+            }
+
+            mainSection.appendChild(linetContent)
+        })
+    }
+
 }
 
 // Call The Function to create Rules Section
