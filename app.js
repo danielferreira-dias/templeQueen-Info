@@ -28,7 +28,7 @@ function createHTMLFromJSON() {
                 // Section Title
                 if (section.Title) {
                     if (section.Type === "Title") {
-                        const title = document.createElement("h3");
+                        const title = document.createElement("h2");
                         title.textContent = section.Title;
                         container.appendChild(title);
                     }
@@ -231,6 +231,17 @@ function createRuleSection(subSection, subContainer) {
                     if (word.Type === "text" && word.Text) {
                         const textParagraph = document.createElement("p");
                         textParagraph.textContent = word.Text;
+
+                        if (word.valueType == "puntataMinima") {
+                            textParagraph.textContent = `${word.Text} ${word.value} EUR`;
+                        } else if (word.valueType == "puntataMaxima") {
+                            textParagraph.textContent = `${word.Text} ${word.value} EUR`;
+                        } else if (word.valueType == "maxWinValue") {
+                            textParagraph.textContent = `${word.Text} ${word.value}x the bet`;
+                        } else if (word.valueType == "rtpValue") {
+                            textParagraph.textContent = `${word.Text} ${word.value}`;
+                        }
+
                         subContainer.style.flexDirection = "column";
 
                         subContainer.classList.add("sub-container-flex")
@@ -242,7 +253,7 @@ function createRuleSection(subSection, subContainer) {
     }
 }
 
-// Call The New Function
+// Call to create New Sections
 function createNewSections(mainSection, subSection, subContainer) {
     subContainer.style.display = subSection.typeDisplay;
     subContainer.style.flexDirection = subSection.direction;

@@ -161,19 +161,38 @@
                                 "layoutStyle": "flex-direction: row;",
                                 "wording": [
                                     {
+                                        "valueType": "puntataMinima",
                                         "Type": "text",
-                                        "Text": "Puntata Minima: 0.20\u20AC."
+                                        "Text": "Puntata Minima:",
+                                        "value": "0.20"
+                                    },
+                                    {
+                                        "valueType": "puntataMaxima",
+                                        "Type": "text",
+                                        "Text": "Puntata Maxima:",
+                                        "value": "20,00"
+                                    },
+                                    {
+                                        "valueType": "maxWinValue",
+                                        "Type": "text",
+                                        "Text": "The Max win is ",
+                                        "value": "5000"
+                                    },
+                                    {
+                                        "valueType": "rtpValue",
+                                        "Type": "text",
+                                        "Text": "This game has a theoretical RTP of:",
+                                        "value": "93,95%"
                                     },
                                     {
                                         "Type": "text",
-                                        "Text": "Puntata Massima: 20.00\u20AC."
-                                    },
-                                    {
-                                        "Type": "text",
-                                        "Text": "The Max win is 5000x the bet.",
-                                        "Text": "This Game has a theoretical RTP of 94.08%",
-                                        "Text": "The FREE SPINS purchase RTP is 94.08%",
                                         "Text": "In case of malfunction, the play and the eventual win will be canceled."
+                                    },
+                                    {
+                                        "valueType": "maxWinValue",
+                                        "Type": "text",
+                                        "Text": "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREESPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed.",
+                                        "value": "5000"
                                     }
                                 ]
                             }
