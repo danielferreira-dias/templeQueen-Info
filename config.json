@@ -137,7 +137,7 @@
                         "lineTextContent": [
                             {
                                 "textSize": "1.5em",
-                                "listType": "normal",
+                                "listType": "p",
                                 "content": [
                                     "All winning combinations are paid from left to right except the SCATTER.",
                                     "In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded.",

@@ -206,14 +206,16 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
 
 
             for (let j = 0; j < contentLineDisplay.content.length; j++) {
-                if (contentLineDisplay.listType == "normal") {
-                    const textParagraph = document.createElement("p");
-                    textParagraph.textContent = contentLineDisplay.content[j]
 
-                    textParagraph.style.fontSize = contentLineDisplay.textSize
-                    linetContent.appendChild(textParagraph)
+                let typeOfList
+                if (contentLineDisplay.listType == "li") {
+                    typeOfList = document.createElement("li");
+                } else {
+                    typeOfList = document.createElement("p");
                 }
+                typeOfList.textContent = contentLineDisplay.content[j]
 
+                linetContent.appendChild(typeOfList)
             }
 
             mainSection.appendChild(linetContent)
