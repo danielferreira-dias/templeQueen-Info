@@ -405,16 +405,19 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "row",
-                                "divWith": "70%",
+                                "divWith": "100%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "numberOfImages": 2,
-                                        "imageWidth": "80%",
-                                        "imageHeight": "80%",
+                                        "numberOfImages": 5,
+                                        "imageWidth": "100%",
+                                        "imageHeight": "100%",
                                         "url": [
-                                            "images/symbols/10.png",
+                                            "images/symbols/11.png",
+                                            "images/symbols/11.png",
+                                            "images/symbols/11.png",
+                                            "images/symbols/11.png",
                                             "images/symbols/11.png"
                                         ],
                                         "direction": "row"

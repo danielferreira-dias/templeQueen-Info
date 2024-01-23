@@ -286,8 +286,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                 singularDiv.style.display = contentDisplay.typeDisplay;
 
                 if (contentDisplay.typeDisplay === "flex") {
-                    const divWidthSize = 100 / subSection.numberFeatures;
-                    singularDiv.style.flex = `${divWidthSize}%`;
+                    singularDiv.style.flex = 1;
+                    singularDiv.style.minWidth = contentDisplay.divWith
                     if (contentDisplay.direction == "row") {
                         singularDiv.classList.add("singular-div-row")
                     } else {
