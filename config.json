@@ -158,6 +158,7 @@
                         "displayContent": [
                             {
                                 "Layout": "flex",
+                                "listType": "li",
                                 "layoutStyle": "flex-direction: row;",
                                 "wording": [
                                     {
@@ -189,7 +190,7 @@
                                         "Text": "In case of malfunction, the play and the eventual win will be canceled."
                                     },
                                     {
-                                        "valueType": "maxWinValue",
+                                        "valueType": "maxWinValueLimit",
                                         "Type": "text",
                                         "Text": "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREESPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed.",
                                         "value": "5000"

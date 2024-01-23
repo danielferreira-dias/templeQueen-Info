@@ -33,6 +33,14 @@ p {
     font-style: normal;
 }
 
+li {
+    margin: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
 /* Sub Container CSS*/
 
 .sub-container {
@@ -46,6 +54,7 @@ p {
     align-items: center;
     width: 90%;
     margin: auto;
+    text-align: center;
 }
 
 .sub-container-grid {

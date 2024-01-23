@@ -229,23 +229,37 @@ function createRuleSection(subSection, subContainer) {
             if (contentDisplay.wording && Array.isArray(contentDisplay.wording)) {
                 contentDisplay.wording.forEach((word) => {
                     if (word.Type === "text" && word.Text) {
-                        const textParagraph = document.createElement("p");
-                        textParagraph.textContent = word.Text;
+                        let typeOfList;
 
-                        if (word.valueType == "puntataMinima") {
-                            textParagraph.textContent = `${word.Text} ${word.value} EUR`;
-                        } else if (word.valueType == "puntataMaxima") {
-                            textParagraph.textContent = `${word.Text} ${word.value} EUR`;
-                        } else if (word.valueType == "maxWinValue") {
-                            textParagraph.textContent = `${word.Text} ${word.value}x the bet`;
-                        } else if (word.valueType == "rtpValue") {
-                            textParagraph.textContent = `${word.Text} ${word.value}`;
+                        if (contentDisplay.listType == "li") {
+                            typeOfList = document.createElement("li");
+                        } else {
+                            typeOfList = document.createElement("p");
                         }
 
-                        subContainer.style.flexDirection = "column";
+                        // Format the text content based on valueType
+                        switch (word.valueType) {
+                            case "puntataMinima":
+                            case "puntataMaxima":
+                                typeOfList.textContent = `${word.Text} ${word.value} EUR`;
+                                break;
+                            case "maxWinValue":
+                                typeOfList.textContent = `${word.Text} ${word.value}x the bet`;
+                                break;
+                            case "rtpValue":
+                                typeOfList.textContent = `${word.Text} ${word.value}`;
+                                break;
+                            case "maxWinValueLimit":
+                                typeOfList.textContent = `${word.Text}`;
+                                break;
+                            default:
+                                typeOfList.textContent = word.Text;
+                        }
 
-                        subContainer.classList.add("sub-container-flex")
-                        subContainer.appendChild(textParagraph);
+                        // Apply common styling and append to the container
+                        subContainer.style.flexDirection = "column";
+                        subContainer.classList.add("sub-container-flex");
+                        subContainer.appendChild(typeOfList);
                     }
                 });
             }
