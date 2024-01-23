@@ -158,8 +158,9 @@
                         "displayContent": [
                             {
                                 "Layout": "flex",
-                                "listType": "li",
+                                "listType": "p",
                                 "layoutStyle": "flex-direction: row;",
+                                "textAlignment": "center",
                                 "wording": [
                                     {
                                         "valueType": "puntataMinima",
@@ -202,7 +203,7 @@
                 ]
             },
             {
-                "Title": "Main Game",
+                "Title": "Features",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -215,43 +216,49 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "70%",
+                                "divWith": "50%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
-                                        "type": "text",
-                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                        "direction": "column",
-                                        "customFormat": ""
-                                    },
-                                    {
                                         "type": "img",
                                         "numberOfImages": 1,
+                                        "imageWidth": "60%",
+                                        "imageHeight": "60%",
                                         "url": [
                                             "images/symbols/9.png"
                                         ],
                                         "direction": "row"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "textAlignment": "center",
+                                        "content": "Substitutes all symbols, except the SCATTER and SUPER SCATTER symbol.",
+                                        "direction": "column",
+                                        "customFormat": ""
                                     }
                                 ]
                             },
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "70%",
+                                "divWith": "50%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
                                         "numberOfImages": 2,
+                                        "imageWidth": "80%",
+                                        "imageHeight": "80%",
                                         "url": [
-                                            "images/symbols/9.png",
-                                            "images/symbols/10.png"
+                                            "images/symbols/10.png",
+                                            "images/symbols/11.png"
                                         ],
                                         "direction": "row"
                                     },
                                     {
                                         "type": "text",
-                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "textAlignment": "center",
+                                        "content": "Landing 3, 4 or 5 SCATTER symbols in base game awards 6, 8 or 10 FREE SPINS, respectively.\nSUPER SCATTER only appears in the last reel and triggers the \"SUPER FREE SPINS\"",
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -262,7 +269,7 @@
                 ]
             },
             {
-                "Title": "Bonus",
+                "Title": "Enigmatic Totem",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -274,24 +281,26 @@
                         "features": [
                             {
                                 "typeDisplay": "flex",
-                                "direction": "row",
-                                "divWith": "70%",
+                                "direction": "column",
+                                "divWith": "100%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
+                                        "imageWidth": "80%",
+                                        "imageHeight": "80%",
                                         "url": [
-                                            "images/symbols/1.png"
+                                            "images/settings/PAGE_1.png"
                                         ],
                                         "direction": "column"
                                     },
                                     {
                                         "type": "plural_text",
                                         "numberOfTexts": 2,
+                                        "textAlignment": "center",
                                         "content": [
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation."
+                                            "The ENIGMATIC TOTEM can randomly substitute some symbols with WILD or SCATTER. He can also add MULTIPLIERS to the current WILDS on the reels."
                                         ],
                                         "direction": "column",
                                         "customFormat": ""
@@ -303,13 +312,13 @@
                 ]
             },
             {
-                "Title": "Feature",
+                "Title": "Free Spins",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
                     {
                         "typeDisplay": "flex",
-                        "direction": "row",
+                        "direction": "column",
                         "justifyContent": "center",
                         "numberFeatures": 3,
                         "features": [
@@ -320,12 +329,11 @@
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/symbols/1.png"
-                                        ],
-                                        "direction": "column"
+                                        "type": "text",
+                                        "textAlignment": "center",
+                                        "content": "In the base game, if you manage to land three or more SCATTER symbols, you'll activate the FREE SPINS round. The number of FREE SPINS you get depends on how many SCATTER symbols you land: 3 SCATTERS give you 6 FREE SPINS, 4 SCATTERS grant you 8, and if you're lucky enough to land 5, you'll receive 10 FREE SPINS.",
+                                        "direction": "column",
+                                        "customFormat": ""
                                     }
                                 ]
                             },
@@ -337,7 +345,8 @@
                                 "featureContent": [
                                     {
                                         "type": "text",
-                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "textAlignment": "center",
+                                        "content": "\n\nOnce the FREE SPINS round is triggered, you'll be taken to a new set of reels, this time you have more reel slots. During this round, you have the opportunity to land various MULTIPLIERS that can increase the value of your prizes. The total amount won during the FREE SPINS round will be awarded at the end.",
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -350,32 +359,9 @@
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/symbols/1.png"
-                                        ],
-                                        "direction": "column"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "typeDisplay": "flex",
-                        "direction": "row",
-                        "justifyContent": "center",
-                        "numberFeatures": 1,
-                        "features": [
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "90%",
-                                "quanitityContent": 1,
-                                "featureContent": [
-                                    {
                                         "type": "text",
-                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
+                                        "textAlignment": "center",
+                                        "content": "\n\nExcitingly, there's a COLLECTOR feature in the game. This COLLECTOR has the ability to absorb and accumulate all the MULTIPLIERS that become visible on the reels during the FREE SPINS round. So, as you land MULTIPLIERS, the COLLECTOR stores them, potentially leading to even bigger rewards when the FREE SPINS conclude.",
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -386,36 +372,30 @@
                 ]
             },
             {
-                "Title": "Buy Bonus",
+                "Title": "Free Spins",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
                     {
                         "typeDisplay": "flex",
-                        "direction": "row",
+                        "direction": "column",
                         "justifyContent": "center",
-                        "numberFeatures": 3,
+                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
-                                "direction": "row",
+                                "direction": "column",
                                 "divWith": "70%",
-                                "quanitityContent": 2,
+                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/symbols/1.png"
-                                        ],
-                                        "direction": "column"
-                                    },
-                                    {
                                         "type": "plural_text",
-                                        "numberOfTexts": 2,
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 3,
                                         "content": [
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation."
+                                            "Additionally, be on the lookout for the exclusive MYSTERY QUETZAL symbol during your gameplay! This unique symbol has two fantastic abilities: it can transform into a COLLECTOR, absorbing and accumulating all the MULTIPLIERS that become visible on the reels during the FREE SPINS round. As a result, you could end up with even greater rewards when the FREE SPINS conclude.",
+                                            "But that's not all! The MYSTERY QUETZAL symbol also has the power to grant you an additional 2 FREE SPINS. So, not only does it help you collect MULTIPLIERS, but it also gives you extra opportunities to win.",
+                                            "Pay attention to the main TOTTEM, it can give you a surprise and duplicate up to 3 existing COIN MULTIPLIERS on the screen, as well reveal some new ones."
                                         ],
                                         "direction": "column",
                                         "customFormat": ""
@@ -426,47 +406,18 @@
                                 "typeDisplay": "flex",
                                 "direction": "row",
                                 "divWith": "70%",
-                                "quanitityContent": 2,
-                                "featureContent": [
-                                    {
-                                        "type": "plural_text",
-                                        "numberOfTexts": 2,
-                                        "content": [
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                            "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation."
-                                        ],
-                                        "direction": "column",
-                                        "customFormat": ""
-                                    },
-                                    {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/symbols/1.png"
-                                        ],
-                                        "direction": "column"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "typeDisplay": "flex",
-                        "direction": "row",
-                        "justifyContent": "center",
-                        "numberFeatures": 1,
-                        "features": [
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "90%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "text",
-                                        "content": "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                        "direction": "column",
-                                        "customFormat": ""
+                                        "type": "img",
+                                        "numberOfImages": 2,
+                                        "imageWidth": "80%",
+                                        "imageHeight": "80%",
+                                        "url": [
+                                            "images/symbols/10.png",
+                                            "images/symbols/11.png"
+                                        ],
+                                        "direction": "row"
                                     }
                                 ]
                             }

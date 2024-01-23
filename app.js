@@ -83,6 +83,7 @@ function getRandomColor() {
     return Math.floor(Math.random() * 16777215).toString(16);
 }
 
+
 // Call the function to start populating content
 createHTMLFromJSON();
 
@@ -275,7 +276,7 @@ function createNewSections(mainSection, subSection, subContainer) {
     subContainer.style.flexDirection = subSection.direction;
     if (subSection.typeDisplay === "flex") {
         subContainer.style.justifyContent = subSection.justifyContent;
-        subContainer.style.width = "100%"
+        subContainer.classList.add("sub-container-flex")
     }
 
     if (mainSection.sectionType === "Feature") {
@@ -285,10 +286,13 @@ function createNewSections(mainSection, subSection, subContainer) {
                 singularDiv.style.display = contentDisplay.typeDisplay;
 
                 if (contentDisplay.typeDisplay === "flex") {
-                    singularDiv.style.flexDirection = contentDisplay.direction;
-                    singularDiv.style.alignItems = "center";
-                    singularDiv.style.width = contentDisplay.divWith;
-                    singularDiv.style.justifyContent = contentDisplay.justifyContent;
+                    const divWidthSize = 100 / subSection.numberFeatures;
+                    singularDiv.style.flex = `${divWidthSize}%`;
+                    if (contentDisplay.direction == "row") {
+                        singularDiv.classList.add("singular-div-row")
+                    } else {
+                        singularDiv.classList.add("singular-div-column")
+                    }
                 }
 
                 for (let j = 0; j < contentDisplay.quanitityContent; j++) {
@@ -304,7 +308,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                         for (let i = 0; i < numberOfImages; i++) {
                             const contentDivImage = document.createElement("div");
                             contentDivImage.style.backgroundImage = `url(${contentDisplay.featureContent[j].url[i]})`;
-
+                            contentDivImage.style.width = contentDisplay.featureContent[j].imageWidth
+                            contentDivImage.style.height = contentDisplay.featureContent[j].imageWidth
                             contentDivImage.classList.add("featureImagesContent"); // Optional: Add a class for styling
                             contentDiv.appendChild(contentDivImage);
                         }
@@ -312,6 +317,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                         contentDiv.classList.add("content-div-class-flex-text");
                         const textParagraph = document.createElement("p");
                         textParagraph.textContent = contentDisplay.featureContent[j].content;
+
                         contentDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
                         // Check if numberOfTexts is defined
@@ -327,6 +333,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                         }
                     }
 
+                    contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
+
                     singularDiv.appendChild(contentDiv);
                 }
 
@@ -335,6 +343,8 @@ function createNewSections(mainSection, subSection, subContainer) {
         }
     }
 }
+
+
 
 
 

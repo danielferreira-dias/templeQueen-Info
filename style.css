@@ -5,6 +5,10 @@ body {
     background-color: #333;
 }
 
+.symbol-section {
+    padding: 0 5%;
+}
+
 .close-button {
     position: fixed;
     top: 10px;
@@ -46,16 +50,15 @@ li {
 .sub-container {
     width: 80%;
     border: 1px solid white;
-
 }
 
 .sub-container-flex {
-    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
     align-items: center;
-    width: 90%;
-    margin: auto;
-    text-align: center;
+    justify-content: center;
 }
+
 
 .sub-container-grid {
     display: grid;
@@ -262,16 +265,30 @@ p {
 
 /* Sub Container - Feature Section - CSS*/
 
+.singular-div-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.singular-div-column {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .content-div-class-flex-img {
     display: flex;
     width: 70%;
+    height: 70%;
     align-items: center;
     justify-content: center;
 }
 
 .content-div-class-flex-text {
     display: flex;
-    width: 90%;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }
@@ -281,6 +298,4 @@ p {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 50%;
-    height: 50%;
 }
