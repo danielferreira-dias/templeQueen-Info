@@ -331,6 +331,31 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                             contentDiv.appendChild(textParagraph);
                         }
+                    } else if (contentDisplay.featureContent[j].type === "img_text") {
+
+                        contentDiv.classList.add("content-div-class-flex-img");
+                        // Check if numberOfImages is defined
+                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
+
+                        for (let i = 0; i < numberOfImages; i++) {
+                            const contentDivImage = document.createElement("div");
+                            contentDivImage.style.backgroundImage = `url(${contentDisplay.featureContent[j].url[i]})`;
+                            contentDivImage.style.width = contentDisplay.featureContent[j].imageWidth
+                            contentDivImage.style.height = contentDisplay.featureContent[j].imageWidth
+                            contentDivImage.classList.add("featureImagesContent"); // Optional: Add a class for styling
+                            contentDiv.appendChild(contentDivImage);
+                        }
+
+                        // Check if numberOfTexts is defined
+                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
+
+                        for (let i = 0; i < numberOfString; i++) {
+                            contentDiv.classList.add("content-div-class-flex-text");
+                            const textParagraph = document.createElement("p");
+                            textParagraph.textContent = contentDisplay.featureContent[j].content[i];
+
+                            contentDiv.appendChild(textParagraph);
+                        }
                     }
 
                     contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
