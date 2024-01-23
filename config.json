@@ -414,11 +414,63 @@
                                         "imageWidth": "100%",
                                         "imageHeight": "100%",
                                         "url": [
-                                            "images/symbols/11.png",
-                                            "images/symbols/11.png",
-                                            "images/symbols/11.png",
-                                            "images/symbols/11.png",
-                                            "images/symbols/11.png"
+                                            "images/Settings/COIN.png",
+                                            "images/Settings/NORMAL_BIRD.png",
+                                            "images/Settings/PLUS.png",
+                                            "images/Settings/SUPER_BIRD.png",
+                                            "images/Settings/TOTEM.png"
+                                        ],
+                                        "direction": "row"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Super Free Spins",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "row",
+                        "justifyContent": "center",
+                        "numberFeatures": 2,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "60%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "plural_text",
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 2,
+                                        "content": [
+                                            "SUPER FREE SPINS are activated if there are 3 or more SCATTERS on the reels and if there is a SUPER SCATTER on the last reel.",
+                                            "\n\nSUPER FREE SPINS follow the same logic as normal FREE SPINS as explained on the previous pages, but with one particularity, there is always 1 or more GUARANTEED COLLECTORS and the prize outputs are potentialy bigger."
+                                        ],
+                                        "direction": "column",
+                                        "customFormat": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "row",
+                                "divWith": "40%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "imageWidth": "100%",
+                                        "imageHeight": "100%",
+                                        "url": [
+                                            "images/Settings/SUPER_FREE_SPINS.png"
                                         ],
                                         "direction": "row"
                                     }
