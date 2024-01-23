@@ -23,6 +23,7 @@ function createHTMLFromJSON() {
                 container.classList.add("container")
                 container.style.display = "flex";
                 container.style.flexDirection = "column";
+                container.style.alignItems = "center"
 
                 // Section Title
                 if (section.Title) {
@@ -205,10 +206,14 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
 
 
             for (let j = 0; j < contentLineDisplay.content.length; j++) {
-                const textParagraph = document.createElement("p");
-                textParagraph.textContent = contentLineDisplay.content[j]
+                if (contentLineDisplay.listType == "normal") {
+                    const textParagraph = document.createElement("p");
+                    textParagraph.textContent = contentLineDisplay.content[j]
 
-                linetContent.appendChild(textParagraph)
+                    textParagraph.style.fontSize = contentLineDisplay.textSize
+                    linetContent.appendChild(textParagraph)
+                }
+
             }
 
             mainSection.appendChild(linetContent)

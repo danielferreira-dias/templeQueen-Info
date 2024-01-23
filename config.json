@@ -136,9 +136,12 @@
                         ],
                         "lineTextContent": [
                             {
+                                "textSize": "1.5em",
+                                "listType": "normal",
                                 "content": [
-                                    "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation.",
-                                    "Culpa consectetur est eu voluptate duis est aute velit sunt tempor exercitation."
+                                    "All winning combinations are paid from left to right except the SCATTER.",
+                                    "In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded.",
+                                    "In case of combinations consisting exclusively of WILD symbols, it will be paid as the highest symbol."
                                 ]
                             }
                         ]

@@ -20,11 +20,17 @@ body {
 h3 {
     font-size: 3rem;
     text-align: center;
-    border-bottom: 1px white;
+    border: inset;
+    border-width: 0px 0px 1px 0px;
+    padding: 25px;
+    width: 50%;
 }
 
 p {
     margin: 0.7rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Sub Container CSS*/
@@ -179,6 +185,13 @@ p.sub-container-content-flex {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 25px;
+}
+
+.line-layout-text>p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Sub Container - Rules Content - CSS*/
