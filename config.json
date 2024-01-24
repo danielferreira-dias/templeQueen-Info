@@ -222,7 +222,7 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
-                                        "imageWidth": "60%",
+                                        "imageWidth": "50%",
                                         "imageHeight": "60%",
                                         "url": [
                                             "images/symbols/9.png"
@@ -247,7 +247,7 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 2,
-                                        "imageWidth": "80%",
+                                        "imageWidth": "50%",
                                         "imageHeight": "80%",
                                         "url": [
                                             "images/symbols/10.png",
@@ -288,8 +288,7 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
-                                        "imageWidth": "80%",
-                                        "imageHeight": "80%",
+                                        "imageType": "big",
                                         "url": [
                                             "images/settings/PAGE_1.png"
                                         ],
@@ -411,8 +410,6 @@
                                     {
                                         "type": "img_text",
                                         "numberOfImages": 1,
-                                        "imageWidth": "100%",
-                                        "imageHeight": "100%",
                                         "url": [
                                             "images/Settings/COIN.png"
                                         ],
@@ -426,8 +423,6 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 2,
-                                        "imageWidth": "100%",
-                                        "imageHeight": "100%",
                                         "url": [
                                             "images/Settings/PLUS.png",
                                             "images/Settings/NORMAL_BIRD.png"
@@ -437,8 +432,6 @@
                                     {
                                         "type": "img_text",
                                         "numberOfImages": 1,
-                                        "imageWidth": "100%",
-                                        "imageHeight": "100%",
                                         "url": [
                                             "images/Settings/SUPER_BIRD.png"
                                         ],
@@ -452,8 +445,6 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
-                                        "imageWidth": "100%",
-                                        "imageHeight": "100%",
                                         "url": [
                                             "images/Settings/TOTEM.png"
                                         ],

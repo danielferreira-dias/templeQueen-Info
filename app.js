@@ -286,8 +286,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                 singularDiv.style.display = contentDisplay.typeDisplay;
 
                 if (contentDisplay.typeDisplay === "flex") {
-                    singularDiv.style.flex = 1;
-                    singularDiv.style.minWidth = contentDisplay.divWith
+                    singularDiv.style.flex = 1
+                    singularDiv.style.maxWidth = "100%"
                     if (contentDisplay.direction == "row") {
                         singularDiv.classList.add("singular-div-row")
                     } else {
@@ -306,11 +306,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                         const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
                         for (let i = 0; i < numberOfImages; i++) {
-                            const contentDivImage = document.createElement("div");
-                            contentDivImage.style.backgroundImage = `url(${contentDisplay.featureContent[j].url[i]})`;
-                            contentDivImage.style.width = contentDisplay.featureContent[j].imageWidth
-                            contentDivImage.style.height = contentDisplay.featureContent[j].imageWidth
-                            contentDivImage.classList.add("featureImagesContent"); // Optional: Add a class for styling
+                            const contentDivImage = document.createElement("img");
+                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            if (contentDisplay.featureContent[j].imageType == "big") {
+                                contentDivImage.classList.add("big-image")
+                            }
                             contentDiv.appendChild(contentDivImage);
                         }
                     } else if (contentDisplay.featureContent[j].type === "text") {
@@ -338,11 +338,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                         const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
                         for (let i = 0; i < numberOfImages; i++) {
-                            const contentDivImage = document.createElement("div");
-                            contentDivImage.style.backgroundImage = `url(${contentDisplay.featureContent[j].url[i]})`;
-                            contentDivImage.style.width = contentDisplay.featureContent[j].imageWidth
-                            contentDivImage.style.height = contentDisplay.featureContent[j].imageWidth
-                            contentDivImage.classList.add("featureImagesContent"); // Optional: Add a class for styling
+                            const contentDivImage = document.createElement("img");
+                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            if (contentDisplay.featureContent[j].imageType == "big") {
+                                contentDivImage.classList.add("big-image")
+                            }
                             contentDiv.appendChild(contentDivImage);
                         }
 
