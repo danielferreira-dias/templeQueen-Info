@@ -508,6 +508,45 @@
                         ]
                     }
                 ]
+            },
+            {
+                "Title": "Double Chance",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "column",
+                        "justifyContent": "center",
+                        "numberFeatures": 1,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "60%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img_text",
+                                        "imageType": "small",
+                                        "divWith": "small",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/Settings/SUPER_BIRD.png"
+                                        ],
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 2,
+                                        "content": [
+                                            "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled.",
+                                            "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
+                                        ],
+                                        "direction": "column"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
