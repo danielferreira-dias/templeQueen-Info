@@ -229,27 +229,43 @@ p.sub-container-content-flex {
 .singular-div-row {
     flex-direction: row;
     align-items: center;
+    flex: 1;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .singular-div-column {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-div-class-flex-img {
-    display: flex;
-    max-width: 100%;
     flex: 1;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .singular-div-column {
+        flex-basis: 100%;
+        /* Force each child to take 100% width when screen is <= 600px */
+    }
+
+    .singular-div-row {
+        flex-basis: 100%;
+        /* Force each child to take 100% width when screen is <= 600px */
+    }
+}
+
+
+.content-div-class-flex-img {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .content-div-class-flex-text {
     display: flex;
-    width: 100%;
+    flex: 1;
     align-items: center;
     justify-content: center;
 }
@@ -257,7 +273,20 @@ p.sub-container-content-flex {
 
 /* Image Section */
 
+.div-small-type {
+    min-width: 200px;
+}
+
+.div-big-type {
+    min-width: 50%;
+}
+
 .big-image {
     max-width: 100%;
+    object-fit: contain;
+}
+
+.small-image {
+    max-width: 50%;
     object-fit: contain;
 }

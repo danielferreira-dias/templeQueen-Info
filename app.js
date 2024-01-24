@@ -286,7 +286,6 @@ function createNewSections(mainSection, subSection, subContainer) {
                 singularDiv.style.display = contentDisplay.typeDisplay;
 
                 if (contentDisplay.typeDisplay === "flex") {
-                    singularDiv.style.flex = 1
                     singularDiv.style.maxWidth = "100%"
                     if (contentDisplay.direction == "row") {
                         singularDiv.classList.add("singular-div-row")
@@ -310,6 +309,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
                                 contentDivImage.classList.add("big-image")
+                            } else if (contentDisplay.featureContent[j].imageType == "small") {
+                                contentDivImage.classList.add("small-image")
                             }
                             contentDiv.appendChild(contentDivImage);
                         }
@@ -326,6 +327,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                         for (let i = 0; i < numberOfString; i++) {
 
                             contentDiv.classList.add("content-div-class-flex-text");
+
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = contentDisplay.featureContent[j].content[i];
 
@@ -342,6 +344,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
                                 contentDivImage.classList.add("big-image")
+                            } else if (contentDisplay.featureContent[j].imageType == "small") {
+                                contentDivImage.classList.add("small-image")
                             }
                             contentDiv.appendChild(contentDivImage);
                         }
@@ -357,7 +361,9 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDiv.appendChild(textParagraph);
                         }
                     }
-
+                    if (contentDisplay.featureContent[j].divWith == "small") {
+                        contentDiv.classList.add("div-small-type")
+                    }
                     contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
 
                     singularDiv.appendChild(contentDiv);

@@ -216,14 +216,13 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "50%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
-                                        "imageWidth": "50%",
-                                        "imageHeight": "60%",
+                                        "divWith": "small",
+                                        "imageType": "big",
                                         "url": [
                                             "images/symbols/9.png"
                                         ],
@@ -241,14 +240,13 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "50%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
                                         "numberOfImages": 2,
-                                        "imageWidth": "50%",
-                                        "imageHeight": "80%",
+                                        "divWith": "small",
+                                        "imageType": "small",
                                         "url": [
                                             "images/symbols/10.png",
                                             "images/symbols/11.png"
@@ -282,12 +280,12 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "100%",
                                 "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
+                                        "divWith": "big",
                                         "imageType": "big",
                                         "url": [
                                             "images/settings/PAGE_1.png"
@@ -296,7 +294,7 @@
                                     },
                                     {
                                         "type": "plural_text",
-                                        "numberOfTexts": 2,
+                                        "numberOfTexts": 1,
                                         "textAlignment": "center",
                                         "content": [
                                             "The ENIGMATIC TOTEM can randomly substitute some symbols with WILD or SCATTER. He can also add MULTIPLIERS to the current WILDS on the reels."
@@ -324,7 +322,6 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "70%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
@@ -339,7 +336,6 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "90%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
@@ -354,7 +350,6 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "70%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
@@ -384,7 +379,6 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "70%",
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
@@ -404,11 +398,12 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "row",
-                                "divWith": "100%",
                                 "quanitityContent": 4,
                                 "featureContent": [
                                     {
                                         "type": "img_text",
+                                        "imageType": "big",
+                                        "divWith": "small",
                                         "numberOfImages": 1,
                                         "url": [
                                             "images/Settings/COIN.png"
@@ -422,6 +417,8 @@
                                     },
                                     {
                                         "type": "img",
+                                        "imageType": "big",
+                                        "divWith": "small",
                                         "numberOfImages": 2,
                                         "url": [
                                             "images/Settings/PLUS.png",
@@ -431,6 +428,8 @@
                                     },
                                     {
                                         "type": "img_text",
+                                        "imageType": "big",
+                                        "divWith": "small",
                                         "numberOfImages": 1,
                                         "url": [
                                             "images/Settings/SUPER_BIRD.png"
@@ -444,6 +443,8 @@
                                     },
                                     {
                                         "type": "img",
+                                        "imageType": "big",
+                                        "divWith": "small",
                                         "numberOfImages": 1,
                                         "url": [
                                             "images/Settings/TOTEM.png"
@@ -495,8 +496,8 @@
                                     {
                                         "type": "img",
                                         "numberOfImages": 1,
-                                        "imageWidth": "100%",
-                                        "imageHeight": "100%",
+                                        "divWith": "100%",
+                                        "imageType": "big",
                                         "url": [
                                             "images/Settings/SUPER_FREE_SPINS.png"
                                         ],
