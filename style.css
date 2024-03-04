@@ -65,6 +65,7 @@ li {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 
@@ -270,6 +271,13 @@ p.sub-container-content-flex {
     justify-content: center;
 }
 
+.content-div-class-flex-div {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 /* Image Section */
 

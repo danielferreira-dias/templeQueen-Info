@@ -360,6 +360,43 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                             contentDiv.appendChild(textParagraph);
                         }
+                    } else if (contentDisplay.featureContent[j].type == "divContent") {
+                        contentDiv.classList.add("content-div-class-flex-div");
+                        // Check if numberOfDivsContent is defined
+                        const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
+
+                        for (let i = 0; i < numberOfDivsContent; i++) {
+                            // Create a new div element for each iteration
+                            const borderDiv = document.createElement("div");
+
+                            // Apply CSS to the Borders
+                            borderDiv.style.borderStyle = "solid";
+                            borderDiv.style.margin = "10px";
+                            borderDiv.style.height = "150px";
+                            borderDiv.style.width = "150px";
+                            borderDiv.style.borderWidth = "5px";
+                            borderDiv.style.borderColor = "	#FFD700"
+
+                            // Apply Flexbox to align text vertically
+                            borderDiv.style.display = "flex";
+                            borderDiv.style.justifyContent = "center"; // Align horizontally
+                            borderDiv.style.alignItems = "center"; // Align vertically
+
+                            // Append the new div to the main contentDiv
+                            contentDiv.appendChild(borderDiv);
+
+                            // Access the text array for the current border div
+                            const textArray = contentDisplay.featureContent[j].divContentBorder[i];
+
+                            // Inside The Border Divs, Apply Text
+                            const borderText = document.createElement("p");
+                            borderText.style.fontSize = "1.0rem";
+
+                            borderText.textContent = textArray.contentInside;
+
+                            // Append the text to the current borderDiv
+                            borderDiv.appendChild(borderText);
+                        }
                     }
                     if (contentDisplay.featureContent[j].divWith == "small") {
                         contentDiv.classList.add("div-small-type")

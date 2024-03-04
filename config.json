@@ -547,6 +547,80 @@
                         ]
                     }
                 ]
+            },
+            {
+                "Title": "Cristal Shop",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "column",
+                        "justifyContent": "center",
+                        "numberFeatures": 1,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "60%",
+                                "quanitityContent": 2,
+                                "featureContent": [
+                                    {
+                                        "type": "img_text",
+                                        "imageType": "small",
+                                        "divWith": "small",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/Settings/ICON.png"
+                                        ],
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 2,
+                                        "content": [
+                                            "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                            "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                        ],
+                                        "direction": "column"
+                                    },
+                                    {
+                                        "type": "divContent",
+                                        "numberOfDivs": 4,
+                                        "direction": "row",
+                                        "divContentBorder": [
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "SUPER FREE SPINS 400x BET"
+                                                ],
+                                                "content": "RTP - 93,13%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "FREE SPINS 100x BET"
+                                                ],
+                                                "content": "RTP - 93,96%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "FEATURE 10x BET"
+                                                ],
+                                                "content": "RTP - 94,03%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "SUPER FEATURE 15x BET"
+                                                ],
+                                                "content": "RTP - 94,03%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
