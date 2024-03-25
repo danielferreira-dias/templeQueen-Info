@@ -6,16 +6,50 @@ function closeInfo() {
 
 // ----------------------------------------------------
 
+function createHeadingSection() {
+    const headingSection = document.querySelector(".heading-section-div");
+
+    // Create Heading Section
+    const headingSectionTitle = document.createElement("h1");
+    const versionDateWrapper = document.createElement("div"); // Create a wrapper for version and date
+    versionDateWrapper.style.textAlign = "center";
+    versionDateWrapper.style.display = "flex";
+    versionDateWrapper.style.flexDirection = "row";
+    versionDateWrapper.style.justifyContent = "center";
+    const headingSectionVersion = document.createElement("h3");
+    const headingSectionData = document.createElement("h3");
+
+    // Set text content
+    headingSectionTitle.textContent = "7Diamond";
+    headingSectionVersion.textContent = "Game Version: v1.0.0";
+
+    // Append elements
+    headingSection.appendChild(headingSectionTitle);
+
+    // Append version and date into wrapper
+    versionDateWrapper.appendChild(headingSectionVersion);
+    versionDateWrapper.appendChild(headingSectionData);
+
+    // Append wrapper to headingSection
+    headingSection.appendChild(versionDateWrapper);
+
+    // Append wrapper to headingSection
+    headingSection.appendChild(versionDateWrapper);
+
+}
+
 function createHTMLFromJSON() {
     fetch("config.json")
         .then((response) => response.json())
         .then((data) => {
 
             // Title of the Game
-            document.title = "Book of West";
+            document.title = "Temple Queen";
 
             // Create Sections
             const main = document.querySelector(".symbol-section");
+
+
             data.Info.Section.forEach((section) => {
 
                 // Create Section Container
@@ -42,7 +76,11 @@ function createHTMLFromJSON() {
                     subContainer.style.display = subSection.Layout;
                     if (section.sectionType != "Feature") {
                         if (subSection.Layout == "grid") {
-                            subContainer.classList.add("sub-container-grid")
+                            if (section.sectionType == "lineLayout") {
+                                subContainer.classList.add("sub-container-grid-line-layout")
+                            } else {
+                                subContainer.classList.add("sub-container-grid")
+                            }
                         }
                         else if (subSection.Layout == "flex") {
                             subContainer.classList.add("sub-container-flex")
@@ -55,7 +93,7 @@ function createHTMLFromJSON() {
 
 
                     // Symbol Section
-                    createSymbolSection(subSection, subContainer)
+                    createSymbolSection(section, subSection, subContainer)
 
                     // Line Layout Section
                     createLineLayoutSection(container, subSection, subContainer)
@@ -69,6 +107,7 @@ function createHTMLFromJSON() {
 
                 })
 
+
                 main.appendChild(container)
             });
         })
@@ -80,72 +119,73 @@ function createHTMLFromJSON() {
 // Backbone Functions
 
 function getRandomColor() {
-    return Math.floor(Math.random() * 16777215).toString(16);
+    // Get the color at the random index
+    const color = "ff0096"
+
+    // Return the chosen color
+    return color;
 }
 
-
+// Call the function to create Heading Section
+createHeadingSection();
 // Call the function to start populating content
 createHTMLFromJSON();
 
-// Call The Function to create Symbol Section
-function createSymbolSection(subSection, subContainer) {
-    if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
-        subSection.displayContent.forEach((contentDisplay) => {
-            // Adds a Div to each Symbol
-            for (let i = contentDisplay.symbolQuantity - 1; i >= 0; i--) {
 
-                const displayContent = document.createElement("div");
-                // displayContent.classList.add("sub-container-content");
+function createSymbolSection(section, subSection, subContainer) {
+    if (section.sectionType == 'symbolPayout') {
+        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+            subSection.displayContent.forEach((contentDisplay) => {
+                // Adds a Div to each Symbol
+                for (let i = contentDisplay.symbols.length - 1; i >= 0; i--) {
+                    const displayContent = document.createElement("div");
+                    // Add Display Type to Each Symbol Section Div
+                    if (contentDisplay.Layout == "grid") {
+                        displayContent.classList.add("sub-container-content-grid");
 
-                // Add Display Type to Each Symbol Section Div
-                if (contentDisplay.Layout == "grid") {
-                    displayContent.classList.add("sub-container-content-grid");
+                    }
+                    else if (contentDisplay.Layout == "flex") {
+                        displayContent.classList.add("sub-container-content-flex");
+                    }
+                    subContainer.appendChild(displayContent)
 
-                }
-                else if (contentDisplay.Layout == "flex") {
-                    displayContent.classList.add("sub-container-content-flex");
-                }
-                subContainer.appendChild(displayContent)
-
-
-                contentDisplay.symbols.forEach((content) => {
-
-                    // Symbol Div Config
+                    // Left Div contains Symbol Image
                     const leftDiv = document.createElement("div");
                     leftDiv.classList.add("image-container-symbol");
                     leftDiv.style.backgroundImage = `url("./images/symbols/${i}.png")`;
                     const symbolImage = document.createElement("img")
                     leftDiv.appendChild(symbolImage)
 
-                    // Symbol table Config
+                    displayContent.appendChild(leftDiv);
+
+                    // Right Div contains Info
                     const rightDiv = document.createElement("div");
                     rightDiv.classList.add("list-container");
 
-                    for (let index = 0; index < content.item2.multipliers.length; index++) {
-                        // const element = array[index];
+                    // Iterate over symbols and display multipliers and values
+                    contentDisplay.symbols[i].multipliers.forEach((multiplier, index) => {
                         const listDiv = document.createElement("div")
                         listDiv.classList.add("list-div")
-                        const simbolvalue = document.createElement("p")
-                        simbolvalue.classList.add("symbol-value-text")
-                        simbolvalue.innerText = content.item2.values[index]
+                        const multiplierText = document.createElement("p")
+                        multiplierText.classList.add("multiplier-symbol-value-text")
+                        multiplierText.innerText = multiplier
 
+                        const valueText = document.createElement("p")
+                        valueText.classList.add("symbol-value-text")
+                        valueText.innerText = contentDisplay.symbols[i].values[index]
 
-                        const multiplierSimbolvalue = document.createElement("p")
-                        multiplierSimbolvalue.classList.add("multiplier-symbol-value-text")
-                        multiplierSimbolvalue.innerText = content.item2.multipliers[index]
-
-                        listDiv.appendChild(multiplierSimbolvalue)
-                        listDiv.appendChild(simbolvalue)
-
+                        listDiv.appendChild(multiplierText)
+                        listDiv.appendChild(valueText)
                         rightDiv.appendChild(listDiv)
-                    }
-                    displayContent.appendChild(leftDiv);
+                    });
+
                     displayContent.appendChild(rightDiv);
-                });
-            }
-        });
+                }
+            });
+        }
     }
 };
+
 
 // Call The Function to create Line Layout Section
 function createLineLayoutSection(mainSection, subSection, subContainer) {
@@ -182,21 +222,20 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
                     displayContent.appendChild(row);
                 }
 
-
-
                 // Add Display Type to Each Symbol Section Div
                 if (contentDisplay.Layout == "grid") {
-                    displayContent.classList.add("sub-container-content-grid");
+                    displayContent.classList.add("sub-container-grid-line-layout");
 
                 }
                 else if (contentDisplay.Layout == "flex") {
                     displayContent.classList.add("sub-container-content-flex");
+                    displayContent.style.borderStyle = "solid";
+                    displayContent.style.borderWidth = "8px";
+                    displayContent.style.borderColor = "#b72342"
                     displayContent.style.flexDirection = "column";
                 }
                 subContainer.appendChild(displayContent)
             }
-
-
 
         })
     }
@@ -391,6 +430,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                             // Inside The Border Divs, Apply Text
                             const borderText = document.createElement("p");
                             borderText.style.fontSize = "1.0rem";
+                            borderText.style.textAlign = "center";
 
                             borderText.textContent = textArray.contentInside;
 
@@ -407,11 +447,100 @@ function createNewSections(mainSection, subSection, subContainer) {
                 }
 
                 subContainer.appendChild(singularDiv);
+
+                // Enter Words to Search
+                searchDynamicParagraphs("WILD")
+                searchDynamicParagraphs("SCATTER")
+                searchDynamicParagraphs("FREE SPINS")
+                searchDynamicParagraphs("SUPER FREE SPINS")
+
             });
         }
     }
 }
 
+// Function to search for the search term within dynamically generated <p> elements
+function searchDynamicParagraphs(keyWord) {
+
+    // Search Key Words
+    const searchTerm = keyWord;
+
+    // Get all <p> elements on the page
+    const paragraphs = document.querySelectorAll('p');
+
+    // Iterate over each <p> element
+    paragraphs.forEach(paragraph => {
+        // Check if the text content of the <p> element contains the search term
+        if (paragraph.textContent.includes(searchTerm)) {
+            // Split the paragraph's text content into parts based on the search term
+            const parts = paragraph.textContent.split(searchTerm);
+
+            // Create a new fragment to hold the modified content
+            const fragment = document.createDocumentFragment();
+
+            // Iterate over the parts of the text content
+            parts.forEach((part, index) => {
+                // Create a new span element for the part
+                const span = document.createElement('span');
+                span.textContent = part;
+
+                // Append the span to the fragment
+                fragment.appendChild(span);
+
+                // If this is not the last part, append a span for the search term
+                if (index < parts.length - 1) {
+                    const searchTermSpan = document.createElement('span');
+                    searchTermSpan.textContent = searchTerm;
+                    searchTermSpan.style.color = '#ff0096'; // Apply blue color
+                    fragment.appendChild(searchTermSpan);
+                }
+            });
+
+            // Clear the paragraph's content and append the modified content
+            paragraph.textContent = '';
+            paragraph.appendChild(fragment);
+        }
+    });
+}
+
+// Function to search for words in caps lock within dynamically generated <p> elements
+function colorWordsInCapsLock() {
+    // Get all <p> elements on the page
+    const paragraphs = document.querySelectorAll('p');
+
+    // Iterate over each <p> element
+    paragraphs.forEach(paragraph => {
+        // Split the paragraph's text content into words
+        const words = paragraph.textContent.split(/\s+/);
+
+        // Create a new fragment to hold the modified content
+        const fragment = document.createDocumentFragment();
+
+        // Iterate over the words
+        words.forEach(word => {
+            // Check if the word is in caps lock
+            if (word === word.toUpperCase() && /[A-Z]/.test(word)) {
+                // Create a new span element for the word
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.style.color = 'blue'; // Apply blue color
+
+                // Append the span to the fragment
+                fragment.appendChild(span);
+            } else {
+                // Create a new text node for the word
+                const textNode = document.createTextNode(word + ' ');
+
+                // Append the text node to the fragment
+                fragment.appendChild(textNode);
+            }
+        });
+
+        // Clear the paragraph's content and append the modified content
+        paragraph.textContent = '';
+        paragraph.appendChild(fragment);
+    });
+}
 
 
 

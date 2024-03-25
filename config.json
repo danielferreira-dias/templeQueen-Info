@@ -17,24 +17,50 @@
                                 "symbolQuantity": 10,
                                 "symbols": [
                                     {
-                                        "item1": {
-                                            "Type": "img",
-                                            "src": "images/symbols/1.png"
-                                        },
-                                        "item2": {
-                                            "multipliers": [
-                                                "x5",
-                                                "x4",
-                                                "x3"
-                                            ],
-                                            "values": [
-                                                "5,00",
-                                                "1,50",
-                                                "0.50"
-                                            ],
-                                            "Layout": "flex",
-                                            "layoutStyle": "flex-direction: column;"
-                                        }
+                                        "multipliers": [
+                                            "x5",
+                                            "x4",
+                                            "x3"
+                                        ],
+                                        "values": [
+                                            "5,00",
+                                            "1,50",
+                                            "0.50"
+                                        ],
+                                        "Layout": "flex",
+                                        "layoutStyle": "flex-direction: column;"
+                                    },
+                                    {
+                                        "multipliers": [
+                                            "x5",
+                                            "x4",
+                                            "x3",
+                                            "x2"
+                                        ],
+                                        "values": [
+                                            "5,00",
+                                            "1,50",
+                                            "0.50",
+                                            "0.20"
+                                        ],
+                                        "Layout": "flex",
+                                        "layoutStyle": "flex-direction: column;"
+                                    },
+                                    {
+                                        "multipliers": [
+                                            "x5",
+                                            "x4",
+                                            "x3",
+                                            "x2"
+                                        ],
+                                        "values": [
+                                            "5,00",
+                                            "1,50",
+                                            "0.50",
+                                            "0.20"
+                                        ],
+                                        "Layout": "flex",
+                                        "layoutStyle": "flex-direction: column;"
                                     }
                                 ]
                             }
@@ -53,7 +79,7 @@
                             {
                                 "Layout": "flex",
                                 "layoutStyle": "flex-direction: row;",
-                                "lineQuantity": 10,
+                                "lineQuantity": 15,
                                 "lineRows": 3,
                                 "lineCols": 5,
                                 "lines": {
@@ -96,24 +122,38 @@
                                             2
                                         ],
                                         [
-                                            0,
-                                            0,
                                             1,
                                             0,
-                                            0
+                                            0,
+                                            0,
+                                            1
                                         ],
                                         [
+                                            1,
                                             2,
                                             2,
+                                            2,
+                                            1
+                                        ],
+                                        [
+                                            0,
+                                            0,
                                             1,
                                             2,
                                             2
                                         ],
                                         [
+                                            2,
+                                            2,
                                             1,
-                                            2,
-                                            2,
-                                            2,
+                                            0,
+                                            0
+                                        ],
+                                        [
+                                            1,
+                                            0,
+                                            1,
+                                            0,
                                             1
                                         ],
                                         [
@@ -122,6 +162,27 @@
                                             0,
                                             0,
                                             1
+                                        ],
+                                        [
+                                            1,
+                                            2,
+                                            2,
+                                            2,
+                                            1
+                                        ],
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            2,
+                                            2
+                                        ],
+                                        [
+                                            2,
+                                            2,
+                                            1,
+                                            0,
+                                            0
                                         ],
                                         [
                                             1,
@@ -139,9 +200,8 @@
                                 "textSize": "1.5em",
                                 "listType": "p",
                                 "content": [
-                                    "All winning combinations are paid from left to right except the SCATTER.",
-                                    "In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded.",
-                                    "In case of combinations consisting exclusively of WILD symbols, it will be paid as the highest symbol."
+                                    "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of Wild symbols, it will be paid as the highest symbol..",
+                                    "Any malfunctions will cancel all bets and payouts"
                                 ]
                             }
                         ]
@@ -615,6 +675,60 @@
                                                 "content": "RTP - 94,03%"
                                             }
                                         ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": "Hunter Mode",
+                "sectionType": "Feature",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "column",
+                        "justifyContent": "center",
+                        "numberFeatures": 2,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "row",
+                                "divWith": "40%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "divWith": "100%",
+                                        "imageType": "big",
+                                        "url": [
+                                            "images/Settings/HUNTER_MODE.png"
+                                        ],
+                                        "direction": "row"
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "60%",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "plural_text",
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 4,
+                                        "content": [
+                                            "HUNTER MODE is an enhanced and accelerated AUTOPLAY feature exclusively available in games developed by CRISTALTEC. This mode is designed to offer players a quicker and more intense gaming experience.",
+                                            "While in HUNTER MODE, the game utilizes the same game engine and logic as the regular gameplay, but the pace of the game is significantly faster. As a result of this increased speed, only the total winnings achieved per game round are displayed to the player. The detailed outcomes of individual spins or rounds are not shown.",
+                                            "FREE SPINS are triggered the HUNTER MODE is stopped automatically and an input from the player is required to proceed to the FREE SPINS.",
+                                            "It's worth noting that players have the flexibility to stop the HUNTER MODE at any moment during their gaming session. If they choose to do so, the total results of the current gaming session will be displayed after the ongoing game round is completed."
+                                        ],
+                                        "direction": "column",
+                                        "customFormat": ""
                                     }
                                 ]
                             }

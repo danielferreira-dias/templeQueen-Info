@@ -2,6 +2,35 @@
     box-sizing: border-box;
 }
 
+/* Heading Section */
+
+.heading-section-div {
+    top: 0;
+    position: relative;
+    border: inset;
+    border-width: 0px 0px 1px 0px;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+    padding: 0 5%;
+    z-index: 1000;
+    color: #ff0096;
+    border-color: #ff0096;
+    /* Adjust z-index as needed */
+}
+
+.heading-section-div h1 {
+    margin: 0px;
+}
+
+.heading-section h3 {
+    /* or inline-block */
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    /* Optional: Add some spacing between them */
+}
+
+/* Main Section */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -19,6 +48,7 @@ body {
     top: 10px;
     right: 10px;
     cursor: pointer;
+    z-index: 9999;
 }
 
 .close-button img {
@@ -26,29 +56,37 @@ body {
     height: 30px;
 }
 
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+
 h2 {
     font-size: 2rem;
     text-align: center;
     border: inset;
     border-width: 0px 0px 1px 0px;
+    border-color: #ff0096;
+    color: #ff0096;
     padding: 25px;
     width: 80%;
 }
 
-
-
 p {
     margin: 0.7rem;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
     font-size: 1.25rem;
+    text-align: justify;
 }
 
 li {
     margin: 0.7rem;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
     font-size: 1.5em;
 }
@@ -72,7 +110,7 @@ li {
 .sub-container-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 30px;
     align-self: center;
     width: 90%;
 }
@@ -120,6 +158,7 @@ li {
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: 0.5rem;
 }
 
 /* Sub Container - Symbol Content - CSS*/
@@ -129,12 +168,14 @@ p.sub-container-content-flex {
 }
 
 .image-container-symbol {
-    width: 50%;
+    flex: 0 0 50%;
+    height: 100%;
     /* background-color: red; */
     aspect-ratio: 1;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
 }
 
 .sub-container-content-grid {
@@ -144,31 +185,85 @@ p.sub-container-content-flex {
 
 .list-container {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    padding: 1rem;
+    padding: 5px;
     flex: 1;
     align-items: center;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
 }
 
 .multiplier-symbol-value-text {
-    color: blueviolet;
+    color: #ff0096;
     font-weight: 900;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 .symbol-value-text {
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 }
 
 .list-div {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 1rem;
 }
 
 /* Sub Container - Line Content - CSS*/
+
+.sub-container-grid-line-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    align-self: center;
+    width: 90%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .sub-container-grid-line-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .sub-container-grid-line-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        width: 50%;
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .sub-container-grid-line-layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .sub-container-grid-line-layout {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
 
 .line-layout-card {
     display: flex;
@@ -180,7 +275,7 @@ p.sub-container-content-flex {
 }
 
 .line-layout-row {
-    width: 80%;
+    width: 100%;
     display: flex;
     /* border: 1px solid white; */
     /* height: 40px; */
@@ -194,7 +289,7 @@ p.sub-container-content-flex {
     /* 20% to match the width for a square shape */
     border: 1px solid white;
     box-sizing: border-box;
-    position: relative;
+    position: relative;;
 
 }
 
@@ -203,6 +298,7 @@ p.sub-container-content-flex {
     position: absolute;
     width: 100%;
     height: 100%;
+    margin: auto;
 }
 
 .line-number {
@@ -282,7 +378,7 @@ p.sub-container-content-flex {
 /* Image Section */
 
 .div-small-type {
-    min-width: 200px;
+    min-width: 150px;
 }
 
 .div-big-type {
