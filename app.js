@@ -158,28 +158,67 @@ function createSymbolSection(section, subSection, subContainer) {
 
                     displayContent.appendChild(leftDiv);
 
-                    // Right Div contains Info
-                    const rightDiv = document.createElement("div");
-                    rightDiv.classList.add("list-container");
+                    // Right Div Parent
+                    const rightDivParent = document.createElement("div");
+                    rightDivParent.style.display = "flex";
+                    rightDivParent.style.flexDirection = "row";
+                    rightDivParent.style.flex = 1;
+
+                    // Right Div contains Multipliers
+                    const rightDivMultiplierCol = document.createElement("div");
+                    rightDivMultiplierCol.classList.add("list-container-left");
+
+                    // Right Div contains Values
+                    const rightDivValueCol = document.createElement("div");
+                    rightDivValueCol.classList.add("list-container-right");
+
 
                     // Iterate over symbols and display multipliers and values
-                    contentDisplay.symbols[i].multipliers.forEach((multiplier, index) => {
-                        const listDiv = document.createElement("div")
-                        listDiv.classList.add("list-div")
-                        const multiplierText = document.createElement("p")
-                        multiplierText.classList.add("multiplier-symbol-value-text")
-                        multiplierText.innerText = multiplier
+                    contentDisplay.symbols[i].data.forEach((dataInfo) => {
 
-                        const valueText = document.createElement("p")
-                        valueText.classList.add("symbol-value-text")
-                        valueText.innerText = contentDisplay.symbols[i].values[index]
+                        const listDiv = document.createElement("div");
+                        listDiv.classList.add("list-div");
 
-                        listDiv.appendChild(multiplierText)
-                        listDiv.appendChild(valueText)
-                        rightDiv.appendChild(listDiv)
+                        const multiplierText = document.createElement("p");
+                        multiplierText.classList.add("multiplier-symbol-value-text");
+                        multiplierText.innerText = dataInfo.multipliers;
+
+                        // Apply CSS to control text overflow
+                        multiplierText.style.overflow = "hidden";
+                        multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                        listDiv.appendChild(multiplierText);
+                        rightDivMultiplierCol.appendChild(listDiv);
+
+                        const valueText = document.createElement("p");
+                        valueText.classList.add("symbol-value-text");
+                        valueText.innerText = dataInfo.value
+
+
+                        // Apply CSS to control text overflow
+                        valueText.style.overflow = "hidden";
+                        valueText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                        rightDivValueCol.appendChild(valueText);
+
+                        const newDiv = document.createElement("div");
+                        if (dataInfo.specialContent != null) {
+
+                            let specialContentText = document.createElement("p");
+                            specialContentText.classList.add('symbol-specialContent-text')
+                            specialContentText.innerText = dataInfo.specialContent
+                            rightDivValueCol.appendChild(specialContentText);
+
+                            newDiv.appendChild(rightDivValueCol)
+                        }
+
+
                     });
 
-                    displayContent.appendChild(rightDiv);
+                    rightDivParent.appendChild(rightDivMultiplierCol);
+                    rightDivParent.appendChild(rightDivValueCol);
+                    displayContent.appendChild(rightDivParent);
+
                 }
             });
         }

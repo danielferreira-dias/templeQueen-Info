@@ -39,7 +39,7 @@ body {
 }
 
 .symbol-section {
-    padding: 0 5%;
+    padding: 0 10%;
     width: 100%;
 }
 
@@ -116,14 +116,14 @@ li {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .sub-container-grid {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
     .sub-container-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -183,7 +183,7 @@ p.sub-container-content-flex {
     gap: 20px;
 }
 
-.list-container {
+.list-container-left {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -191,20 +191,33 @@ p.sub-container-content-flex {
     align-items: center;
     justify-content: center;
     text-align: left;
-    overflow: hidden;
+}
+.list-container-right {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    text-align: left;
 }
 
 .multiplier-symbol-value-text {
     color: #ff0096;
     font-weight: 900;
-    font-size: 1.8rem;
-    margin-bottom: 0px;
+    font-size: 2.5rem;
+    margin: 0px;
 }
 
 .symbol-value-text {
     color: white;
-    font-size: 1.8rem;
-    margin-bottom: 0px;
+    font-size: 2.5rem;
+    margin: 0px;
+}
+
+.symbol-specialContent-text {
+    color: gold;
+    font-size: 2.5rem;
+    margin: 0px;
 }
 
 .list-div {

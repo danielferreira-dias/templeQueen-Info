@@ -17,144 +17,222 @@
                                 "symbolQuantity": 10,
                                 "symbols": [
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "4,00",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "1,00",
+                                                "specialContent": "+1SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "0,50",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "4,00",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "1,00",
+                                                "specialContent": "+1SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "0,50",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "4,00",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "1,00",
+                                                "specialContent": "+1SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "0,50",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "6,00",
+                                                "specialContent": "+3SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "2,50",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "1,00",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "6,00",
+                                                "specialContent": "+3SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "2,50",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "1,00",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "40,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "4,00",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "1,00",
+                                                "specialContent": "+1SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x2",
+                                                "value": "",
+                                                "specialContent": "1SPIN"
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "40,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "4,50",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "1,50",
+                                                "specialContent": "+1SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x2",
+                                                "value": "",
+                                                "specialContent": "1SPIN"
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "100,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "20,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "2,00",
+                                                "specialContent": "+2SPIN"
+                                            },
+                                            {
+                                                "multipliers": "x2",
+                                                "value": "0,50",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     },
                                     {
-                                        "multipliers": [
-                                            "x5",
-                                            "x4",
-                                            "x3",
-                                            "x2"
-                                        ],
-                                        "values": [
-                                            "5,00",
-                                            "1,50",
-                                            "0,50",
-                                            "0,20"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "250,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "50,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "5,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x2",
+                                                "value": "1,00",
+                                                "specialContent": "+1SPIN"
+                                            }
                                         ],
                                         "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;"
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
                                     }
                                 ]
                             }
