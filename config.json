@@ -709,82 +709,17 @@
                                     {
                                         "type": "plural_text",
                                         "textAlignment": "center",
-                                        "numberOfTexts": 3,
+                                        "numberOfTexts": 6,
                                         "content": [
-                                            "Additionally, be on the lookout for the exclusive MYSTERY QUETZAL symbol during your gameplay! This unique symbol has two fantastic abilities: it can transform into a COLLECTOR, absorbing and accumulating all the MULTIPLIERS that become visible on the reels during the FREE SPINS round. As a result, you could end up with even greater rewards when the FREE SPINS conclude.",
-                                            "But that's not all! The MYSTERY QUETZAL symbol also has the power to grant you an additional 2 FREE SPINS. So, not only does it help you collect MULTIPLIERS, but it also gives you extra opportunities to win.",
-                                            "Pay attention to the main TOTTEM, it can give you a surprise and duplicate up to 3 existing COIN MULTIPLIERS on the screen, as well reveal some new ones."
+                                            "The player must select a card, red or black, to see what is on the other side. If an x2 is displayed the player can double their prize.",
+                                            "If a X is displayed the player loses their prize. The player can only double their prize ONCE. At any time, the player can collect their winnings by pressing the TAKE button.",
+                                            "The game will auto exit the risk phase no action is made by the player. The player can access the Double Up game by pressing the RISCHIA button at the play end.",
+                                            "If the autoplay option is enabled, the double up game will be skipped at the play end.",
+                                            "Wins over 10.000x the initial bet cannot be doubled.",
+                                            "The double up game RTP is 100%"
                                         ],
                                         "direction": "column",
                                         "customFormat": ""
-                                    }
-                                ]
-                            },
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "row",
-                                "quanitityContent": 4,
-                                "featureContent": [
-                                    {
-                                        "type": "img_text",
-                                        "imageType": "big",
-                                        "divWith": "small",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/Settings/COIN.png"
-                                        ],
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 1,
-                                        "data": [
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "Coins have a value of 500x the bet"
-                                            }
-                                        ],
-                                        "direction": "column",
-                                        "contentDirection": "column"
-                                    },
-                                    {
-                                        "type": "img",
-                                        "imageType": "big",
-                                        "divWith": "small",
-                                        "numberOfImages": 2,
-                                        "url": [
-                                            "images/Settings/PLUS.png",
-                                            "images/Settings/NORMAL_BIRD.png"
-                                        ],
-                                        "direction": "row"
-                                    },
-                                    {
-                                        "type": "img_text",
-                                        "imageType": "big",
-                                        "divWith": "small",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/Settings/SUPER_BIRD.png"
-                                        ],
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 1,
-                                        "data": [
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "Coins have a value of 500x the bet"
-                                            }
-                                        ],
-                                        "direction": "column",
-                                        "contentDirection": "column"
-                                    },
-                                    {
-                                        "type": "img",
-                                        "imageType": "big",
-                                        "divWith": "small",
-                                        "numberOfImages": 1,
-                                        "url": [
-                                            "images/Settings/TOTEM.png"
-                                        ],
-                                        "direction": "row"
                                     }
                                 ]
                             }
@@ -859,32 +794,28 @@
                                 "typeDisplay": "flex",
                                 "direction": "column",
                                 "divWith": "60%",
-                                "quanitityContent": 1,
+                                "quanitityContent": 2,
                                 "featureContent": [
                                     {
-                                        "type": "img_text",
-                                        "imageType": "small",
-                                        "divWith": "small",
+                                        "type": "img",
                                         "numberOfImages": 1,
+                                        "divWith": "100%",
+                                        "imageType": "big",
                                         "url": [
                                             "images/Settings/SUPER_BIRD.png"
                                         ],
+                                        "direction": "row"
+                                    },
+                                    {
+                                        "type": "plural_text",
                                         "textAlignment": "center",
                                         "numberOfTexts": 2,
-                                        "data": [
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled."
-                                            },
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
-                                            }
+                                        "content": [
+                                            "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled.",
+                                            "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
                                         ],
                                         "direction": "column",
-                                        "contentDirection": "column"
+                                        "customFormat": ""
                                     }
                                 ]
                             }
@@ -907,31 +838,28 @@
                                 "typeDisplay": "flex",
                                 "direction": "column",
                                 "divWith": "60%",
-                                "quanitityContent": 2,
+                                "quanitityContent": 3,
                                 "featureContent": [
                                     {
-                                        "type": "img_text",
-                                        "imageType": "small",
-                                        "divWith": "small",
+                                        "type": "img",
                                         "numberOfImages": 1,
+                                        "divWith": "100%",
+                                        "imageType": "big",
                                         "url": [
                                             "images/Settings/ICON.png"
                                         ],
+                                        "direction": "row"
+                                    },
+                                    {
+                                        "type": "plural_text",
                                         "textAlignment": "center",
                                         "numberOfTexts": 2,
-                                        "data": [
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game."
-                                            },
-                                            {
-                                                "multipliers": "",
-                                                "value": "",
-                                                "specialContent": "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
-                                            }
+                                        "content": [
+                                            "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                            "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
                                         ],
-                                        "direction": "column"
+                                        "direction": "column",
+                                        "customFormat": ""
                                     },
                                     {
                                         "type": "divContent",

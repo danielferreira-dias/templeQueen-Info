@@ -60,7 +60,7 @@ function createHTMLFromJSON() {
                 container.style.alignItems = "center"
 
                 // Section Title
-                if (section.Title != "Rules") {
+                if (section.title != "Rules") {
                     if (section.Type === "Title") {
                         const title = document.createElement("h2");
                         title.textContent = section.Title;
@@ -98,12 +98,11 @@ function createHTMLFromJSON() {
                     // Line Layout Section
                     createLineLayoutSection(container, subSection, subContainer)
 
+                    // Features Section
+                    createNewSections(section, subSection, subContainer)
+
                     // Rule Section
                     // createRuleSection(subSection, subContainer)
-
-                    // Features Section
-                    // createFeatureSection(section, subSection, subContainer)
-                    createNewSections(section, subSection, subContainer)
 
                 })
 
