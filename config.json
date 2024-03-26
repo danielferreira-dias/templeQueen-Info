@@ -484,10 +484,22 @@
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 3,
-                                        "content": [
-                                            "x5 - 100,00",
-                                            "x4 - 10,00",
-                                            "x3 - 1,00"
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "100,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "10,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "1,00",
+                                                "specialContent": null
+                                            }
                                         ],
                                         "direction": "row",
                                         "contentDirection": "column"
@@ -533,7 +545,7 @@
                 ]
             },
             {
-                "Title": "Enigmatic Totem",
+                "Title": "Free Spins",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -546,24 +558,17 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 2,
+                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "divWith": "big",
-                                        "imageType": "big",
-                                        "url": [
-                                            "images/settings/PAGE_1.png"
-                                        ],
-                                        "direction": "column"
-                                    },
-                                    {
                                         "type": "plural_text",
-                                        "numberOfTexts": 1,
+                                        "numberOfTexts": 4,
                                         "textAlignment": "center",
                                         "content": [
-                                            "The ENIGMATIC TOTEM can randomly substitute some symbols with WILD or SCATTER. He can also add MULTIPLIERS to the current WILDS on the reels."
+                                            "In this bonus the player must select one of the star to reveal the FREE SPINS Multiplier.",
+                                            "If the player makes no choice, after a few seconds one of the options will be selected automatically.",
+                                            "The FREE SPINS game starts with 10 spins and during the game the player has the possibility to win 10 more spins. With a maximum of 100 spins in total.",
+                                            "During FREE SPINS game the multiplier is applied to both winnings and extra spins."
                                         ],
                                         "direction": "column",
                                         "customFormat": ""
@@ -575,15 +580,15 @@
                 ]
             },
             {
-                "Title": "Free Spins",
+                "Title": "Extra Spins",
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
                     {
                         "typeDisplay": "flex",
-                        "direction": "column",
+                        "direction": "row",
                         "justifyContent": "center",
-                        "numberFeatures": 3,
+                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
@@ -591,11 +596,34 @@
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "text",
+                                        "type": "img_text",
+                                        "imageType": "big",
+                                        "divWith": "small",
+                                        "numberOfImages": 1,
+                                        "url": [
+                                            "images/symbols/9.png"
+                                        ],
                                         "textAlignment": "center",
-                                        "content": "In the base game, if you manage to land three or more SCATTER symbols, you'll activate the FREE SPINS round. The number of FREE SPINS you get depends on how many SCATTER symbols you land: 3 SCATTERS give you 6 FREE SPINS, 4 SCATTERS grant you 8, and if you're lucky enough to land 5, you'll receive 10 FREE SPINS.",
-                                        "direction": "column",
-                                        "customFormat": ""
+                                        "numberOfTexts": 1,
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "100,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "52,00",
+                                                "specialContent": null
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "2,00",
+                                                "specialContent": "+2SPIN"
+                                            }
+                                        ],
+                                        "direction": "row",
+                                        "contentDirection": "column"
                                     }
                                 ]
                             },
@@ -607,9 +635,36 @@
                                     {
                                         "type": "text",
                                         "textAlignment": "center",
-                                        "content": "\n\nOnce the FREE SPINS round is triggered, you'll be taken to a new set of reels, this time you have more reel slots. During this round, you have the opportunity to land various MULTIPLIERS that can increase the value of your prizes. The total amount won during the FREE SPINS round will be awarded at the end.",
+                                        "content": "With some symbol combinations you can win extra spins and play them without paying additional credits. During the extra spins phase the bet can also be changed.",
                                         "direction": "column",
                                         "customFormat": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "column",
+                        "justifyContent": "center",
+                        "numberFeatures": 2,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "quanitityContent": 1,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 3,
+                                        "divWith": "small",
+                                        "imageType": "big",
+                                        "url": [
+                                            "images/Settings/START BUTTON.png",
+                                            "images/Settings/ARROW.png",
+                                            "images/Settings/SPINS BUTTON_IT.png"
+                                        ],
+                                        "direction": "row"
                                     }
                                 ]
                             },
@@ -619,9 +674,13 @@
                                 "quanitityContent": 1,
                                 "featureContent": [
                                     {
-                                        "type": "text",
+                                        "type": "plural_text",
                                         "textAlignment": "center",
-                                        "content": "\n\nExcitingly, there's a COLLECTOR feature in the game. This COLLECTOR has the ability to absorb and accumulate all the MULTIPLIERS that become visible on the reels during the FREE SPINS round. So, as you land MULTIPLIERS, the COLLECTOR stores them, potentially leading to even bigger rewards when the FREE SPINS conclude.",
+                                        "numberOfTexts": 2,
+                                        "content": [
+                                            "The player can see the Start button changing and start the increment of extra spins available. The game will auto play after 10 seconds the player doesnt press the button START.",
+                                            "The extra spins are always played after the presentation of all the outcome of the previous spin."
+                                        ],
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -676,8 +735,12 @@
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 1,
-                                        "content": [
-                                            "Coin Symbols have a value of 1- 500x Bet."
+                                        "data": [
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "Coins have a value of 500x the bet"
+                                            }
                                         ],
                                         "direction": "column",
                                         "contentDirection": "column"
@@ -703,8 +766,12 @@
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 1,
-                                        "content": [
-                                            "Only on SUPER FREE SPINS"
+                                        "data": [
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "Coins have a value of 500x the bet"
+                                            }
                                         ],
                                         "direction": "column",
                                         "contentDirection": "column"
@@ -804,9 +871,17 @@
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 2,
-                                        "content": [
-                                            "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled.",
-                                            "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
+                                        "data": [
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled."
+                                            },
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
+                                            }
                                         ],
                                         "direction": "column",
                                         "contentDirection": "column"
@@ -844,9 +919,17 @@
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 2,
-                                        "content": [
-                                            "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
-                                            "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                        "data": [
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game."
+                                            },
+                                            {
+                                                "multipliers": "",
+                                                "value": "",
+                                                "specialContent": "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            }
                                         ],
                                         "direction": "column"
                                     },
