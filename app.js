@@ -1,4 +1,4 @@
-
+let currentLanguage = "UK"
 
 function closeInfo() {
     console.log("Closing info");
@@ -60,7 +60,7 @@ function createHTMLFromJSON() {
                 container.style.alignItems = "center"
 
                 // Section Title
-                if (section.Title) {
+                if (section.Title != "Rules") {
                     if (section.Type === "Title") {
                         const title = document.createElement("h2");
                         title.textContent = section.Title;
@@ -99,7 +99,7 @@ function createHTMLFromJSON() {
                     createLineLayoutSection(container, subSection, subContainer)
 
                     // Rule Section
-                    createRuleSection(subSection, subContainer)
+                    // createRuleSection(subSection, subContainer)
 
                     // Features Section
                     // createFeatureSection(section, subSection, subContainer)
@@ -276,6 +276,7 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
                 }
                 else if (contentDisplay.Layout == "flex") {
                     displayContent.classList.add("sub-container-content-flex");
+                    displayContent.style.borderRadius = "10px"
                     displayContent.style.borderStyle = "solid";
                     displayContent.style.borderWidth = "8px";
                     displayContent.style.borderColor = "#b72342"
@@ -438,13 +439,17 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                         // Check if numberOfTexts is defined
                         const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
+                        const numberOfTextsDiv = document.createElement("div");
+                        numberOfTextsDiv.style.display = "flex"
+                        numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
 
                         for (let i = 0; i < numberOfString; i++) {
                             contentDiv.classList.add("content-div-class-flex-text");
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = contentDisplay.featureContent[j].content[i];
 
-                            contentDiv.appendChild(textParagraph);
+                            numberOfTextsDiv.appendChild(textParagraph)
+                            contentDiv.appendChild(numberOfTextsDiv);
                         }
                     } else if (contentDisplay.featureContent[j].type == "divContent") {
                         contentDiv.classList.add("content-div-class-flex-div");

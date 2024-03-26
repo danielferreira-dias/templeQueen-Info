@@ -34,6 +34,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-style: italic;
     color: white;
     background-color: #333;
 }
@@ -78,8 +79,8 @@ p {
     margin: 0.7rem;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
-    font-style: normal;
-    font-size: 1.25rem;
+    font-style: italic;
+    font-size: 2.0rem;
     text-align: justify;
 }
 
@@ -87,8 +88,8 @@ li {
     margin: 0.7rem;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
-    font-style: normal;
-    font-size: 1.5em;
+    font-style: italic;
+    font-size: 2.0rem;
 }
 
 /* Sub Container CSS*/
@@ -104,13 +105,14 @@ li {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 50px 0px;
 }
 
 
 .sub-container-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     align-self: center;
     width: 90%;
 }
@@ -119,6 +121,14 @@ li {
 @media only screen and (max-width: 900px) {
     .sub-container-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+    h2 {
+        width: 50%;
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
     }
 }
 
@@ -141,7 +151,7 @@ li {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .sub-container-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -187,10 +197,10 @@ p.sub-container-content-flex {
     display: flex;
     height: 100%;
     flex-direction: column;
-    flex: 1;
     align-items: center;
     justify-content: center;
     text-align: left;
+    margin-left: 5%;
 }
 .list-container-right {
     display: flex;
@@ -199,6 +209,7 @@ p.sub-container-content-flex {
     flex: 1;
     justify-content: center;
     text-align: left;
+    margin-left: 5%;
 }
 
 .value-special-content-div{
@@ -236,7 +247,7 @@ p.sub-container-content-flex {
 .sub-container-grid-line-layout {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    gap: 20px;
     align-self: center;
     width: 90%;
 }
@@ -265,7 +276,7 @@ p.sub-container-content-flex {
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 2.0rem;
     }
 }
 
@@ -336,7 +347,7 @@ p.sub-container-content-flex {
 .line-layout-text>p {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
 }
 
 /* Sub Container - Feature Section - CSS*/
