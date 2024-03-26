@@ -173,9 +173,8 @@ function createSymbolSection(section, subSection, subContainer) {
                     rightDivValueCol.classList.add("list-container-right");
 
 
-                    // Iterate over symbols and display multipliers and values
+                    // Iterate over symbols and display multipliers, values, and special content
                     contentDisplay.symbols[i].data.forEach((dataInfo) => {
-
                         const listDiv = document.createElement("div");
                         listDiv.classList.add("list-div");
 
@@ -192,29 +191,38 @@ function createSymbolSection(section, subSection, subContainer) {
 
                         const valueText = document.createElement("p");
                         valueText.classList.add("symbol-value-text");
-                        valueText.innerText = dataInfo.value
-
+                        valueText.innerText = dataInfo.value;
 
                         // Apply CSS to control text overflow
                         valueText.style.overflow = "hidden";
                         valueText.style.textOverflow = "ellipsis"; // or any other desired style
 
-                        rightDivValueCol.appendChild(valueText);
+                        // Create a div to contain both value and special content
+                        const valueSpecialContentDiv = document.createElement("div");
+                        valueSpecialContentDiv.classList.add("value-special-content-div");
 
-                        const newDiv = document.createElement("div");
+                        // Append value text to the div
+                        valueSpecialContentDiv.appendChild(valueText);
+
+                        // Check if special content exists
                         if (dataInfo.specialContent != null) {
+                            const specialContentText = document.createElement("p");
+                            specialContentText.classList.add("symbol-specialContent-text");
+                            specialContentText.innerText = dataInfo.specialContent;
 
-                            let specialContentText = document.createElement("p");
-                            specialContentText.classList.add('symbol-specialContent-text')
-                            specialContentText.innerText = dataInfo.specialContent
-                            rightDivValueCol.appendChild(specialContentText);
+                            // Apply CSS to control text overflow
+                            specialContentText.style.overflow = "hidden";
+                            specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
 
-                            newDiv.appendChild(rightDivValueCol)
+                            // Append special content text to the div
+                            valueSpecialContentDiv.appendChild(specialContentText);
                         }
 
-
+                        // Append the div containing both value and special content to the column
+                        rightDivValueCol.appendChild(valueSpecialContentDiv);
                     });
 
+                    // Append columns to parent
                     rightDivParent.appendChild(rightDivMultiplierCol);
                     rightDivParent.appendChild(rightDivValueCol);
                     displayContent.appendChild(rightDivParent);
