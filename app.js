@@ -1,4 +1,4 @@
-let currentLanguage = "UK"
+let currentLanguage = "EN"
 
 function closeInfo() {
     console.log("Closing info");
@@ -292,17 +292,22 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
             linetContent.classList.add("line-layout-text")
 
 
-            for (let j = 0; j < contentLineDisplay.content.length; j++) {
 
-                let typeOfList
-                if (contentLineDisplay.listType == "li") {
-                    typeOfList = document.createElement("li");
-                } else {
-                    typeOfList = document.createElement("p");
-                }
-                typeOfList.textContent = contentLineDisplay.content[j]
+            // Access the content for the specified language code
+            const contentForLanguage = contentLineDisplay.content[currentLanguage];
 
-                linetContent.appendChild(typeOfList)
+            if (contentForLanguage && Array.isArray(contentForLanguage)) {
+                contentForLanguage.forEach((text) => {
+                    let typeOfList;
+                    if (contentLineDisplay.listType == "li") {
+                        typeOfList = document.createElement("li");
+                    } else {
+                        typeOfList = document.createElement("p");
+                    }
+                    typeOfList.textContent = text;
+
+                    linetContent.appendChild(typeOfList);
+                });
             }
 
             mainSection.appendChild(linetContent)
@@ -317,7 +322,7 @@ function createRuleSection(subSection, subContainer) {
         subSection.displayContent.forEach((contentDisplay) => {
             if (contentDisplay.wording && Array.isArray(contentDisplay.wording)) {
                 contentDisplay.wording.forEach((word) => {
-                    if (word.Type === "text" && word.Text) {
+                    if (word.Type === "text" && word.content[currentLanguage]) {
                         let typeOfList;
 
                         if (contentDisplay.listType == "li") {
@@ -330,16 +335,16 @@ function createRuleSection(subSection, subContainer) {
                         switch (word.valueType) {
                             case "puntataMinima":
                             case "puntataMaxima":
-                                typeOfList.textContent = `${word.Text} ${word.value} EUR`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} EUR`;
                                 break;
                             case "maxWinValue":
-                                typeOfList.textContent = `${word.Text} ${word.value}x the bet`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}x the bet`;
                                 break;
                             case "rtpValue":
-                                typeOfList.textContent = `${word.Text} ${word.value}`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}`;
                                 break;
                             case "maxWinValueLimit":
-                                typeOfList.textContent = `${word.Text}`;
+                                typeOfList.textContent = `${word.content[currentLanguage]}`;
                                 break;
                             default:
                                 typeOfList.textContent = word.Text;
@@ -403,7 +408,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                     } else if (contentDisplay.featureContent[j].type === "text") {
                         contentDiv.classList.add("content-div-class-flex-text");
                         const textParagraph = document.createElement("p");
-                        textParagraph.textContent = contentDisplay.featureContent[j].content;
+                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
 
                         contentDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
@@ -415,7 +420,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDiv.classList.add("content-div-class-flex-text");
 
                             const textParagraph = document.createElement("p");
-                            textParagraph.textContent = contentDisplay.featureContent[j].content[i];
+                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
 
                             contentDiv.appendChild(textParagraph);
                         }

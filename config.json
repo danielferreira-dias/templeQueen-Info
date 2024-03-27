@@ -371,10 +371,16 @@
                             {
                                 "textSize": "1.5em",
                                 "listType": "p",
-                                "content": [
-                                    "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of Wild symbols, it will be paid as the highest symbol..",
-                                    "Any malfunctions will cancel all bets and payouts"
-                                ]
+                                "content": {
+                                    "EN": [
+                                        "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of Wild symbols, it will be paid as the highest symbol...",
+                                        "Any malfunctions will cancel all bets and payouts."
+                                    ],
+                                    "IT": [
+                                        "Tutte le combinazioni vincenti vengono pagate da sinistra a destra, tranne i FREE SPINS. Nel caso in cui il simbolo WILD crei più combinazioni di premi all'interno della stessa linea di vincita, viene assegnata solo la vincita più vantaggiosa per il giocatore. In caso di combinazioni composte esclusivamente da simboli Wild, verrà pagato il simbolo più alto...",
+                                        "Eventuali malfunzionamenti annulleranno tutte le giocate e i pagamenti."
+                                    ]
+                                }
                             }
                         ]
                     }
@@ -409,7 +415,14 @@
                                     {
                                         "type": "text",
                                         "textAlignment": "center",
-                                        "content": "Substitutes all symbols, except the FREE SPINS symbol",
+                                        "content": {
+                                            "EN": [
+                                                "Substitutes all symbols, except the FREE SPINS symbol."
+                                            ],
+                                            "IT": [
+                                                "Sostituisce tutti i simboli, tranne il simbolo FREE SPINS."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -453,7 +466,14 @@
                                     {
                                         "type": "text",
                                         "textAlignment": "center",
-                                        "content": "3 or more symbols scattered across the reels, pay a prize and award the bonus FREE SPINS.",
+                                        "content": {
+                                            "EN": [
+                                                "3 or more symbols scattered across the reels, pay a prize and award the bonus FREE SPINS."
+                                            ],
+                                            "IT": [
+                                                "3 o più simboli sparsi sui rulli pagano un premio e assegnano il bonus FREE SPINS."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -476,11 +496,18 @@
                                         "type": "plural_text",
                                         "numberOfTexts": 3,
                                         "textAlignment": "center",
-                                        "content": [
-                                            "In the case of multiplier feature trigger, the award order is the following:",
-                                            "1 - Winning lines prizes;",
-                                            "2 - FREE SPINS."
-                                        ],
+                                        "content": {
+                                            "EN": [
+                                                "In the case of multiplier feature trigger, the award order is the following:",
+                                                "1 - Winning lines prizes;",
+                                                "2 - FREE SPINS."
+                                            ],
+                                            "IT": [
+                                                "In caso di attivazione della funzione moltiplicatore, l'ordine dei premi è il seguente:",
+                                                "1 - premi per le linee di vincita;",
+                                                "2 - GIRI GRATUITI."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -510,12 +537,20 @@
                                         "type": "plural_text",
                                         "numberOfTexts": 4,
                                         "textAlignment": "center",
-                                        "content": [
-                                            "In this bonus the player must select one of the star to reveal the FREE SPINS Multiplier.",
-                                            "If the player makes no choice, after a few seconds one of the options will be selected automatically.",
-                                            "The FREE SPINS game starts with 10 spins and during the game the player has the possibility to win 10 more spins. With a maximum of 100 spins in total.",
-                                            "During FREE SPINS game the multiplier is applied to both winnings and extra spins."
-                                        ],
+                                        "content": {
+                                            "EN": [
+                                                "In this bonus the player must select one of the star to reveal the FREE SPINS Multiplier.",
+                                                "If the player makes no choice, after a few seconds one of the options will be selected automatically.",
+                                                "The FREE SPINS game starts with 10 spins and during the game the player has the possibility to win 10 more spins. With a maximum of 100 spins in total.",
+                                                "During FREE SPINS game the multiplier is applied to both winnings and extra spins."
+                                            ],
+                                            "IT": [
+                                                "In questo bonus il giocatore deve selezionare una delle stelle per rivelare il moltiplicatore di FREE SPINS",
+                                                "Se il giocatore non effettua alcuna scelta, dopo qualche secondo verrà selezionata automaticamente una delle opzioni",
+                                                "Il gioco FREE SPINS inizia con 10 giri e durante il gioco il giocatore ha la possibilità di vincere altri 10 giri. Con un massimo di 100 giri in totale",
+                                                "Durante il gioco FREE SPINS il moltiplicatore viene applicato sia alle vincite che ai giri extra."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -581,7 +616,14 @@
                                     {
                                         "type": "text",
                                         "textAlignment": "center",
-                                        "content": "With some symbol combinations you can win extra spins and play them without paying additional credits. During the extra spins phase the bet can also be changed.",
+                                        "content": {
+                                            "EN": [
+                                                "With some symbol combinations you can win extra spins and play them without paying additional credits. During the extra spins phase the bet can also be changed."
+                                            ],
+                                            "IT": [
+                                                "Con alcune combinazioni di simboli è possibile vincere giri extra e giocarli senza pagare crediti aggiuntivi. Durante la fase dei giri extra è possibile modificare la puntata."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -623,10 +665,16 @@
                                         "type": "plural_text",
                                         "textAlignment": "center",
                                         "numberOfTexts": 2,
-                                        "content": [
-                                            "The player can see the Start button changing and start the increment of extra spins available. The game will auto play after 10 seconds the player doesnt press the button START.",
-                                            "The extra spins are always played after the presentation of all the outcome of the previous spin."
-                                        ],
+                                        "content": {
+                                            "EN": [
+                                                "The player can see the Start button changing and start the increment of extra spins available. The game will auto play after 10 seconds the player doesnt press the button START.",
+                                                "The extra spins are always played after the presentation of all the outcome of the previous spin."
+                                            ],
+                                            "IT": [
+                                                "Il giocatore può vedere il pulsante di avvio cambiare e iniziare l'incremento dei giri extra disponibili. Il gioco si autoalimenta dopo 10 secondi che il giocatore non ha premuto il pulsante START",
+                                                "I giri extra vengono sempre giocati dopo la presentazione di tutti i risultati del giro precedente."
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -656,14 +704,24 @@
                                         "type": "plural_text",
                                         "textAlignment": "center",
                                         "numberOfTexts": 6,
-                                        "content": [
-                                            "The player must select a card, red or black, to see what is on the other side. If an x2 is displayed the player can double their prize.",
-                                            "If a X is displayed the player loses their prize. The player can only double their prize ONCE. At any time, the player can collect their winnings by pressing the TAKE button.",
-                                            "The game will auto exit the risk phase no action is made by the player. The player can access the Double Up game by pressing the RISCHIA button at the play end.",
-                                            "If the autoplay option is enabled, the double up game will be skipped at the play end.",
-                                            "Wins over 10.000x the initial bet cannot be doubled.",
-                                            "The double up game RTP is 100%"
-                                        ],
+                                        "content": {
+                                            "EN": [
+                                                "The player must select a card, red or black, to see what is on the other side. If an x2 is displayed the player can double their prize.",
+                                                "If a X is displayed the player loses their prize. The player can only double their prize ONCE. At any time, the player can collect their winnings by pressing the TAKE button.",
+                                                "The game will auto exit the risk phase no action is made by the player. The player can access the Double Up game by pressing the RISCHIA button at the play end.",
+                                                "If the autoplay option is enabled, the double up game will be skipped at the play end.",
+                                                "Wins over 10.000x the initial bet cannot be doubled.",
+                                                "The double up game RTP is 100%"
+                                            ],
+                                            "IT": [
+                                                "Il giocatore deve selezionare una carta, rossa o nera, per vedere cosa c'è sull'altro lato. Se viene visualizzato un x2, il giocatore può raddoppiare il premio",
+                                                "Se viene visualizzata una X, il giocatore perde il premio. Il giocatore può raddoppiare il premio una sola volta. In qualsiasi momento, il giocatore può riscuotere la vincita premendo il pulsante TAKE",
+                                                "Il gioco esce automaticamente dalla fase di rischio se il giocatore non compie alcuna azione. Il giocatore può accedere al gioco Double Up premendo il pulsante RISCHIA al termine della partita",
+                                                "Se l'opzione di gioco automatico è attivata, il gioco del Double Up verrà saltato al termine della partita",
+                                                "Le vincite superiori a 10.000x la puntata iniziale non possono essere raddoppiate",
+                                                "L'RTP del gioco del raddoppio è del 100%"
+                                            ]
+                                        },
                                         "direction": "column",
                                         "customFormat": ""
                                     }
@@ -690,35 +748,77 @@
                                     {
                                         "valueType": "puntataMinima",
                                         "Type": "text",
-                                        "Text": "Puntata Minima:",
+                                        "content": {
+                                            "EN": [
+                                                "Minimum Bet:"
+                                            ],
+                                            "IT": [
+                                                "Puntata Minima:"
+                                            ]
+                                        },
                                         "value": "0.50"
                                     },
                                     {
                                         "valueType": "puntataMaxima",
                                         "Type": "text",
-                                        "Text": "Puntata Maxima:",
+                                        "content": {
+                                            "EN": [
+                                                "Max Bet:"
+                                            ],
+                                            "IT": [
+                                                "Puntata Maxima:"
+                                            ]
+                                        },
                                         "value": "5,00"
                                     },
                                     {
                                         "valueType": "maxWinValue",
                                         "Type": "text",
-                                        "Text": "The Max win is ",
+                                        "content": {
+                                            "EN": [
+                                                "The Max win is "
+                                            ],
+                                            "IT": [
+                                                "La vincita massima è "
+                                            ]
+                                        },
                                         "value": "20,000x"
                                     },
                                     {
                                         "valueType": "rtpValue",
                                         "Type": "text",
-                                        "Text": "This game has a theoretical RTP of:",
+                                        "content": {
+                                            "EN": [
+                                                "This game has a theoretical RTP of:"
+                                            ],
+                                            "IT": [
+                                                "Questo gioco ha un RTP teorico di:"
+                                            ]
+                                        },
                                         "value": "95,295%"
                                     },
                                     {
                                         "Type": "text",
-                                        "Text": "In case of malfunction, the play and the eventual win will be canceled."
+                                        "content": {
+                                            "EN": [
+                                                "In case of malfunction, the play and the eventual win will be canceled."
+                                            ],
+                                            "IT": [
+                                                "In caso di malfunzionamento, il gioco e l'eventuale vittoria saranno annullati"
+                                            ]
+                                        }
                                     },
                                     {
                                         "valueType": "maxWinValueLimit",
                                         "Type": "text",
-                                        "Text": "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed.",
+                                        "content": {
+                                            "EN": [
+                                                "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed."
+                                            ],
+                                            "IT": [
+                                                "Il valore massimo del premio è limitato a 5.000x la puntata sia nel gioco principale che nei FREE SPINS. Se il premio dei giri totali raggiunge 5000x la puntata, il giro termina. Il premio viene assegnato e tutti i FREE SPINS rimasti vengono rimossi."
+                                            ]
+                                        },
                                         "value": "5000"
                                     }
                                 ]
