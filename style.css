@@ -67,9 +67,6 @@ h1 {
 h2 {
     font-size: 2rem;
     text-align: center;
-    border: inset;
-    border-width: 0px 0px 1px 0px;
-    border-color: #ff0096;
     color: #ff0096;
     padding: 25px;
     width: 80%;

@@ -1,4 +1,4 @@
-let currentLanguage = "EN"
+let currentLanguage = "PT"
 
 function closeInfo() {
     console.log("Closing info");
@@ -63,6 +63,19 @@ function createHTMLFromJSON() {
                 if (section.title != "Rules") {
                     if (section.Type === "Title") {
                         const title = document.createElement("h2");
+                        if (section.sectionType != "symbolPayout") {
+                            title.style.border = "inset"
+                            title.style.borderWidth = "2px 0px 1px 0px"
+                            title.style.borderColor = "#ff0096"
+                        } else {
+                            title.style.border = "inset"
+                            title.style.borderWidth = "0px 0px 1px 0px"
+                            title.style.borderColor = "#ff0096"
+                        }
+
+                        // border: inset;
+                        // border - width: 0px 0px 1px 0px;
+                        // border - color: #ff0096;
                         title.textContent = section.Title;
                         container.appendChild(title);
                     }
