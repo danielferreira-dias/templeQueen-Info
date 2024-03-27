@@ -381,60 +381,6 @@
                 ]
             },
             {
-                "Title": "Rules",
-                "sectionType": "Rules",
-                "Type": "Title",
-                "SubSection": [
-                    {
-                        "Layout": "flex",
-                        "displayContent": [
-                            {
-                                "Layout": "flex",
-                                "listType": "p",
-                                "layoutStyle": "flex-direction: row;",
-                                "textAlignment": "center",
-                                "wording": [
-                                    {
-                                        "valueType": "puntataMinima",
-                                        "Type": "text",
-                                        "Text": "Puntata Minima:",
-                                        "value": "0.20"
-                                    },
-                                    {
-                                        "valueType": "puntataMaxima",
-                                        "Type": "text",
-                                        "Text": "Puntata Maxima:",
-                                        "value": "20,00"
-                                    },
-                                    {
-                                        "valueType": "maxWinValue",
-                                        "Type": "text",
-                                        "Text": "The Max win is ",
-                                        "value": "5000"
-                                    },
-                                    {
-                                        "valueType": "rtpValue",
-                                        "Type": "text",
-                                        "Text": "This game has a theoretical RTP of:",
-                                        "value": "93,95%"
-                                    },
-                                    {
-                                        "Type": "text",
-                                        "Text": "In case of malfunction, the play and the eventual win will be canceled."
-                                    },
-                                    {
-                                        "valueType": "maxWinValueLimit",
-                                        "Type": "text",
-                                        "Text": "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREESPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed.",
-                                        "value": "5000"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
                 "Title": "Features",
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -728,227 +674,52 @@
                 ]
             },
             {
-                "Title": "Super Free Spins",
-                "sectionType": "Feature",
+                "Title": "Rules",
+                "sectionType": "Rules",
                 "Type": "Title",
                 "SubSection": [
                     {
-                        "typeDisplay": "flex",
-                        "direction": "row",
-                        "justifyContent": "center",
-                        "numberFeatures": 2,
-                        "features": [
+                        "Layout": "flex",
+                        "displayContent": [
                             {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "60%",
-                                "quanitityContent": 1,
-                                "featureContent": [
+                                "Layout": "flex",
+                                "listType": "p",
+                                "layoutStyle": "flex-direction: row;",
+                                "textAlignment": "center",
+                                "wording": [
                                     {
-                                        "type": "plural_text",
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 2,
-                                        "content": [
-                                            "SUPER FREE SPINS are activated if there are 3 or more SCATTERS on the reels and if there is a SUPER SCATTER on the last reel.",
-                                            "SUPER FREE SPINS follow the same logic as normal FREE SPINS as explained on the previous pages, but with one particularity, there is always 1 or more GUARANTEED COLLECTORS and the prize outputs are potentialy bigger."
-                                        ],
-                                        "direction": "column",
-                                        "customFormat": ""
-                                    }
-                                ]
-                            },
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "row",
-                                "divWith": "40%",
-                                "quanitityContent": 1,
-                                "featureContent": [
-                                    {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "divWith": "100%",
-                                        "imageType": "big",
-                                        "url": [
-                                            "images/Settings/SUPER_FREE_SPINS.png"
-                                        ],
-                                        "direction": "row"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Title": "Double Chance",
-                "sectionType": "Feature",
-                "Type": "Title",
-                "SubSection": [
-                    {
-                        "typeDisplay": "flex",
-                        "direction": "column",
-                        "justifyContent": "center",
-                        "numberFeatures": 1,
-                        "features": [
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "60%",
-                                "quanitityContent": 2,
-                                "featureContent": [
-                                    {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "divWith": "100%",
-                                        "imageType": "big",
-                                        "url": [
-                                            "images/Settings/SUPER_BIRD.png"
-                                        ],
-                                        "direction": "row"
+                                        "valueType": "puntataMinima",
+                                        "Type": "text",
+                                        "Text": "Puntata Minima:",
+                                        "value": "0.50"
                                     },
                                     {
-                                        "type": "plural_text",
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 2,
-                                        "content": [
-                                            "The player can select the option of DOUBLE CHANCE, paying 1.25x the bet, where the chance to win FREE SPINS naturally is doubled.",
-                                            "When this feature is enabled the buy FREE SPINS and SUPER FREE SPINS feature is disabled."
-                                        ],
-                                        "direction": "column",
-                                        "customFormat": ""
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Title": "Cristal Shop",
-                "sectionType": "Feature",
-                "Type": "Title",
-                "SubSection": [
-                    {
-                        "typeDisplay": "flex",
-                        "direction": "column",
-                        "justifyContent": "center",
-                        "numberFeatures": 1,
-                        "features": [
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "60%",
-                                "quanitityContent": 3,
-                                "featureContent": [
-                                    {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "divWith": "100%",
-                                        "imageType": "big",
-                                        "url": [
-                                            "images/Settings/ICON.png"
-                                        ],
-                                        "direction": "row"
+                                        "valueType": "puntataMaxima",
+                                        "Type": "text",
+                                        "Text": "Puntata Maxima:",
+                                        "value": "5,00"
                                     },
                                     {
-                                        "type": "plural_text",
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 2,
-                                        "content": [
-                                            "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
-                                            "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
-                                        ],
-                                        "direction": "column",
-                                        "customFormat": ""
+                                        "valueType": "maxWinValue",
+                                        "Type": "text",
+                                        "Text": "The Max win is ",
+                                        "value": "20,000x"
                                     },
                                     {
-                                        "type": "divContent",
-                                        "numberOfDivs": 4,
-                                        "direction": "row",
-                                        "divContentBorder": [
-                                            {
-                                                "direction": "column",
-                                                "contentInside": [
-                                                    "SUPER FREE SPINS 400x BET"
-                                                ],
-                                                "content": "RTP - 93,13%"
-                                            },
-                                            {
-                                                "direction": "column",
-                                                "contentInside": [
-                                                    "FREE SPINS 100x BET"
-                                                ],
-                                                "content": "RTP - 93,96%"
-                                            },
-                                            {
-                                                "direction": "column",
-                                                "contentInside": [
-                                                    "FEATURE 10x BET"
-                                                ],
-                                                "content": "RTP - 94,03%"
-                                            },
-                                            {
-                                                "direction": "column",
-                                                "contentInside": [
-                                                    "SUPER FEATURE 15x BET"
-                                                ],
-                                                "content": "RTP - 94,03%"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Title": "Hunter Mode",
-                "sectionType": "Feature",
-                "Type": "Title",
-                "SubSection": [
-                    {
-                        "typeDisplay": "flex",
-                        "direction": "column",
-                        "justifyContent": "center",
-                        "numberFeatures": 2,
-                        "features": [
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "row",
-                                "divWith": "40%",
-                                "quanitityContent": 1,
-                                "featureContent": [
+                                        "valueType": "rtpValue",
+                                        "Type": "text",
+                                        "Text": "This game has a theoretical RTP of:",
+                                        "value": "95,295%"
+                                    },
                                     {
-                                        "type": "img",
-                                        "numberOfImages": 1,
-                                        "divWith": "100%",
-                                        "imageType": "big",
-                                        "url": [
-                                            "images/Settings/HUNTER_MODE.png"
-                                        ],
-                                        "direction": "row"
-                                    }
-                                ]
-                            },
-                            {
-                                "typeDisplay": "flex",
-                                "direction": "column",
-                                "divWith": "60%",
-                                "quanitityContent": 1,
-                                "featureContent": [
+                                        "Type": "text",
+                                        "Text": "In case of malfunction, the play and the eventual win will be canceled."
+                                    },
                                     {
-                                        "type": "plural_text",
-                                        "textAlignment": "center",
-                                        "numberOfTexts": 4,
-                                        "content": [
-                                            "HUNTER MODE is an enhanced and accelerated AUTOPLAY feature exclusively available in games developed by CRISTALTEC. This mode is designed to offer players a quicker and more intense gaming experience.",
-                                            "While in HUNTER MODE, the game utilizes the same game engine and logic as the regular gameplay, but the pace of the game is significantly faster. As a result of this increased speed, only the total winnings achieved per game round are displayed to the player. The detailed outcomes of individual spins or rounds are not shown.",
-                                            "FREE SPINS are triggered the HUNTER MODE is stopped automatically and an input from the player is required to proceed to the FREE SPINS.",
-                                            "It's worth noting that players have the flexibility to stop the HUNTER MODE at any moment during their gaming session. If they choose to do so, the total results of the current gaming session will be displayed after the ongoing game round is completed."
-                                        ],
-                                        "direction": "column",
-                                        "customFormat": ""
+                                        "valueType": "maxWinValueLimit",
+                                        "Type": "text",
+                                        "Text": "The maximium value of the prize is limited to 5.000x the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed.",
+                                        "value": "5000"
                                     }
                                 ]
                             }

@@ -102,7 +102,7 @@ function createHTMLFromJSON() {
                     createNewSections(section, subSection, subContainer)
 
                     // Rule Section
-                    // createRuleSection(subSection, subContainer)
+                    createRuleSection(subSection, subContainer)
 
                 })
 
