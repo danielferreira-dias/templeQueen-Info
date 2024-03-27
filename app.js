@@ -76,7 +76,7 @@ function createHTMLFromJSON() {
                         // border: inset;
                         // border - width: 0px 0px 1px 0px;
                         // border - color: #ff0096;
-                        title.textContent = section.Title;
+                        title.textContent = section.Title[currentLanguage];
                         container.appendChild(title);
                     }
                 }

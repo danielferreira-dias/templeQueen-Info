@@ -3,7 +3,14 @@
         "Sections_Quantity": 6,
         "Section": [
             {
-                "Title": "Symbol Payout",
+                "Title": {
+                    "EN": "Symbol Payout",
+                    "RU": "Выплата символов",
+                    "FR": "Paiement des symboles",
+                    "ZH": "符号支付",
+                    "US": "Symbol Payout",
+                    "PT": "Pagamento de Símbolos"
+                },
                 "Type": "Title",
                 "sectionType": "symbolPayout",
                 "layoutStyle": "grid-template-columns: repeat(2, 1fr); gap: 16px;",
@@ -241,7 +248,14 @@
                 ]
             },
             {
-                "Title": "Line Layout",
+                "Title": {
+                    "EN": "Line Layout",
+                    "RU": "Расположение линии",
+                    "FR": "Disposition des lignes",
+                    "ZH": "线路布局",
+                    "US": "Line Layout",
+                    "PT": "Layout da Linha"
+                },
                 "sectionType": "lineLayout",
                 "Type": "Title",
                 "SubSection": [
@@ -407,7 +421,14 @@
                 ]
             },
             {
-                "Title": "Features",
+                "Title": {
+                    "EN": "Features",
+                    "RU": "Особенности",
+                    "FR": "Fonctionnalités",
+                    "ZH": "特点",
+                    "US": "Features",
+                    "PT": "Recursos"
+                },
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -593,7 +614,14 @@
                 ]
             },
             {
-                "Title": "Free Spins",
+                "Title": {
+                    "EN": "Free Spins",
+                    "RU": "Free Spins",
+                    "FR": "Free Spins",
+                    "ZH": "Free Spins",
+                    "US": "Free Spins",
+                    "PT": "Free Spins"
+                },
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -666,7 +694,14 @@
                 ]
             },
             {
-                "Title": "Extra Spins",
+                "Title": {
+                    "EN": "Extra Spins",
+                    "RU": "Extra Spins",
+                    "FR": "Extra Spins",
+                    "ZH": "Extra Spins",
+                    "US": "Extra Spins",
+                    "PT": "Extra Spins"
+                },
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -825,7 +860,14 @@
                 ]
             },
             {
-                "Title": "Free Spins",
+                "Title": {
+                    "EN": "Free Spins",
+                    "RU": "Free Spins",
+                    "FR": "Free Spins",
+                    "ZH": "Free Spins",
+                    "US": "Free Spins",
+                    "PT": "Free Spins"
+                },
                 "sectionType": "Feature",
                 "Type": "Title",
                 "SubSection": [
@@ -912,7 +954,14 @@
                 ]
             },
             {
-                "Title": "Rules",
+                "Title": {
+                    "EN": "Rules",
+                    "RU": "Правила",
+                    "FR": "Règles",
+                    "ZH": "规则",
+                    "US": "Rules",
+                    "PT": "Regras"
+                },
                 "sectionType": "Rules",
                 "Type": "Title",
                 "SubSection": [
