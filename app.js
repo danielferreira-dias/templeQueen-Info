@@ -579,58 +579,66 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                 subContainer.appendChild(singularDiv);
 
-                // Enter Words to Search
-                searchDynamicParagraphs("WILD")
-                searchDynamicParagraphs("SCATTER")
-                searchDynamicParagraphs("FREE SPINS")
-                searchDynamicParagraphs("SUPER FREE SPINS")
+                // Enter Words to Search based on current language
+                if (currentLanguage === "UK") {
+                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+                } else if (currentLanguage === "ZH") {
+                    searchDynamicParagraphs(["野生", "免费旋转", "额外旋转"]);
+                } else if (currentLanguage === "RUS") {
+                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛАТНЫЕ ВРАЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРАЩЕНИЯ"]);
+                } else if (currentLanguage === "PT") {
+                    searchDynamicParagraphs(["WILD", "GIROS GRÁTIS", "GIROS EXTRA"]);
+                } else if (currentLanguage === "FR") {
+                    searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
+                } else if (currentLanguage === "US") {
+                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+                }
 
             });
         }
     }
 }
 
-// Function to search for the search term within dynamically generated <p> elements
-function searchDynamicParagraphs(keyWord) {
-
-    // Search Key Words
-    const searchTerm = keyWord;
-
+// Function to search for the search terms within dynamically generated <p> elements
+function searchDynamicParagraphs(keyWords) {
     // Get all <p> elements on the page
     const paragraphs = document.querySelectorAll('p');
 
     // Iterate over each <p> element
     paragraphs.forEach(paragraph => {
-        // Check if the text content of the <p> element contains the search term
-        if (paragraph.textContent.includes(searchTerm)) {
-            // Split the paragraph's text content into parts based on the search term
-            const parts = paragraph.textContent.split(searchTerm);
+        // Iterate over each search term
+        keyWords.forEach(searchTerm => {
+            // Check if the text content of the <p> element contains the search term
+            if (paragraph.textContent.includes(searchTerm)) {
+                // Split the paragraph's text content into parts based on the search term
+                const parts = paragraph.textContent.split(searchTerm);
 
-            // Create a new fragment to hold the modified content
-            const fragment = document.createDocumentFragment();
+                // Create a new fragment to hold the modified content
+                const fragment = document.createDocumentFragment();
 
-            // Iterate over the parts of the text content
-            parts.forEach((part, index) => {
-                // Create a new span element for the part
-                const span = document.createElement('span');
-                span.textContent = part;
+                // Iterate over the parts of the text content
+                parts.forEach((part, index) => {
+                    // Create a new span element for the part
+                    const span = document.createElement('span');
+                    span.textContent = part;
 
-                // Append the span to the fragment
-                fragment.appendChild(span);
+                    // Append the span to the fragment
+                    fragment.appendChild(span);
 
-                // If this is not the last part, append a span for the search term
-                if (index < parts.length - 1) {
-                    const searchTermSpan = document.createElement('span');
-                    searchTermSpan.textContent = searchTerm;
-                    searchTermSpan.style.color = '#ff0096'; // Apply blue color
-                    fragment.appendChild(searchTermSpan);
-                }
-            });
+                    // If this is not the last part, append a span for the search term
+                    if (index < parts.length - 1) {
+                        const searchTermSpan = document.createElement('span');
+                        searchTermSpan.textContent = searchTerm;
+                        searchTermSpan.style.color = '#ff0096'; // Apply blue color
+                        fragment.appendChild(searchTermSpan);
+                    }
+                });
 
-            // Clear the paragraph's content and append the modified content
-            paragraph.textContent = '';
-            paragraph.appendChild(fragment);
-        }
+                // Clear the paragraph's content and append the modified content
+                paragraph.textContent = '';
+                paragraph.appendChild(fragment);
+            }
+        });
     });
 }
 
