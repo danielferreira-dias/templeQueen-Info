@@ -1,4 +1,4 @@
-let currentLanguage = "PT"
+let currentLanguage = "RU"
 
 function closeInfo() {
     console.log("Closing info");
@@ -164,7 +164,7 @@ function createSymbolSection(section, subSection, subContainer) {
                     // Left Div contains Symbol Image
                     const leftDiv = document.createElement("div");
                     leftDiv.classList.add("image-container-symbol");
-                    leftDiv.style.backgroundImage = `url("./images/symbols/${i}.png")`;
+                    leftDiv.style.backgroundImage = `url("./images/Settings/Symbol/${i}.png")`;
                     const symbolImage = document.createElement("img")
                     leftDiv.appendChild(symbolImage)
 
@@ -592,6 +592,9 @@ function createNewSections(mainSection, subSection, subContainer) {
                     searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
                 } else if (currentLanguage === "US") {
                     searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+
+                } else if (currentLanguage == "CHIN") {
+                    searchDynamicParagraphs("")
                 }
 
             });

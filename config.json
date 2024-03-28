@@ -449,7 +449,7 @@
                                         "divWith": "small",
                                         "imageType": "big",
                                         "url": [
-                                            "images/symbols/9.png"
+                                            "images/Settings/Symbol/9.png"
                                         ],
                                         "direction": "row"
                                     },
@@ -495,7 +495,7 @@
                                         "divWith": "small",
                                         "numberOfImages": 1,
                                         "url": [
-                                            "images/symbols/10.png"
+                                            "images/Settings/Symbol/10.png"
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 3,
@@ -722,7 +722,7 @@
                                         "divWith": "small",
                                         "numberOfImages": 1,
                                         "url": [
-                                            "images/symbols/9.png"
+                                            "images/Settings/Symbol/9.png"
                                         ],
                                         "textAlignment": "center",
                                         "numberOfTexts": 1,
@@ -803,9 +803,9 @@
                                         "divWith": "small",
                                         "imageType": "big",
                                         "url": [
-                                            "images/Settings/START BUTTON.png",
-                                            "images/Settings/ARROW.png",
-                                            "images/Settings/SPINS BUTTON_IT.png"
+                                            "images/Settings/Assets/START BUTTON.png",
+                                            "images/Settings/Assets/ARROW.png",
+                                            "images/Settings/Assets/SPINS BUTTON_IT.png"
                                         ],
                                         "direction": "row"
                                     }
