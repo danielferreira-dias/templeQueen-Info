@@ -1115,6 +1115,81 @@
                         ]
                     }
                 ]
+            },
+            {
+                "Title": {
+                    "EN": "Buttons",
+                    "RU": "Кнопки",
+                    "FR": "Boutons",
+                    "ZH": "按钮",
+                    "US": "Buttons",
+                    "PT": "Botões"
+                },
+                "sectionType": "Button",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "Layout": "flex",
+                        "displayContent": [
+                            {
+                                "Buttons": [
+                                    {
+                                        "img": "images/Settings/Buttons/CONFIRM.png",
+                                        "content": {
+                                            "EN": [
+                                                "Starts the game play"
+                                            ],
+                                            "IT": [
+                                                "Inizia il gioco"
+                                            ],
+                                            "RU": [
+                                                "Начинает игру"
+                                            ],
+                                            "FR": [
+                                                "Démarre le jeu"
+                                            ],
+                                            "ZH": [
+                                                "开始游戏"
+                                            ],
+                                            "US": [
+                                                "Starts the game play"
+                                            ],
+                                            "PT": [
+                                                "Inicia o jogo"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "content": {
+                                            "EN": [
+                                                "Starts the game play"
+                                            ],
+                                            "IT": [
+                                                "Inizia il gioco"
+                                            ],
+                                            "RU": [
+                                                "Начинает игру"
+                                            ],
+                                            "FR": [
+                                                "Démarre le jeu"
+                                            ],
+                                            "ZH": [
+                                                "开始游戏"
+                                            ],
+                                            "US": [
+                                                "Starts the game play"
+                                            ],
+                                            "PT": [
+                                                "Inicia o jogo"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }

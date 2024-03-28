@@ -1,4 +1,4 @@
-let currentLanguage = "RU"
+let currentLanguage = "EN"
 
 function closeInfo() {
     console.log("Closing info");
@@ -44,7 +44,7 @@ function createHTMLFromJSON() {
         .then((data) => {
 
             // Title of the Game
-            document.title = "Temple Queen";
+            document.title = "7Diamond";
 
             // Create Sections
             const main = document.querySelector(".symbol-section");
@@ -117,6 +117,9 @@ function createHTMLFromJSON() {
                     // Rule Section
                     createRuleSection(subSection, subContainer)
 
+                    // Button Page
+                    createButtonSection(section, subSection, subContainer)
+
                 })
 
 
@@ -143,7 +146,7 @@ createHeadingSection();
 // Call the function to start populating content
 createHTMLFromJSON();
 
-
+// Call The Function to create Symbol Section
 function createSymbolSection(section, subSection, subContainer) {
     if (section.sectionType == 'symbolPayout') {
         if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
@@ -597,6 +600,46 @@ function createNewSections(mainSection, subSection, subContainer) {
                     searchDynamicParagraphs("")
                 }
 
+            });
+        }
+    }
+}
+
+// Create Button Page
+function createButtonSection(section, subSection, subContainer) {
+
+    if (section.sectionType == 'Button') {
+        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+            subSection.displayContent.forEach((contentDisplay) => {
+
+                const buttonContainerDiv = document.createElement("div");
+                buttonContainerDiv.style.display = "flex"
+                buttonContainerDiv.style.flexDirection = "column"
+
+                if (contentDisplay.Buttons && Array.isArray(contentDisplay.Buttons)) {
+                    contentDisplay.Buttons.forEach((button) => {
+
+                        const buttonImage = document.createElement("img");
+                        buttonImage.src = button.img;
+
+                        const buttonDesc = document.createElement("p");
+                        buttonDesc.innerText = button.content[currentLanguage];
+
+                        const buttonDiv = document.createElement("div");
+                        buttonDiv.style.display = "flex"
+                        buttonDiv.style.flexDirection = "row"
+                        buttonDiv.style.justifyContent = "center"
+                        buttonDiv.style.alignItems = "center"
+                        buttonDiv.style.margin = " 10px 0px "
+
+                        buttonDiv.appendChild(buttonImage);
+                        buttonDiv.appendChild(buttonDesc);
+
+                        buttonContainerDiv.appendChild(buttonDiv);
+                    });
+                }
+
+                subContainer.appendChild(buttonContainerDiv);
             });
         }
     }
