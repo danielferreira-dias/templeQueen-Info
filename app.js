@@ -1,5 +1,17 @@
 let currentLanguage = "EN"
 
+
+let currency = [
+    {
+        "EN": "EUR",
+        "RU": "RUB",
+        "FR": "EUR",
+        "ZH": "CNY",
+        "US": "USD",
+        "PT": "EUR"
+    }
+];
+
 function closeInfo() {
     console.log("Closing info");
 }
@@ -350,8 +362,9 @@ function createRuleSection(subSection, subContainer) {
                         // Format the text content based on valueType
                         switch (word.valueType) {
                             case "puntataMinima":
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currency[0][currentLanguage]}`;
                             case "puntataMaxima":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} EUR`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currency[0][currentLanguage]}`;
                                 break;
                             case "maxWinValue":
                                 typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}x the bet`;
