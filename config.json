@@ -1118,6 +1118,126 @@
             },
             {
                 "Title": {
+                    "EN": "Cristal Shop",
+                    "RU": "Cristal Shop",
+                    "FR": "Cristal Shop",
+                    "ZH": "Cristal Shop",
+                    "US": "Cristal Shop",
+                    "PT": "Cristal Shop"
+                },
+                "sectionType": "BuyBonus",
+                "Type": "Title",
+                "SubSection": [
+                    {
+                        "typeDisplay": "flex",
+                        "direction": "column",
+                        "justifyContent": "center",
+                        "numberFeatures": 1,
+                        "features": [
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "column",
+                                "divWith": "60%",
+                                "quanitityContent": 3,
+                                "featureContent": [
+                                    {
+                                        "type": "img",
+                                        "numberOfImages": 1,
+                                        "divWith": "100%",
+                                        "imageType": "big",
+                                        "url": [
+                                            "images/Settings/Buttons/CANCEL.png"
+                                        ],
+                                        "direction": "row",
+                                        "valueType": "puntataMaxima",
+                                        "Type": "text",
+                                        "Text": "Puntata Maxima:",
+                                        "value": "5,00"
+                                    },
+                                    {
+                                        "type": "plural_text",
+                                        "textAlignment": "center",
+                                        "numberOfTexts": 2,
+                                        "content": {
+                                            "EN": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "IT": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "RU": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "FR": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "ZH": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "US": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ],
+                                            "PT": [
+                                                "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
+                                                "Discover the thrill of FEATURE slot: 3 FREE SPINS, with WILD MULTIPLIERS (x2 to x5). Take it to the next level with 3 FREE SPINS of the SUPER FEATURE - more chances for big wins!"
+                                            ]
+                                        },
+                                        "direction": "column",
+                                        "customFormat": "",
+                                        "valueType": "maxWinValue",
+                                        "Type": "text",
+                                        "Text": "The Max win is ",
+                                        "value": "20,000x"
+                                    },
+                                    {
+                                        "type": "divContent",
+                                        "numberOfDivs": 4,
+                                        "direction": "row",
+                                        "divContentBorder": [
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "SUPER FREE SPINS 400x BET"
+                                                ],
+                                                "content": "RTP - 93,13%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "FREE SPINS 100x BET"
+                                                ],
+                                                "content": "RTP - 93,96%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "FEATURE 10x BET"
+                                                ],
+                                                "content": "RTP - 94,03%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": [
+                                                    "SUPER FEATURE 15x BET"
+                                                ],
+                                                "content": "RTP - 94,03%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Title": {
                     "EN": "Buttons",
                     "RU": "Кнопки",
                     "FR": "Boutons",
@@ -1212,7 +1332,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/INFO.png",
                                         "content": {
                                             "EN": [
                                                 "Opens the game information/settings screen."
@@ -1238,7 +1358,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/SOUND.png",
                                         "content": {
                                             "EN": [
                                                 "Enables/Disables game volume."
@@ -1264,7 +1384,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/SIZE.png",
                                         "content": {
                                             "EN": [
                                                 "Enables/Disables full-screen gameplay."
@@ -1290,7 +1410,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/FEED.png",
                                         "content": {
                                             "EN": [
                                                 "Opens game history."
@@ -1342,7 +1462,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/MUSIC.png",
                                         "content": {
                                             "EN": [
                                                 "Changes music state."
@@ -1368,7 +1488,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/TURBO.png",
                                         "content": {
                                             "EN": [
                                                 "Activates Turbo."

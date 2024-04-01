@@ -75,22 +75,44 @@ function createHTMLFromJSON() {
                 // Section Title
                 if (section.title != "Rules") {
                     if (section.Type === "Title") {
-                        const title = document.createElement("h2");
-                        if (section.sectionType != "symbolPayout") {
-                            title.style.border = "inset"
-                            title.style.borderWidth = "2px 0px 1px 0px"
-                            title.style.borderColor = "#ff0096"
+
+                        if (section.Title[currentLanguage] == 'Cristal Shop') {
+                            if (gameHasBuyBonus == true) {
+                                const title = document.createElement("h2");
+                                if (section.sectionType != "symbolPayout") {
+                                    title.style.border = "inset"
+                                    title.style.borderWidth = "2px 0px 1px 0px"
+                                    title.style.borderColor = "#ff0096"
+                                } else {
+                                    title.style.border = "inset"
+                                    title.style.borderWidth = "0px 0px 1px 0px"
+                                    title.style.borderColor = "#ff0096"
+                                }
+
+                                title.textContent = section.Title[currentLanguage];
+                                container.appendChild(title);
+                            }
+
                         } else {
-                            title.style.border = "inset"
-                            title.style.borderWidth = "0px 0px 1px 0px"
-                            title.style.borderColor = "#ff0096"
+                            const title = document.createElement("h2");
+                            if (section.sectionType != "symbolPayout") {
+                                title.style.border = "inset"
+                                title.style.borderWidth = "2px 0px 1px 0px"
+                                title.style.borderColor = "#ff0096"
+                            } else {
+                                title.style.border = "inset"
+                                title.style.borderWidth = "0px 0px 1px 0px"
+                                title.style.borderColor = "#ff0096"
+                            }
+
+                            title.textContent = section.Title[currentLanguage];
+                            container.appendChild(title);
                         }
 
                         // border: inset;
                         // border - width: 0px 0px 1px 0px;
                         // border - color: #ff0096;
-                        title.textContent = section.Title[currentLanguage];
-                        container.appendChild(title);
+
                     }
                 }
 
@@ -679,8 +701,224 @@ function createButtonSection(section, subSection, subContainer) {
 }
 
 
-function createbuyBonusSection(section, subSection, subContainer) {
+function createbuyBonusSection(mainSection, subSection, subContainer) {
+    if (mainSection.sectionType === "BuyBonus" && gameHasBuyBonus == true) {
+        if (subSection.features && Array.isArray(subSection.features)) {
+            subSection.features.forEach((contentDisplay) => {
+                const singularDiv = document.createElement("div");
+                singularDiv.style.display = contentDisplay.typeDisplay;
 
+                if (contentDisplay.typeDisplay === "flex") {
+                    singularDiv.style.maxWidth = "100%"
+                    if (contentDisplay.direction == "row") {
+                        singularDiv.classList.add("singular-div-row")
+                    } else {
+                        singularDiv.classList.add("singular-div-column")
+                    }
+                }
+
+                for (let j = 0; j < contentDisplay.quanitityContent; j++) {
+                    const contentDiv = document.createElement("div");
+
+                    contentDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
+
+                    if (contentDisplay.featureContent[j].type === "img") {
+                        contentDiv.classList.add("content-div-class-flex-img");
+                        // Check if numberOfImages is defined
+                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
+
+                        for (let i = 0; i < numberOfImages; i++) {
+                            const contentDivImage = document.createElement("img");
+                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            if (contentDisplay.featureContent[j].imageType == "big") {
+                                contentDivImage.classList.add("big-image")
+                            } else if (contentDisplay.featureContent[j].imageType == "small") {
+                                contentDivImage.classList.add("small-image")
+                            }
+                            contentDiv.appendChild(contentDivImage);
+                        }
+                    } else if (contentDisplay.featureContent[j].type === "text") {
+                        contentDiv.classList.add("content-div-class-flex-text");
+                        const textParagraph = document.createElement("p");
+                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
+
+                        contentDiv.appendChild(textParagraph);
+                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
+                        // Check if numberOfTexts is defined
+                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
+
+                        for (let i = 0; i < numberOfString; i++) {
+
+                            contentDiv.classList.add("content-div-class-flex-text");
+
+                            const textParagraph = document.createElement("p");
+                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
+
+                            contentDiv.appendChild(textParagraph);
+                        }
+                    } else if (contentDisplay.featureContent[j].type === "img_text") {
+
+                        contentDiv.classList.add("content-div-class-flex-img");
+                        // Check if numberOfImages is defined
+                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
+
+                        for (let i = 0; i < numberOfImages; i++) {
+                            const contentDivImage = document.createElement("img");
+                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            if (contentDisplay.featureContent[j].imageType == "big") {
+                                contentDivImage.classList.add("big-image")
+                            } else if (contentDisplay.featureContent[j].imageType == "small") {
+                                contentDivImage.classList.add("small-image")
+                            }
+                            contentDiv.appendChild(contentDivImage);
+                        }
+
+                        // Check if numberOfTexts is defined
+                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
+                        const numberOfTextsDiv = document.createElement("div");
+                        numberOfTextsDiv.style.display = "flex"
+                        numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
+
+                        // Right Div Parent
+                        const rightDivParent = document.createElement("div");
+                        rightDivParent.style.display = "flex";
+                        rightDivParent.style.flexDirection = "row";
+                        rightDivParent.style.flex = 1;
+
+                        // Right Div contains Multipliers
+                        const rightDivMultiplierCol = document.createElement("div");
+                        rightDivMultiplierCol.classList.add("list-container-left");
+
+                        // Right Div contains Values
+                        const rightDivValueCol = document.createElement("div");
+                        rightDivValueCol.classList.add("list-container-right");
+
+
+                        // Iterate over symbols and display multipliers, values, and special content
+                        contentDisplay.featureContent[j].data.forEach((dataInfo) => {
+                            const listDiv = document.createElement("div");
+                            listDiv.classList.add("list-div");
+
+                            const multiplierText = document.createElement("p");
+                            multiplierText.classList.add("multiplier-symbol-value-text");
+                            multiplierText.innerText = dataInfo.multipliers;
+
+                            // Apply CSS to control text overflow
+                            multiplierText.style.overflow = "hidden";
+                            multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                            listDiv.appendChild(multiplierText);
+                            rightDivMultiplierCol.appendChild(listDiv);
+
+                            const valueText = document.createElement("p");
+                            valueText.classList.add("symbol-value-text");
+                            valueText.innerText = dataInfo.value;
+
+                            // Apply CSS to control text overflow
+                            valueText.style.overflow = "hidden";
+                            valueText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                            // Create a div to contain both value and special content
+                            const valueSpecialContentDiv = document.createElement("div");
+                            valueSpecialContentDiv.classList.add("value-special-content-div");
+
+                            // Append value text to the div
+                            valueSpecialContentDiv.appendChild(valueText);
+
+                            // Check if special content exists
+                            if (dataInfo.specialContent != null) {
+                                const specialContentText = document.createElement("p");
+                                specialContentText.classList.add("symbol-specialContent-text");
+                                specialContentText.innerText = dataInfo.specialContent;
+
+                                // Apply CSS to control text overflow
+                                specialContentText.style.overflow = "hidden";
+                                specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                                // Append special content text to the div
+                                valueSpecialContentDiv.appendChild(specialContentText);
+                            }
+
+                            // Append the div containing both value and special content to the column
+                            rightDivValueCol.appendChild(valueSpecialContentDiv);
+                        })
+                        numberOfTextsDiv.appendChild(rightDivValueCol)
+
+                        // Append columns to parent
+                        rightDivParent.appendChild(rightDivMultiplierCol);
+                        rightDivParent.appendChild(rightDivValueCol);
+                        contentDiv.appendChild(rightDivParent);
+
+                    } else if (contentDisplay.featureContent[j].type == "divContent") {
+                        contentDiv.classList.add("content-div-class-flex-div");
+                        // Check if numberOfDivsContent is defined
+                        const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
+
+                        for (let i = 0; i < numberOfDivsContent; i++) {
+                            // Create a new div element for each iteration
+                            const borderDiv = document.createElement("div");
+
+                            // Apply CSS to the Borders
+                            borderDiv.style.borderStyle = "solid";
+                            borderDiv.style.margin = "10px";
+                            borderDiv.style.height = "150px";
+                            borderDiv.style.width = "150px";
+                            borderDiv.style.borderWidth = "5px";
+                            borderDiv.style.borderColor = "	#FFD700"
+
+                            // Apply Flexbox to align text vertically
+                            borderDiv.style.display = "flex";
+                            borderDiv.style.justifyContent = "center"; // Align horizontally
+                            borderDiv.style.alignItems = "center"; // Align vertically
+
+                            // Append the new div to the main contentDiv
+                            contentDiv.appendChild(borderDiv);
+
+                            // Access the text array for the current border div
+                            const textArray = contentDisplay.featureContent[j].divContentBorder[i];
+
+                            // Inside The Border Divs, Apply Text
+                            const borderText = document.createElement("p");
+                            borderText.style.fontSize = "1.0rem";
+                            borderText.style.textAlign = "center";
+
+                            borderText.textContent = textArray.contentInside;
+
+                            // Append the text to the current borderDiv
+                            borderDiv.appendChild(borderText);
+                        }
+                    }
+                    if (contentDisplay.featureContent[j].divWith == "small") {
+                        contentDiv.classList.add("div-small-type")
+                    }
+                    contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
+
+                    singularDiv.appendChild(contentDiv);
+                }
+
+                subContainer.appendChild(singularDiv);
+
+                // Enter Words to Search based on current language
+                if (currentLanguage === "UK") {
+                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+                } else if (currentLanguage === "ZH") {
+                    searchDynamicParagraphs(["野生", "兝费旋转", "额外旋转"]);
+                } else if (currentLanguage === "RUS") {
+                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛНТНЫЕ ВРНЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
+                } else if (currentLanguage === "PT") {
+                    searchDynamicParagraphs(["WILD", "GIROS GRÝTIS", "GIROS EXTRA"]);
+                } else if (currentLanguage === "FR") {
+                    searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
+                } else if (currentLanguage === "US") {
+                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+
+                } else if (currentLanguage == "CHIN") {
+                    searchDynamicParagraphs("")
+                }
+
+            });
+        }
+    }
 }
 
 // Function to search for the search terms within dynamically generated <p> elements
