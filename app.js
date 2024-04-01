@@ -291,7 +291,7 @@ function createLineLayoutSection(mainSection, subSection, subContainer) {
         subSection.displayContent.forEach((contentDisplay) => {
 
             // Adds a Div to each Line
-            for (let n = 0; n < contentDisplay.lineQuantity; n++) {
+            for (let n = 0; n < contentDisplay.lines; n++) {
                 const displayContent = document.createElement("div");
                 const color = "#" + getRandomColor()
                 for (let i = 0; i < contentDisplay.lineRows; i++) {
@@ -438,17 +438,15 @@ function createNewSections(mainSection, subSection, subContainer) {
                     }
                 }
 
-                for (let j = 0; j < contentDisplay.quanitityContent; j++) {
+                for (let j = 0; j < contentDisplay.featureContent.length; j++) {
                     const contentDiv = document.createElement("div");
 
                     contentDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
                         contentDiv.classList.add("content-div-class-flex-img");
-                        // Check if numberOfImages is defined
-                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
-                        for (let i = 0; i < numberOfImages; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
@@ -465,10 +463,8 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                         contentDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
-                        // Check if numberOfTexts is defined
-                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
 
-                        for (let i = 0; i < numberOfString; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
 
                             contentDiv.classList.add("content-div-class-flex-text");
 
@@ -480,10 +476,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
 
                         contentDiv.classList.add("content-div-class-flex-img");
-                        // Check if numberOfImages is defined
-                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
-                        for (let i = 0; i < numberOfImages; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
@@ -494,8 +488,6 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDiv.appendChild(contentDivImage);
                         }
 
-                        // Check if numberOfTexts is defined
-                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
                         const numberOfTextsDiv = document.createElement("div");
                         numberOfTextsDiv.style.display = "flex"
                         numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
@@ -696,7 +688,7 @@ function createButtonSection(section, subSection, subContainer) {
     }
 }
 
-
+// In case the game has buy bonus display the respective section
 function createbuyBonusSection(mainSection, subSection, subContainer) {
     if (mainSection.sectionType === "BuyBonus" && gameHasBuyBonus == true) {
         if (subSection.features && Array.isArray(subSection.features)) {
@@ -713,17 +705,15 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                     }
                 }
 
-                for (let j = 0; j < contentDisplay.quanitityContent; j++) {
+                for (let j = 0; j < contentDisplay.featureContent.length; j++) {
                     const contentDiv = document.createElement("div");
 
                     contentDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
                         contentDiv.classList.add("content-div-class-flex-img");
-                        // Check if numberOfImages is defined
-                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
-                        for (let i = 0; i < numberOfImages; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
@@ -740,10 +730,8 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
                         contentDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
-                        // Check if numberOfTexts is defined
-                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
 
-                        for (let i = 0; i < numberOfString; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
 
                             contentDiv.classList.add("content-div-class-flex-text");
 
@@ -755,10 +743,8 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
 
                         contentDiv.classList.add("content-div-class-flex-img");
-                        // Check if numberOfImages is defined
-                        const numberOfImages = contentDisplay.featureContent[j].numberOfImages || 1;
 
-                        for (let i = 0; i < numberOfImages; i++) {
+                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
@@ -769,8 +755,6 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             contentDiv.appendChild(contentDivImage);
                         }
 
-                        // Check if numberOfTexts is defined
-                        const numberOfString = contentDisplay.featureContent[j].numberOfTexts || 1;
                         const numberOfTextsDiv = document.createElement("div");
                         numberOfTextsDiv.style.display = "flex"
                         numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection

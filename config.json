@@ -1,6 +1,5 @@
 {
     "Info": {
-        "Sections_Quantity": 6,
         "Section": [
             {
                 "Title": {
@@ -21,7 +20,6 @@
                             {
                                 "Layout": "flex",
                                 "layoutStyle": "flex-direction: row;",
-                                "symbolQuantity": 10,
                                 "symbols": [
                                     {
                                         "data": [
@@ -436,16 +434,13 @@
                         "typeDisplay": "flex",
                         "direction": "row",
                         "justifyContent": "center",
-                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "numberOfImages": 1,
                                         "divWith": "small",
                                         "imageType": "big",
                                         "url": [
@@ -487,18 +482,15 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 2,
                                 "featureContent": [
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
                                         "divWith": "small",
-                                        "numberOfImages": 1,
                                         "url": [
                                             "images/Settings/Symbol/10.png"
                                         ],
                                         "textAlignment": "center",
-                                        "numberOfTexts": 3,
                                         "data": [
                                             {
                                                 "multipliers": "x5",
@@ -556,16 +548,13 @@
                         "typeDisplay": "flex",
                         "direction": "row",
                         "justifyContent": "center",
-                        "numberFeatures": 1,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
-                                        "numberOfTexts": 3,
                                         "textAlignment": "center",
                                         "content": {
                                             "EN": [
@@ -629,16 +618,13 @@
                         "typeDisplay": "flex",
                         "direction": "row",
                         "justifyContent": "center",
-                        "numberFeatures": 1,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
-                                        "numberOfTexts": 4,
                                         "textAlignment": "center",
                                         "content": {
                                             "EN": [
@@ -709,23 +695,19 @@
                         "typeDisplay": "flex",
                         "direction": "row",
                         "justifyContent": "center",
-                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
                                         "divWith": "small",
-                                        "numberOfImages": 1,
                                         "url": [
                                             "images/Settings/Symbol/9.png"
                                         ],
                                         "textAlignment": "center",
-                                        "numberOfTexts": 1,
                                         "data": [
                                             {
                                                 "multipliers": "x5",
@@ -751,7 +733,6 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "text",
@@ -790,16 +771,13 @@
                         "typeDisplay": "flex",
                         "direction": "column",
                         "justifyContent": "center",
-                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "numberOfImages": 3,
                                         "divWith": "small",
                                         "imageType": "big",
                                         "url": [
@@ -814,12 +792,10 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
                                         "textAlignment": "center",
-                                        "numberOfTexts": 2,
                                         "content": {
                                             "EN": [
                                                 "The player can see the Start button changing and start the increment of extra spins available. The game will auto play after 10 seconds if the player doesn't press the START button.",
@@ -875,17 +851,14 @@
                         "typeDisplay": "flex",
                         "direction": "column",
                         "justifyContent": "center",
-                        "numberFeatures": 2,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "quanitityContent": 1,
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
                                         "textAlignment": "center",
-                                        "numberOfTexts": 6,
                                         "content": {
                                             "EN": [
                                                 "The player must select a card, red or black, to see what is on the other side. If an x2 is displayed the player can double their prize.",
@@ -1132,17 +1105,14 @@
                         "typeDisplay": "flex",
                         "direction": "column",
                         "justifyContent": "center",
-                        "numberFeatures": 1,
                         "features": [
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
                                 "divWith": "60%",
-                                "quanitityContent": 3,
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "numberOfImages": 1,
                                         "divWith": "100%",
                                         "imageType": "big",
                                         "url": [
@@ -1157,7 +1127,6 @@
                                     {
                                         "type": "plural_text",
                                         "textAlignment": "center",
-                                        "numberOfTexts": 2,
                                         "content": {
                                             "EN": [
                                                 "CRISTAL SHOP gives direct access to the game features. These features can only be activated in the base game.",
