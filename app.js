@@ -73,27 +73,9 @@ function createHTMLFromJSON() {
                 container.style.alignItems = "center"
 
                 // Section Title
-                if (section.title != "Rules") {
-                    if (section.Type === "Title") {
-
-                        if (section.Title[currentLanguage] == 'Cristal Shop') {
-                            if (gameHasBuyBonus == true) {
-                                const title = document.createElement("h2");
-                                if (section.sectionType != "symbolPayout") {
-                                    title.style.border = "inset"
-                                    title.style.borderWidth = "2px 0px 1px 0px"
-                                    title.style.borderColor = "#ff0096"
-                                } else {
-                                    title.style.border = "inset"
-                                    title.style.borderWidth = "0px 0px 1px 0px"
-                                    title.style.borderColor = "#ff0096"
-                                }
-
-                                title.textContent = section.Title[currentLanguage];
-                                container.appendChild(title);
-                            }
-
-                        } else {
+                if (section.Type === "Title") {
+                    if (section.Title[currentLanguage] == 'Cristal Shop') {
+                        if (gameHasBuyBonus == true) {
                             const title = document.createElement("h2");
                             if (section.sectionType != "symbolPayout") {
                                 title.style.border = "inset"
@@ -109,13 +91,27 @@ function createHTMLFromJSON() {
                             container.appendChild(title);
                         }
 
-                        // border: inset;
-                        // border - width: 0px 0px 1px 0px;
-                        // border - color: #ff0096;
+                    } else {
+                        const title = document.createElement("h2");
+                        if (section.sectionType != "symbolPayout") {
+                            title.style.border = "inset"
+                            title.style.borderWidth = "2px 0px 1px 0px"
+                            title.style.borderColor = "#ff0096"
+                        } else {
+                            title.style.border = "inset"
+                            title.style.borderWidth = "0px 0px 1px 0px"
+                            title.style.borderColor = "#ff0096"
+                        }
 
+                        title.textContent = section.Title[currentLanguage];
+                        container.appendChild(title);
                     }
-                }
 
+                    // border: inset;
+                    // border - width: 0px 0px 1px 0px;
+                    // border - color: #ff0096;
+
+                }
                 // Create a Sub-Section Container for each Container
                 section.SubSection.forEach((subSection) => {
                     const subContainer = document.createElement("div")
