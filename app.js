@@ -1,4 +1,5 @@
 let currentLanguage = "EN"
+let gameHasBuyBonus = false
 
 
 let currency = [
@@ -131,6 +132,11 @@ function createHTMLFromJSON() {
 
                     // Button Page
                     createButtonSection(section, subSection, subContainer)
+
+                    // Buy Bonus
+                    if (gameHasBuyBonus == true) {
+                        createbuyBonusSection(section, subSection, subContainer)
+                    }
 
                 })
 
@@ -599,11 +605,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                 if (currentLanguage === "UK") {
                     searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
                 } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["野生", "免费旋转", "额外旋转"]);
+                    searchDynamicParagraphs(["野生", "兝费旋转", "额外旋转"]);
                 } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛАТНЫЕ ВРАЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРАЩЕНИЯ"]);
+                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛНТНЫЕ ВРНЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
                 } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["WILD", "GIROS GRÁTIS", "GIROS EXTRA"]);
+                    searchDynamicParagraphs(["WILD", "GIROS GRÝTIS", "GIROS EXTRA"]);
                 } else if (currentLanguage === "FR") {
                     searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
                 } else if (currentLanguage === "US") {
@@ -632,6 +638,10 @@ function createButtonSection(section, subSection, subContainer) {
                 if (contentDisplay.Buttons && Array.isArray(contentDisplay.Buttons)) {
                     contentDisplay.Buttons.forEach((button) => {
 
+                        const mainDivButton = document.createElement("div");
+                        mainDivButton.style.display = "flex"
+                        mainDivButton.style.flexDirection = "row"
+
                         const buttonImage = document.createElement("img");
                         buttonImage.src = button.img;
 
@@ -640,15 +650,25 @@ function createButtonSection(section, subSection, subContainer) {
 
                         const buttonDiv = document.createElement("div");
                         buttonDiv.style.display = "flex"
-                        buttonDiv.style.flexDirection = "row"
+                        buttonDiv.style.flexDirection = "column"
                         buttonDiv.style.justifyContent = "center"
                         buttonDiv.style.alignItems = "center"
                         buttonDiv.style.margin = " 10px 0px "
 
-                        buttonDiv.appendChild(buttonImage);
-                        buttonDiv.appendChild(buttonDesc);
+                        const buttonDivText = document.createElement("div");
+                        buttonDivText.style.display = "flex"
+                        buttonDivText.style.flexDirection = "column"
+                        buttonDivText.style.justifyContent = "center"
+                        buttonDivText.style.alignItems = "center"
+                        buttonDivText.style.margin = " 10px 0px "
 
-                        buttonContainerDiv.appendChild(buttonDiv);
+                        buttonDiv.appendChild(buttonImage);
+                        buttonDivText.appendChild(buttonDesc);
+
+                        mainDivButton.appendChild(buttonDiv);
+                        mainDivButton.appendChild(buttonDivText);
+
+                        buttonContainerDiv.appendChild(mainDivButton)
                     });
                 }
 
@@ -656,6 +676,11 @@ function createButtonSection(section, subSection, subContainer) {
             });
         }
     }
+}
+
+
+function createbuyBonusSection(section, subSection, subContainer) {
+
 }
 
 // Function to search for the search terms within dynamically generated <p> elements

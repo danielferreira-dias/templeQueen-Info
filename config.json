@@ -1163,25 +1163,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Opens the Autoplay menu."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Apre il menu Autoplay."
                                             ],
                                             "RU": [
                                                 "Начинает игру"
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Ouvre le menu de lecture automatique."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "打开自动播放菜单"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Opens the Autoplay menu."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Abre o menu de reprodução automática."
                                             ]
                                         }
                                     },
@@ -1189,25 +1189,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Opens the Bet menu."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Apre il menu Puntata."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Открывает меню ставок."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Ouvre le menu des paris."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "打开投注菜单"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Opens the Bet menu."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Abre o menu de apostas."
                                             ]
                                         }
                                     },
@@ -1215,25 +1215,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Opens the game information/settings screen."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Apre la schermata delle informazioni/impostazioni."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Открывает экран с информацией/настройками игры."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Ouvre l'écran d'informations/réglages du jeu."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "打开游戏信息/设置屏幕"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Opens the game information/settings screen."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Abre a tela de informações/configurações do jogo."
                                             ]
                                         }
                                     },
@@ -1241,25 +1241,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Enables/Disables game volume."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Attiva/Disattiva il volume del gioco."
                                             ],
                                             "RU": [
                                                 "Начинает игру"
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Active/Désactive le volume du jeu."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "启用/禁用游戏音量"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Enables/Disables game volume."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Ativa/Desativa o volume do jogo."
                                             ]
                                         }
                                     },
@@ -1267,25 +1267,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Enables/Disables full-screen gameplay."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Attiva/Dissativa il gioco a schermo intero."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Включает/отключает полноэкранный режим игры."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Active/Désactive le mode plein écran."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "启用/禁用全屏游戏"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Enables/Disables full-screen gameplay."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Ativa/Desativa o modo de jogo em tela cheia."
                                             ]
                                         }
                                     },
@@ -1293,25 +1293,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Opens game history."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Apre la cronologia del gioco."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Открывает историю игры."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Ouvre l'historique des parties."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "打开游戏历史记录"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Opens game history."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Abre o histórico de jogos."
                                             ]
                                         }
                                     },
@@ -1319,25 +1319,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Changes game language."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Cambia la lingua del gioco."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Изменяет язык игры."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Change la langue du jeu."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "更改游戏语言"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Changes game language."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Altera o idioma do jogo."
                                             ]
                                         }
                                     },
@@ -1345,25 +1345,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Changes music state."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Cambia lo stato della musica."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Изменяет состояние музыки."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Change l'état de la musique."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "更改音乐状态"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Changes music state."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Altera o estado da música."
                                             ]
                                         }
                                     },
@@ -1371,25 +1371,25 @@
                                         "img": "images/Settings/Buttons/CANCEL.png",
                                         "content": {
                                             "EN": [
-                                                "Starts the game play"
+                                                "Activates Turbo."
                                             ],
                                             "IT": [
-                                                "Inizia il gioco"
+                                                "Attivare il Turbo."
                                             ],
                                             "RU": [
-                                                "Начинает игру"
+                                                "Активирует турбо-режим."
                                             ],
                                             "FR": [
-                                                "Démarre le jeu"
+                                                "Active le mode Turbo."
                                             ],
                                             "ZH": [
-                                                "开始游戏"
+                                                "启动涡轮模式"
                                             ],
                                             "US": [
-                                                "Starts the game play"
+                                                "Activates Turbo."
                                             ],
                                             "PT": [
-                                                "Inicia o jogo"
+                                                "Ativa o Turbo."
                                             ]
                                         }
                                     }
