@@ -308,7 +308,8 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
                                 if (j == 0) {
                                     const number = document.createElement('p');
                                     column.classList.add('line-number');
-                                    number.textContent = n
+                                    number.style.fontSize = "1.5rem"
+                                    number.textContent = n + 1
                                     column.appendChild(number)
                                 }
 

@@ -263,7 +263,6 @@
                             {
                                 "Layout": "flex",
                                 "layoutStyle": "flex-direction: row;",
-                                "lineQuantity": 15,
                                 "lineRows": 3,
                                 "lineCols": 5,
                                 "lines": {
