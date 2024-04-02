@@ -140,7 +140,7 @@ function createHTMLFromJSON() {
                     createSymbolSection(section, subSection, subContainer)
 
                     // Line Layout Section
-                    createLineLayoutSection(container, subSection, subContainer)
+                    createLineLayoutSection(container, section, subSection, subContainer)
 
                     // Features Section
                     createNewSections(section, subSection, subContainer)
@@ -286,85 +286,87 @@ function createSymbolSection(section, subSection, subContainer) {
 
 
 // Call The Function to create Line Layout Section
-function createLineLayoutSection(mainSection, subSection, subContainer) {
-    if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
-        subSection.displayContent.forEach((contentDisplay) => {
+function createLineLayoutSection(mainSection, section, subSection, subContainer) {
+    if (section.sectionType == 'lineLayout') {
+        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+            subSection.displayContent.forEach((contentDisplay) => {
 
-            // Adds a Div to each Line
-            for (let n = 0; n < contentDisplay.lines; n++) {
-                const displayContent = document.createElement("div");
-                const color = "#" + getRandomColor()
-                for (let i = 0; i < contentDisplay.lineRows; i++) {
-                    const row = document.createElement('div');
-                    row.classList.add('line-layout-row');
+                for (let n = 0; n < contentDisplay.lines.formation.length; n++) {
+                    const displayContent = document.createElement("div");
+                    const color = "#" + getRandomColor()
+                    for (let i = 0; i < contentDisplay.lineRows; i++) {
+                        const row = document.createElement('div');
+                        row.classList.add('line-layout-row');
 
-                    for (let j = 0; j < contentDisplay.lineCols; j++) {
-                        const column = document.createElement('div');
+                        for (let j = 0; j < contentDisplay.lineCols; j++) {
+                            const column = document.createElement('div');
 
-                        column.classList.add('line-layout-column');
+                            column.classList.add('line-layout-column');
 
-                        if (i == contentDisplay.lines.formation[n][j]) {
-                            column.style.backgroundColor = color;
-                            if (j == 0) {
-                                const number = document.createElement('p');
-                                column.classList.add('line-number');
-                                number.textContent = n
-                                column.appendChild(number)
+                            if (i == contentDisplay.lines.formation[n][j]) {
+                                column.style.backgroundColor = color;
+                                if (j == 0) {
+                                    const number = document.createElement('p');
+                                    column.classList.add('line-number');
+                                    number.textContent = n
+                                    column.appendChild(number)
+                                }
+
                             }
 
+                            row.appendChild(column);
                         }
 
-                        row.appendChild(column);
+                        displayContent.appendChild(row);
                     }
 
-                    displayContent.appendChild(row);
-                }
+                    // Add Display Type to Each Symbol Section Div
+                    if (contentDisplay.Layout == "grid") {
+                        displayContent.classList.add("sub-container-grid-line-layout");
 
-                // Add Display Type to Each Symbol Section Div
-                if (contentDisplay.Layout == "grid") {
-                    displayContent.classList.add("sub-container-grid-line-layout");
-
-                }
-                else if (contentDisplay.Layout == "flex") {
-                    displayContent.classList.add("sub-container-content-flex");
-                    displayContent.style.borderRadius = "10px"
-                    displayContent.style.borderStyle = "solid";
-                    displayContent.style.borderWidth = "8px";
-                    displayContent.style.borderColor = "#b72342"
-                    displayContent.style.flexDirection = "column";
-                }
-                subContainer.appendChild(displayContent)
-            }
-
-        })
-    }
-    if (subSection.lineTextContent && Array.isArray(subSection.lineTextContent)) {
-        subSection.lineTextContent.forEach((contentLineDisplay) => {
-            const linetContent = document.createElement("div");
-            linetContent.classList.add("line-layout-text")
-
-
-
-            // Access the content for the specified language code
-            const contentForLanguage = contentLineDisplay.content[currentLanguage];
-
-            if (contentForLanguage && Array.isArray(contentForLanguage)) {
-                contentForLanguage.forEach((text) => {
-                    let typeOfList;
-                    if (contentLineDisplay.listType == "li") {
-                        typeOfList = document.createElement("li");
-                    } else {
-                        typeOfList = document.createElement("p");
                     }
-                    typeOfList.textContent = text;
+                    else if (contentDisplay.Layout == "flex") {
+                        displayContent.classList.add("sub-container-content-flex");
+                        displayContent.style.borderRadius = "10px"
+                        displayContent.style.borderStyle = "solid";
+                        displayContent.style.borderWidth = "8px";
+                        displayContent.style.borderColor = "#b72342"
+                        displayContent.style.flexDirection = "column";
+                    }
+                    subContainer.appendChild(displayContent)
+                }
 
-                    linetContent.appendChild(typeOfList);
-                });
-            }
+            })
+        }
+        if (subSection.lineTextContent && Array.isArray(subSection.lineTextContent)) {
+            subSection.lineTextContent.forEach((contentLineDisplay) => {
+                const linetContent = document.createElement("div");
+                linetContent.classList.add("line-layout-text")
 
-            mainSection.appendChild(linetContent)
-        })
+
+
+                // Access the content for the specified language code
+                const contentForLanguage = contentLineDisplay.content[currentLanguage];
+
+                if (contentForLanguage && Array.isArray(contentForLanguage)) {
+                    contentForLanguage.forEach((text) => {
+                        let typeOfList;
+                        if (contentLineDisplay.listType == "li") {
+                            typeOfList = document.createElement("li");
+                        } else {
+                            typeOfList = document.createElement("p");
+                        }
+                        typeOfList.textContent = text;
+
+                        linetContent.appendChild(typeOfList);
+                    });
+                }
+
+                mainSection.appendChild(linetContent)
+            })
+        }
     }
+
 
 }
 
