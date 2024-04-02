@@ -1,17 +1,6 @@
-let currentLanguage = "EN"
+let currentLanguage = "ZH"
+let currentCurrency = "EUR"
 let gameHasBuyBonus = false
-
-
-let currency = [
-    {
-        "EN": "EUR",
-        "RU": "RUB",
-        "FR": "EUR",
-        "ZH": "CNY",
-        "US": "USD",
-        "PT": "EUR"
-    }
-];
 
 function closeInfo() {
     console.log("Closing info");
@@ -78,11 +67,11 @@ function createHTMLFromJSON() {
                         if (gameHasBuyBonus == true) {
                             const title = document.createElement("h2");
                             if (section.sectionType != "symbolPayout") {
-                                title.style.border = "inset"
+                                title.style.border = "groove"
                                 title.style.borderWidth = "2px 0px 1px 0px"
                                 title.style.borderColor = "#ff0096"
                             } else {
-                                title.style.border = "inset"
+                                title.style.border = "groove"
                                 title.style.borderWidth = "0px 0px 1px 0px"
                                 title.style.borderColor = "#ff0096"
                             }
@@ -94,11 +83,11 @@ function createHTMLFromJSON() {
                     } else {
                         const title = document.createElement("h2");
                         if (section.sectionType != "symbolPayout") {
-                            title.style.border = "inset"
+                            title.style.border = "groove"
                             title.style.borderWidth = "2px 0px 1px 0px"
                             title.style.borderColor = "#ff0096"
                         } else {
-                            title.style.border = "inset"
+                            title.style.border = "groove"
                             title.style.borderWidth = "0px 0px 1px 0px"
                             title.style.borderColor = "#ff0096"
                         }
@@ -242,7 +231,7 @@ function createSymbolSection(section, subSection, subContainer) {
 
                         const valueText = document.createElement("p");
                         valueText.classList.add("symbol-value-text");
-                        valueText.innerText = dataInfo.value;
+                        valueText.innerText = dataInfo.value + currentCurrency;
 
                         // Apply CSS to control text overflow
                         valueText.style.overflow = "hidden";
@@ -389,9 +378,9 @@ function createRuleSection(subSection, subContainer) {
                         // Format the text content based on valueType
                         switch (word.valueType) {
                             case "puntataMinima":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currency[0][currentLanguage]}`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currentCurrency}`;
                             case "puntataMaxima":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currency[0][currentLanguage]}`;
+                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currentCurrency}`;
                                 break;
                             case "maxWinValue":
                                 typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}x the bet`;
@@ -528,7 +517,7 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                             const valueText = document.createElement("p");
                             valueText.classList.add("symbol-value-text");
-                            valueText.innerText = dataInfo.value;
+                            valueText.innerText = dataInfo.value + '' + currentCurrency;
 
                             // Apply CSS to control text overflow
                             valueText.style.overflow = "hidden";
@@ -795,7 +784,7 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
                             const valueText = document.createElement("p");
                             valueText.classList.add("symbol-value-text");
-                            valueText.innerText = dataInfo.value;
+                            valueText.innerText = dataInfo.value + currentCurrency;
 
                             // Apply CSS to control text overflow
                             valueText.style.overflow = "hidden";

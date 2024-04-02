@@ -120,7 +120,6 @@ li {
         grid-template-columns: repeat(1, 1fr);
     }
     h2 {
-        width: 50%;
         font-size: 3rem;
     }
 
@@ -136,7 +135,6 @@ li {
     }
 
     h2 {
-        width: 50%;
         font-size: 3rem;
     }
 
@@ -268,7 +266,6 @@ p.sub-container-content-flex {
     }
 
     h2 {
-        width: 50%;
         font-size: 3rem;
     }
 
