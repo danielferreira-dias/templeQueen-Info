@@ -231,7 +231,11 @@ function createSymbolSection(section, subSection, subContainer) {
 
                         const valueText = document.createElement("p");
                         valueText.classList.add("symbol-value-text");
-                        valueText.innerText = dataInfo.value + currentCurrency;
+
+                        var normalizedValue = dataInfo.value.replace(',', '.');
+                        if (parseFloat(normalizedValue) > 0.0) {
+                            valueText.innerText = normalizedValue + currentCurrency;
+                        }
 
                         // Apply CSS to control text overflow
                         valueText.style.overflow = "hidden";

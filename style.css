@@ -173,7 +173,7 @@ p.sub-container-content-flex {
 }
 
 .image-container-symbol {
-    flex: 0 0 40%;
+    flex: 0 0 30%;
     height: 100%;
     /* background-color: red; */
     aspect-ratio: 1;
@@ -214,19 +214,19 @@ p.sub-container-content-flex {
 .multiplier-symbol-value-text {
     color: #ff0096;
     font-weight: 900;
-    font-size: 2.0rem;
+    font-size: 1.7rem;
     margin: 0px;
 }
 
 .symbol-value-text {
     color: white;
-    font-size: 2.0rem;
+    font-size: 1.7rem;
     margin: 0px;
 }
 
 .symbol-specialContent-text {
     color: gold;
-    font-size: 2.0rem;
+    font-size: 1.7rem;
     margin: 0px;
 }
 
