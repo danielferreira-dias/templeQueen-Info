@@ -165,6 +165,14 @@ function getRandomColor() {
     return color;
 }
 
+function setCurrency(serverSideCurrency) {
+    currentCurrency = serverSideCurrency
+}
+
+function setCurrency(serverSideLanguage) {
+    currentLanguage = serverSideLanguage
+}
+
 // Call The Function to create Symbol Section
 function createSymbolSection(section, subSection, subContainer) {
     if (section.sectionType == 'symbolPayout') {
@@ -654,6 +662,7 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDiv.style.alignItems = "center"
                         buttonDiv.style.margin = " 10px 0px "
                         buttonDiv.style.width = '30%'
+                        buttonDesc.style.textAlign = 'left'
 
                         const buttonDivText = document.createElement("div");
                         buttonDivText.style.display = "flex"
