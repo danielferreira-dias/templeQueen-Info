@@ -3,12 +3,12 @@
         "Section": [
             {
                 "Title": {
-                    "EN": "Symbol Payout",
-                    "RU": "Выплата символов",
-                    "FR": "Paiement des symboles",
+                    "EN": "SYMBOL PAYOUT",
+                    "RU": "ВЫПЛАТА СИМВОЛОВ",
+                    "FR": "PAIEMENT DES SYMBOLES",
                     "ZH": "符号支付",
-                    "US": "Symbol Payout",
-                    "PT": "Pagamento de Símbolos"
+                    "US": "SYMBOL PAYOUT",
+                    "PT": "PAGAMENTO DE SÍMBOLOS"
                 },
                 "Type": "Title",
                 "sectionType": "symbolPayout",
@@ -247,12 +247,12 @@
             },
             {
                 "Title": {
-                    "EN": "Line Layout",
-                    "RU": "Расположение линии",
-                    "FR": "Disposition des lignes",
+                    "EN": "LINE LAYOUT",
+                    "RU": "РАСПОЛОЖЕНИЕ ЛИНИИ",
+                    "FR": "DISPOSITION DES LIGNES",
                     "ZH": "线路布局",
-                    "US": "Line Layout",
-                    "PT": "Layout da Linha"
+                    "US": "LINE LAYOUT",
+                    "PT": "LAYOUT DA LINHA"
                 },
                 "sectionType": "lineLayout",
                 "Type": "Title",
@@ -267,7 +267,6 @@
                                 "lineCols": 5,
                                 "lines": {
                                     "Type": "img",
-                                    "src": "images/lines/1.png",
                                     "formation": [
                                         [
                                             1,
@@ -384,32 +383,32 @@
                                 "listType": "p",
                                 "content": {
                                     "EN": [
-                                        "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of Wild symbols, it will be paid as the highest symbol...",
+                                        "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of WILD symbols, it will be paid as the highest symbol...",
                                         "Any malfunctions will cancel all bets and payouts."
                                     ],
                                     "IT": [
-                                        "Tutte le combinazioni vincenti vengono pagate da sinistra a destra, tranne i FREE SPINS. Nel caso in cui il simbolo WILD crei più combinazioni di premi all'interno della stessa linea di vincita, viene assegnata solo la vincita più vantaggiosa per il giocatore. In caso di combinazioni composte esclusivamente da simboli Wild, verrà pagato il simbolo più alto...",
-                                        "Eventuali malfunzionamenti annulleranno tutte le giocate e i pagamenti."
+                                        "Tutte le combinazioni vincenti vengono pagate da sinistra a destra eccetto FREE SPINS. Nel caso in cui il simbolo WILD crei più combinazioni vincenti all'interno della stessa linea vincente, verrà assegnata solo la vincita più vantaggiosa per il giocatore. In caso di combinazioni composte esclusivamente da simboli WILD, verrà pagata come il simbolo più alto...",
+                                        "Qualsiasi malfunzionamento annullerà tutte le scommesse e i pagamenti."
                                     ],
                                     "RU": [
-                                        "Все выигрышные комбинации выплачиваются слева направо, за исключением бесплатных спинов. В случае, если символ WILD создает несколько выигрышных комбинаций в пределах одной линии, игроку начисляется только наиболее выгодный выигрыш. В случае комбинаций, состоящих исключительно из символов Wild, выплачивается самый высокий символ...",
+                                        "Все выигрышные комбинации оплачиваются слева направо, за исключением FREE SPINS. В случае, если символ WILD создает несколько выигрышных комбинаций в пределах одной и той же выигрышной линии, будет начислена только наиболее выгодная победа для игрока. В случае комбинаций, состоящих исключительно из символов WILD, она будет оплачена как наивысший символ...",
                                         "Любые сбои отменят все ставки и выплаты."
                                     ],
                                     "FR": [
-                                        "Toutes les combinaisons gagnantes sont payées de gauche à droite, à l'exception des TOURS GRATUITS. Dans le cas où le symbole WILD crée plusieurs combinaisons de prix dans la même ligne gagnante, seul le gain le plus avantageux pour le joueur est attribué. En cas de combinaisons composées exclusivement de symboles Wild, le symbole le plus élevé sera payé...",
-                                        "Tous dysfonctionnements annuleront toutes les mises et paiements."
+                                        "Toutes les combinaisons gagnantes sont payées de gauche à droite, sauf FREE SPINS. Dans le cas où le symbole WILD crée plusieurs combinaisons gagnantes sur la même ligne de gain, seule la victoire la plus bénéfique pour le joueur est attribuée. En cas de combinaisons composées exclusivement de symboles WILD, elle sera payée comme le symbole le plus élevé...",
+                                        "Tout dysfonctionnement annulera toutes les mises et les gains."
                                     ],
                                     "ZH": [
-                                        "所有的获奖组合都是从左到右支付的，除了免费旋转。在同一条获奖线内WILD符号创建多个奖励组合的情况下，仅奖励玩家最有利的赢。在仅由Wild符号组成的组合的情况下，将按最高符号支付...",
-                                        "任何故障都将取消所有下注和赔付。"
+                                        "除了 FREE SPINS 外，所有获奖组合都是从左到右支付。如果野外符号在同一条获奖线上创建多个奖励组合，则仅授予玩家最有利的胜利。如果组合仅由野外符号组成，则将按照最高符号支付...",
+                                        "任何故障都将取消所有的投注和支付。"
                                     ],
                                     "US": [
-                                        "All winning combinations are paid from left to right except the FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of Wild symbols, it will be paid as the highest symbol...",
+                                        "All winning combinations are paid from left to right except FREE SPINS. In the case where the WILD symbol creates multiple prize combinations within the same winning line, only the most beneficial win for the player is awarded. In case of combinations consisting exclusively of WILD symbols, it will be paid as the highest symbol...",
                                         "Any malfunctions will cancel all bets and payouts."
                                     ],
                                     "PT": [
-                                        "Todas as combinações vencedoras são pagas da esquerda para a direita, exceto os GIROS GRÁTIS. No caso em que o símbolo WILD cria múltiplas combinações premiadas dentro da mesma linha vencedora, apenas a vitória mais vantajosa para o jogador é concedida. No caso de combinações consistindo exclusivamente de símbolos Wild, será pago como o símbolo mais alto...",
-                                        "Quaisquer mau funcionamento cancelará todas as apostas e pagamentos."
+                                        "Todas as combinações vencedoras são pagas da esquerda para a direita, exceto FREE SPINS. No caso em que o símbolo WILD cria múltiplas combinações vencedoras dentro da mesma linha de vitória, apenas a vitória mais benéfica para o jogador é premiada. No caso de combinações consistindo exclusivamente de símbolos WILD, será pago como o símbolo mais alto...",
+                                        "Quaisquer falhas cancelarão todas as apostas e pagamentos."
                                     ]
                                 }
                             }
@@ -419,12 +418,12 @@
             },
             {
                 "Title": {
-                    "EN": "Features",
-                    "RU": "Особенности",
-                    "FR": "Fonctionnalités",
+                    "EN": "FEATURES",
+                    "RU": "ОСОБЕННОСТИ",
+                    "FR": "FONCTIONNALITÉS",
                     "ZH": "特点",
-                    "US": "Features",
-                    "PT": "Recursos"
+                    "US": "FEATURES",
+                    "PT": "RECURSOS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -442,6 +441,7 @@
                                         "type": "img",
                                         "divWith": "small",
                                         "imageType": "big",
+                                        "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/9.png"
                                         ],
@@ -455,7 +455,7 @@
                                                 "Substitutes all symbols, except the FREE SPINS symbol."
                                             ],
                                             "IT": [
-                                                "Sostituisce tutti i simboli, tranne il simbolo FREE SPINS."
+                                                "Sostituisce tutti i simboli, ad eccezione del simbolo FREE SPINS."
                                             ],
                                             "RU": [
                                                 "Заменяет все символы, кроме символа FREE SPINS."
@@ -464,13 +464,13 @@
                                                 "Remplace tous les symboles, sauf le symbole FREE SPINS."
                                             ],
                                             "ZH": [
-                                                "替换所有符号，除了免费旋转符号。"
+                                                "替换所有符号，除了 FREE SPINS 符号。"
                                             ],
                                             "US": [
                                                 "Substitutes all symbols, except the FREE SPINS symbol."
                                             ],
                                             "PT": [
-                                                "Substitui todos os símbolos, exceto o símbolo de GIROS GRÁTIS."
+                                                "Substitui todos os símbolos, exceto o símbolo FREE SPINS."
                                             ]
                                         },
                                         "direction": "column",
@@ -486,6 +486,7 @@
                                         "type": "img_text",
                                         "imageType": "big",
                                         "divWith": "small",
+                                        "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/10.png"
                                         ],
@@ -518,22 +519,22 @@
                                                 "3 or more symbols scattered across the reels, pay a prize and award the bonus FREE SPINS."
                                             ],
                                             "IT": [
-                                                "3 o più simboli sparsi sui rulli pagano un premio e assegnano il bonus FREE SPINS."
+                                                "3 o più simboli sparsi sui rulli, pagano un premio e assegnano FREE SPINS."
                                             ],
                                             "RU": [
-                                                "3 или более символов, разбросанных по барабанам, приносят приз и дарят бонусные бесплатные спины."
+                                                "3 или более символов, разбросанных по барабанам, приносят приз и дарят FREE SPINS."
                                             ],
                                             "FR": [
-                                                "3 symboles ou plus dispersés sur les rouleaux, rapportent un prix et attribuent des tours gratuits en bonus."
+                                                "3 symboles ou plus dispersés sur les rouleaux, rapportent un prix et attribuent des FREE SPINS."
                                             ],
                                             "ZH": [
-                                                "散布在滚轮上的3个或更多符号，支付奖金并授予免费旋转奖励。"
+                                                "散落在轴上的3个或更多符号，支付奖金并授予 FREE SPINS。"
                                             ],
                                             "US": [
-                                                "3 or more symbols scattered across the reels, pay a prize and award the bonus FREE SPINS."
+                                                "3 or more symbols scattered across the reels, pay a prize and award FREE SPINS."
                                             ],
                                             "PT": [
-                                                "3 ou mais símbolos dispersos pelos rolos, pagam um prêmio e concedem o bônus de GIROS GRÁTIS."
+                                                "3 ou mais símbolos dispersos pelos rolos, pagam um prêmio e concedem FREE SPINS."
                                             ]
                                         },
                                         "direction": "column",
@@ -564,22 +565,22 @@
                                             "IT": [
                                                 "In caso di attivazione della funzione moltiplicatore, l'ordine dei premi è il seguente:",
                                                 "1 - premi per le linee di vincita;",
-                                                "2 - GIRI GRATUITI."
+                                                "2 - FREE SPINS."
                                             ],
                                             "RU": [
                                                 "В случае срабатывания функции множителя, порядок наград следующий:",
                                                 "1 - Призы за выигрышные линии;",
-                                                "2 - БЕСПЛАТНЫЕ СПИНЫ."
+                                                "2 - FREE SPINS."
                                             ],
                                             "FR": [
                                                 "En cas de déclenchement de la fonction multiplicateur, l'ordre des récompenses est le suivant :",
                                                 "1 - Prix des lignes gagnantes ;",
-                                                "2 - TOURS GRATUITS."
+                                                "2 - FREE SPINS."
                                             ],
                                             "ZH": [
                                                 "如果触发了倍增器功能，则奖励顺序如下：",
                                                 "1 - 赢线奖励；",
-                                                "2 - 免费旋转。"
+                                                "2 - FREE SPINS。"
                                             ],
                                             "US": [
                                                 "In the case of multiplier feature trigger, the award order is the following:",
@@ -589,7 +590,7 @@
                                             "PT": [
                                                 "No caso do acionamento da função multiplicadora, a ordem de premiação é a seguinte:",
                                                 "1 - prêmios das linhas vencedoras;",
-                                                "2 - GIROS GRÁTIS."
+                                                "2 - FREE SPINS."
                                             ]
                                         },
                                         "direction": "column",
@@ -603,12 +604,12 @@
             },
             {
                 "Title": {
-                    "EN": "Free Spins",
-                    "RU": "Free Spins",
-                    "FR": "Free Spins",
-                    "ZH": "Free Spins",
-                    "US": "Free Spins",
-                    "PT": "Free Spins"
+                    "EN": "FREE SPINS",
+                    "RU": "FREE SPINS",
+                    "FR": "FREE SPINS",
+                    "ZH": "FREE SPINS",
+                    "US": "FREE SPINS",
+                    "PT": "FREE SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -645,16 +646,16 @@
                                                 "Во время игры FREE SPINS множитель применяется как к выигрышам, так и к дополнительным спинам."
                                             ],
                                             "FR": [
-                                                "Dans ce bonus, le joueur doit sélectionner l'une des étoiles pour révéler le multiplicateur de TOURS GRATUITS.",
+                                                "Dans ce bonus, le joueur doit sélectionner l'une des étoiles pour révéler le multiplicateur de FREE SPINS.",
                                                 "Si le joueur ne fait aucun choix, après quelques secondes, l'une des options sera sélectionnée automatiquement.",
-                                                "Le jeu de TOURS GRATUITS commence avec 10 tours et pendant le jeu, le joueur a la possibilité de gagner 10 tours supplémentaires. Avec un maximum de 100 tours au total.",
-                                                "Pendant le jeu de TOURS GRATUITS, le multiplicateur est appliqué à la fois aux gains et aux tours supplémentaires."
+                                                "Le jeu de FREE SPINS commence avec 10 tours et pendant le jeu, le joueur a la possibilité de gagner 10 tours supplémentaires. Avec un maximum de 100 tours au total.",
+                                                "Pendant le jeu de FREE SPINS, le multiplicateur est appliqué à la fois aux gains et aux tours supplémentaires."
                                             ],
                                             "ZH": [
-                                                "在这个奖励中，玩家必须选择一个星星来揭示免费旋转的乘数。",
-                                                "如果玩家没有做出选择，几秒钟后将自动选择其中一个选项。",
-                                                "免费旋转游戏从10个旋转开始，玩家在游戏过程中有机会赢得额外的10个旋转。总共最多100个旋转。",
-                                                "在免费旋转游戏中，乘数适用于赢利和额外旋转。"
+                                                "在这个奖励中，玩家必须选择其中一个星星来揭示 FREE SPINS 的倍增器。",
+                                                "如果玩家没有做出选择，在几秒钟后，将自动选择其中一个选项。",
+                                                "FREE SPINS 游戏从10次旋转开始，在游戏过程中玩家有机会赢得10次额外的旋转。总共最多100次旋转。",
+                                                "在 FREE SPINS 游戏期间，倍增器适用于赢得和额外旋转。"
                                             ],
                                             "US": [
                                                 "In this bonus the player must select one of the stars to reveal the FREE SPINS Multiplier.",
@@ -663,10 +664,10 @@
                                                 "During FREE SPINS game the multiplier is applied to both winnings and extra spins."
                                             ],
                                             "PT": [
-                                                "Neste bônus, o jogador deve selecionar uma das estrelas para revelar o multiplicador de GIROS GRÁTIS.",
+                                                "Neste bônus, o jogador deve selecionar uma das estrelas para revelar o multiplicador de FREE SPINS.",
                                                 "Se o jogador não fizer nenhuma escolha, após alguns segundos uma das opções será selecionada automaticamente.",
-                                                "O jogo de GIROS GRÁTIS começa com 10 giros e durante o jogo o jogador tem a possibilidade de ganhar mais 10 giros. Com um máximo de 100 giros no total.",
-                                                "Durante o jogo de GIROS GRÁTIS, o multiplicador é aplicado tanto aos ganhos quanto aos giros extras."
+                                                "O jogo de FREE SPINS começa com 10 giros e durante o jogo o jogador tem a possibilidade de ganhar mais 10 giros. Com um máximo de 100 giros no total.",
+                                                "Durante o jogo de FREE SPINS, o multiplicador é aplicado tanto aos ganhos quanto aos giros extras."
                                             ]
                                         },
                                         "direction": "column",
@@ -680,12 +681,12 @@
             },
             {
                 "Title": {
-                    "EN": "Extra Spins",
-                    "RU": "Extra Spins",
-                    "FR": "Extra Spins",
-                    "ZH": "Extra Spins",
-                    "US": "Extra Spins",
-                    "PT": "Extra Spins"
+                    "EN": "EXTRA SPINS",
+                    "RU": "EXTRA SPINS",
+                    "FR": "EXTRA SPINS",
+                    "ZH": "EXTRA SPINS",
+                    "US": "EXTRA SPINS",
+                    "PT": "EXTRA SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -703,6 +704,7 @@
                                         "type": "img_text",
                                         "imageType": "big",
                                         "divWith": "small",
+                                        "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/9.png"
                                         ],
@@ -779,6 +781,7 @@
                                         "type": "img",
                                         "divWith": "small",
                                         "imageType": "big",
+                                        "wrap": "",
                                         "url": [
                                             "images/Settings/Assets/START BUTTON.png",
                                             "images/Settings/Assets/ARROW.png",
@@ -836,12 +839,12 @@
             },
             {
                 "Title": {
-                    "EN": "Free Spins",
-                    "RU": "Free Spins",
-                    "FR": "Free Spins",
-                    "ZH": "Free Spins",
-                    "US": "Free Spins",
-                    "PT": "Free Spins"
+                    "EN": "FREE SPINS",
+                    "RU": "FREE SPINS",
+                    "FR": "FREE SPINS",
+                    "ZH": "FREE SPINS",
+                    "US": "FREE SPINS",
+                    "PT": "FREE SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -927,12 +930,12 @@
             },
             {
                 "Title": {
-                    "EN": "Rules",
-                    "RU": "Правила",
-                    "FR": "Règles",
+                    "EN": "RULES",
+                    "RU": "ПРАВИЛА",
+                    "FR": "RÈGLES",
                     "ZH": "规则",
-                    "US": "Rules",
-                    "PT": "Regras"
+                    "US": "RULES",
+                    "PT": "REGRAS"
                 },
                 "sectionType": "Rules",
                 "Type": "Title",
@@ -1062,22 +1065,22 @@
                                                 "The maximum value of the prize is limited to 5,000x the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5,000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed."
                                             ],
                                             "IT": [
-                                                "Il valore massimo del premio è limitato a 5.000x la puntata sia nel gioco principale che nei FREE SPINS. Se il premio dei giri totali raggiunge 5.000x la puntata, il giro termina. Il premio viene assegnato e tutti i FREE SPINS rimasti vengono rimossi."
+                                                "Il valore massimo del premio è limitato a 5.000 volte la puntata sia nel gioco principale che nei FREE SPINS. Se il premio delle giocate totali raggiunge 5.000 volte la puntata, la partita termina. Il premio viene assegnato e tutti i FREE SPINS rimasti vengono rimossi."
                                             ],
                                             "RU": [
-                                                "Максимальное значение приза ограничено 5 000x ставкой как в основной игре, так и в бесплатных спинах. Если приз суммарных раундов достигает 5 000x ставки, раунд завершается. Приз присуждается, и все оставшиеся бесплатные спины удаляются."
+                                                "Максимальная сумма выигрыша ограничена 5 000 раз ставка как в основной игре, так и в FREE SPINS. Если выигрыш от общего количества спинов достигает 5 000 раз ставка, раунд завершается. Выигрыш начисляется, и все оставшиеся FREE SPINS удаляются."
                                             ],
                                             "FR": [
-                                                "La valeur maximale du prix est limitée à 5 000 fois la mise à la fois dans le jeu principal et dans les tours gratuits. Si le prix des tours totaux atteint 5 000 fois la mise, le tour se termine. Le prix est attribué et tous les tours gratuits restants sont supprimés."
+                                                "La valeur maximale du prix est limitée à 5 000 fois la mise à la fois dans le jeu principal et dans les FREE SPINS. Si le prix des tours totaux atteint 5 000 fois la mise, le tour se termine. Le prix est attribué et tous les FREE SPINS restants sont supprimés."
                                             ],
                                             "ZH": [
-                                                "奖品的最大值在主游戏和免费旋转中都限制为5,000倍赌注。如果总轮次的奖金达到5,000倍赌注，游戏将结束。奖金将被颁发，并且所有剩余的免费旋转将被移除。"
+                                                "奖金的最大值在主游戏和 FREE SPINS 中均限制为 5,000 倍的赌注。如果总轮次的奖金达到了 5,000 倍的赌注，游戏将结束。奖金将被授予，并且所有剩余的 FREE SPINS 将被移除。"
                                             ],
                                             "US": [
-                                                "The maximum value of the prize is limited to 5,000 times the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5,000 times the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed."
+                                                "The maximum value of the prize is limited to 5,000x the bet in both the main game and FREE SPINS. If the prize of the total rounds hits 5,000x the bet, the round finishes. The prize is awarded and all the FREE SPINS left are removed."
                                             ],
                                             "PT": [
-                                                "O valor máximo do prêmio é limitado a 5.000 vezes a aposta, tanto no jogo principal quanto nos GIROS GRÁTIS. Se o prêmio dos giros totais atingir 5.000 vezes a aposta, o giro termina. O prêmio é concedido e todos os GIROS GRÁTIS restantes são removidos."
+                                                "O valor máximo do prêmio é limitado a 5.000 vezes a aposta, tanto no jogo principal quanto nos FREE SPINS. Se o prêmio dos giros totais atingir 5.000 vezes a aposta, o giro termina. O prêmio é concedido e todos os FREE SPINS restantes são removidos."
                                             ]
                                         },
                                         "value": "5000"
@@ -1090,12 +1093,12 @@
             },
             {
                 "Title": {
-                    "EN": "Cristal Shop",
-                    "RU": "Cristal Shop",
-                    "FR": "Cristal Shop",
-                    "ZH": "Cristal Shop",
-                    "US": "Cristal Shop",
-                    "PT": "Cristal Shop"
+                    "EN": "CRISTAL SHOP",
+                    "RU": "CRISTAL SHOP",
+                    "FR": "CRISTAL SHOP",
+                    "ZH": "CRISTAL SHOP",
+                    "US": "CRISTAL SHOP",
+                    "PT": "CRISTAL SHOP"
                 },
                 "sectionType": "BuyBonus",
                 "Type": "Title",
@@ -1114,6 +1117,7 @@
                                         "type": "img",
                                         "divWith": "100%",
                                         "imageType": "big",
+                                        "wrap": "",
                                         "url": [
                                             "images/Settings/Buttons/CANCEL.png"
                                         ],
@@ -1206,12 +1210,12 @@
             },
             {
                 "Title": {
-                    "EN": "Buttons",
-                    "RU": "Кнопки",
-                    "FR": "Boutons",
+                    "EN": "BUTTONS",
+                    "RU": "КНОПКИ",
+                    "FR": "BOUTONS",
                     "ZH": "按钮",
-                    "US": "Buttons",
-                    "PT": "Botões"
+                    "US": "BUTTONS",
+                    "PT": "BOTÕES"
                 },
                 "sectionType": "Button",
                 "Type": "Title",

@@ -380,7 +380,6 @@ p.sub-container-content-flex {
     flex: 1;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .content-div-class-flex-text {
@@ -409,11 +408,28 @@ p.sub-container-content-flex {
 }
 
 .big-image {
-    max-width: 100%;
     object-fit: contain;
 }
 
 .small-image {
     max-width: 50%;
     object-fit: contain;
+}
+
+/* Button Section */
+
+.sub-container-grid-button-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-self: center;
+    align-items: center;
+    width: 90%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 900px) {
+    .sub-container-grid-button-layout {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

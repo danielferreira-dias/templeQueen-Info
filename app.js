@@ -1,4 +1,4 @@
-let currentLanguage = "EN"
+let currentLanguage = "ZH"
 let currentCurrency = "EUR"
 let gameHasBuyBonus = false
 
@@ -63,7 +63,7 @@ function createHTMLFromJSON() {
 
                 // Section Title
                 if (section.Type === "Title") {
-                    if (section.Title[currentLanguage] == 'Cristal Shop') {
+                    if (section.Title[currentLanguage] == 'CRISTAL SHOP') {
                         if (gameHasBuyBonus == true) {
                             const title = document.createElement("h2");
                             if (section.sectionType != "symbolPayout") {
@@ -436,12 +436,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                 }
 
                 for (let j = 0; j < contentDisplay.featureContent.length; j++) {
-                    const contentDiv = document.createElement("div");
-
-                    contentDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
+                    singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
-                        contentDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
@@ -451,28 +450,31 @@ function createNewSections(mainSection, subSection, subContainer) {
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
                                 contentDivImage.classList.add("small-image")
                             }
-                            contentDiv.appendChild(contentDivImage);
+                            singularDiv.appendChild(contentDivImage);
                         }
                     } else if (contentDisplay.featureContent[j].type === "text") {
-                        contentDiv.classList.add("content-div-class-flex-text");
+                        singularDiv.classList.add("content-div-class-flex-text");
                         const textParagraph = document.createElement("p");
                         textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
 
-                        contentDiv.appendChild(textParagraph);
+                        singularDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
 
                         for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
 
-                            contentDiv.classList.add("content-div-class-flex-text");
+                            singularDiv.classList.add("content-div-class-flex-text");
 
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
 
-                            contentDiv.appendChild(textParagraph);
+                            singularDiv.appendChild(textParagraph);
                         }
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
 
+                        contentDiv = document.createElement("div");
+
                         contentDiv.classList.add("content-div-class-flex-img");
+                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
@@ -557,10 +559,14 @@ function createNewSections(mainSection, subSection, subContainer) {
                         // Append columns to parent
                         rightDivParent.appendChild(rightDivMultiplierCol);
                         rightDivParent.appendChild(rightDivValueCol);
-                        contentDiv.appendChild(rightDivParent);
+
+                        contentDiv.appendChild(rightDivParent)
+
+                        singularDiv.appendChild(contentDiv);
+
 
                     } else if (contentDisplay.featureContent[j].type == "divContent") {
-                        contentDiv.classList.add("content-div-class-flex-div");
+                        singularDiv.classList.add("content-div-class-flex-div");
                         // Check if numberOfDivsContent is defined
                         const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
 
@@ -582,7 +588,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                             borderDiv.style.alignItems = "center"; // Align vertically
 
                             // Append the new div to the main contentDiv
-                            contentDiv.appendChild(borderDiv);
+                            singularDiv.appendChild(borderDiv);
 
                             // Access the text array for the current border div
                             const textArray = contentDisplay.featureContent[j].divContentBorder[i];
@@ -599,11 +605,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                         }
                     }
                     if (contentDisplay.featureContent[j].divWith == "small") {
-                        contentDiv.classList.add("div-small-type")
+                        singularDiv.classList.add("div-small-type")
                     }
-                    contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
+                    singularDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
 
-                    singularDiv.appendChild(contentDiv);
+
                 }
 
                 subContainer.appendChild(singularDiv);
@@ -612,13 +618,13 @@ function createNewSections(mainSection, subSection, subContainer) {
                 if (currentLanguage === "UK") {
                     searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
                 } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["野生", "兝费旋转", "额外旋转"]);
+                    searchDynamicParagraphs(["野生", "FREE SPINS", "额外旋转"]);
                 } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛНТНЫЕ ВРНЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
+                    searchDynamicParagraphs(["ДИКИЙ", "FREE SPINS", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
                 } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["WILD", "GIROS GRÝTIS", "GIROS EXTRA"]);
+                    searchDynamicParagraphs(["WILD", "FREE SPINS", "GIROS EXTRA"]);
                 } else if (currentLanguage === "FR") {
-                    searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
+                    searchDynamicParagraphs(["SAUVAGE", "FREE SPINS", "TOURS SUPPLÉMENTAIRES"]);
                 } else if (currentLanguage === "US") {
                     searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
 
@@ -639,8 +645,7 @@ function createButtonSection(section, subSection, subContainer) {
             subSection.displayContent.forEach((contentDisplay) => {
 
                 const buttonContainerDiv = document.createElement("div");
-                buttonContainerDiv.style.display = "flex"
-                buttonContainerDiv.style.flexDirection = "column"
+                buttonContainerDiv.classList.add('sub-container-grid-button-layout')
 
                 if (contentDisplay.Buttons && Array.isArray(contentDisplay.Buttons)) {
                     contentDisplay.Buttons.forEach((button) => {
@@ -651,6 +656,7 @@ function createButtonSection(section, subSection, subContainer) {
 
                         const buttonImage = document.createElement("img");
                         buttonImage.src = button.img;
+                        buttonImage.style.width = '80%'
 
                         const buttonDesc = document.createElement("p");
                         buttonDesc.innerText = button.content[currentLanguage];
@@ -661,7 +667,7 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDiv.style.justifyContent = "center"
                         buttonDiv.style.alignItems = "center"
                         buttonDiv.style.margin = " 10px 0px "
-                        buttonDiv.style.width = '30%'
+                        buttonDiv.style.flex = '0 0 30%'
                         buttonDesc.style.textAlign = 'left'
 
                         const buttonDivText = document.createElement("div");
@@ -705,12 +711,13 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                 }
 
                 for (let j = 0; j < contentDisplay.featureContent.length; j++) {
-                    const contentDiv = document.createElement("div");
+                    const singularDiv = document.createElement("div");
 
-                    contentDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
+                    singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
-                        contentDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
@@ -720,28 +727,29 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
                                 contentDivImage.classList.add("small-image")
                             }
-                            contentDiv.appendChild(contentDivImage);
+                            singularDiv.appendChild(contentDivImage);
                         }
                     } else if (contentDisplay.featureContent[j].type === "text") {
-                        contentDiv.classList.add("content-div-class-flex-text");
+                        singularDiv.classList.add("content-div-class-flex-text");
                         const textParagraph = document.createElement("p");
                         textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
 
-                        contentDiv.appendChild(textParagraph);
+                        singularDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
 
                         for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
 
-                            contentDiv.classList.add("content-div-class-flex-text");
+                            singularDiv.classList.add("content-div-class-flex-text");
 
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
 
-                            contentDiv.appendChild(textParagraph);
+                            singularDiv.appendChild(textParagraph);
                         }
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
 
-                        contentDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.classList.add("content-div-class-flex-img");
+                        singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
@@ -751,7 +759,7 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
                                 contentDivImage.classList.add("small-image")
                             }
-                            contentDiv.appendChild(contentDivImage);
+                            singularDiv.appendChild(contentDivImage);
                         }
 
                         const numberOfTextsDiv = document.createElement("div");
@@ -826,10 +834,10 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                         // Append columns to parent
                         rightDivParent.appendChild(rightDivMultiplierCol);
                         rightDivParent.appendChild(rightDivValueCol);
-                        contentDiv.appendChild(rightDivParent);
+                        singularDiv.appendChild(rightDivParent);
 
                     } else if (contentDisplay.featureContent[j].type == "divContent") {
-                        contentDiv.classList.add("content-div-class-flex-div");
+                        singularDiv.classList.add("content-div-class-flex-div");
                         // Check if numberOfDivsContent is defined
                         const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
 
@@ -851,7 +859,7 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             borderDiv.style.alignItems = "center"; // Align vertically
 
                             // Append the new div to the main contentDiv
-                            contentDiv.appendChild(borderDiv);
+                            singularDiv.appendChild(borderDiv);
 
                             // Access the text array for the current border div
                             const textArray = contentDisplay.featureContent[j].divContentBorder[i];
@@ -868,31 +876,28 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                         }
                     }
                     if (contentDisplay.featureContent[j].divWith == "small") {
-                        contentDiv.classList.add("div-small-type")
+                        singularDiv.classList.add("div-small-type")
                     }
-                    contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
+                    singularDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
 
-                    singularDiv.appendChild(contentDiv);
+
                 }
 
                 subContainer.appendChild(singularDiv);
 
                 // Enter Words to Search based on current language
                 if (currentLanguage === "UK") {
-                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["野生", "兝费旋转", "额外旋转"]);
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["ДИКИЙ", "БЕСПЛНТНЫЕ ВРНЩЕНИЯ", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["WILD", "GIROS GRÝTIS", "GIROS EXTRA"]);
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 } else if (currentLanguage === "FR") {
-                    searchDynamicParagraphs(["SAUVAGE", "TOURS GRATUITS", "TOURS SUPPLÉMENTAIRES"]);
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 } else if (currentLanguage === "US") {
-                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
-
-                } else if (currentLanguage == "CHIN") {
-                    searchDynamicParagraphs("")
+                    searchDynamicParagraphs(["FREE SPINS"]);
                 }
 
             });
