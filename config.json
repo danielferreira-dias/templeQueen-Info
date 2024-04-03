@@ -1222,7 +1222,7 @@
                             {
                                 "Buttons": [
                                     {
-                                        "img": "images/Settings/Buttons/CONFIRM.png",
+                                        "img": "images/Settings/Buttons/SPIN.png",
                                         "content": {
                                             "EN": [
                                                 "Starts the game play"
@@ -1248,7 +1248,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/AUTOPLAY.png",
                                         "content": {
                                             "EN": [
                                                 "Opens the Autoplay menu."
@@ -1274,7 +1274,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/BET.png",
                                         "content": {
                                             "EN": [
                                                 "Opens the Bet menu."
@@ -1404,7 +1404,7 @@
                                         }
                                     },
                                     {
-                                        "img": "images/Settings/Buttons/CANCEL.png",
+                                        "img": "images/Settings/Buttons/LANGUAGE.png",
                                         "content": {
                                             "EN": [
                                                 "Changes game language."

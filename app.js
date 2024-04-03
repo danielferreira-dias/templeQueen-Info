@@ -1,4 +1,4 @@
-let currentLanguage = "ZH"
+let currentLanguage = "EN"
 let currentCurrency = "EUR"
 let gameHasBuyBonus = false
 
@@ -157,7 +157,6 @@ function createHTMLFromJSON() {
 }
 
 // Backbone Functions
-
 function getRandomColor() {
     // Get the color at the random index
     const color = "ff0096"
@@ -165,11 +164,6 @@ function getRandomColor() {
     // Return the chosen color
     return color;
 }
-
-// Call the function to create Heading Section
-createHeadingSection();
-// Call the function to start populating content
-createHTMLFromJSON();
 
 // Call The Function to create Symbol Section
 function createSymbolSection(section, subSection, subContainer) {
@@ -276,7 +270,6 @@ function createSymbolSection(section, subSection, subContainer) {
         }
     }
 };
-
 
 // Call The Function to create Line Layout Section
 function createLineLayoutSection(mainSection, section, subSection, subContainer) {
@@ -660,13 +653,14 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDiv.style.justifyContent = "center"
                         buttonDiv.style.alignItems = "center"
                         buttonDiv.style.margin = " 10px 0px "
+                        buttonDiv.style.width = '30%'
 
                         const buttonDivText = document.createElement("div");
                         buttonDivText.style.display = "flex"
                         buttonDivText.style.flexDirection = "column"
                         buttonDivText.style.justifyContent = "center"
-                        buttonDivText.style.alignItems = "center"
                         buttonDivText.style.margin = " 10px 0px "
+                        buttonDivText.style.flex = 1
 
                         buttonDiv.appendChild(buttonImage);
                         buttonDivText.appendChild(buttonDesc);
@@ -979,6 +973,10 @@ function colorWordsInCapsLock() {
     });
 }
 
+// Call the function to create Heading Section
+createHeadingSection();
 
+// Call the function to start populating content
+createHTMLFromJSON();
 
 
