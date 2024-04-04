@@ -1,4 +1,4 @@
-let currentLanguage = "EN"
+let currentLanguage = "IT"
 let currentCurrency = "EUR"
 let gameHasBuyBonus = false
 
@@ -971,7 +971,6 @@ function searchDynamicParagraphs(keyWords) {
         // Iterate over each search term
         keyWords.forEach(searchTerm => {
             // Check if the text content of the <p> element contains the search term
-            console.log(paragraph.textContent)
 
             if (paragraph.textContent.includes(searchTerm)) {
                 // Split the paragraph's text content into parts based on the search term
