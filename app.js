@@ -433,6 +433,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                     rtpValue.style.fontSize = "3.0rem"
                                     rtpValue.style.color = "#ff0096"
                                     containerRTP.style.flexDirection = "column"
+                                    containerRTP.style.flexWrap = "wrap"
 
                                     break;
                                 case "maxWinValueLimit":
@@ -743,6 +744,7 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDiv.style.margin = " 10px 0px "
                         buttonDiv.style.flex = '0 0 30%'
                         buttonDesc.style.textAlign = 'left'
+                        buttonDesc.style.fontSize = '1.7rem'
 
                         const buttonDivText = document.createElement("div");
                         buttonDivText.style.display = "flex"
