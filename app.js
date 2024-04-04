@@ -1,6 +1,7 @@
 let currentLanguage = "IT"
 let currentCurrency = "EUR"
 let gameHasBuyBonus = false
+let mainColor = "#ff0096"
 
 function closeInfo() {
     console.log("Closing info");
@@ -69,11 +70,11 @@ function createHTMLFromJSON() {
                             if (section.sectionType != "symbolPayout") {
                                 title.style.border = "groove"
                                 title.style.borderWidth = "2px 0px 1px 0px"
-                                title.style.borderColor = "#ff0096"
+                                title.style.borderColor = mainColor
                             } else {
                                 title.style.border = "groove"
                                 title.style.borderWidth = "0px 0px 1px 0px"
-                                title.style.borderColor = "#ff0096"
+                                title.style.borderColor = mainColor
                             }
 
                             title.textContent = section.Title[currentLanguage];
@@ -85,11 +86,11 @@ function createHTMLFromJSON() {
                         if (section.sectionType != "symbolPayout") {
                             title.style.border = "groove"
                             title.style.borderWidth = "2px 0px 1px 0px"
-                            title.style.borderColor = "#ff0096"
+                            title.style.borderColor = mainColor
                         } else {
                             title.style.border = "groove"
                             title.style.borderWidth = "0px 0px 1px 0px"
-                            title.style.borderColor = "#ff0096"
+                            title.style.borderColor = mainColor
                         }
 
                         title.textContent = section.Title[currentLanguage];
@@ -431,7 +432,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
 
                                     rtpValue.style.textAlign = "center"
                                     rtpValue.style.fontSize = "3.0rem"
-                                    rtpValue.style.color = "#ff0096"
+                                    rtpValue.style.color = mainColor
                                     containerRTP.style.flexDirection = "column"
                                     containerRTP.style.flexWrap = "wrap"
 
@@ -457,7 +458,8 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             if (highlightWords && Array.isArray(highlightWords)) {
                                 highlightWords.forEach((highlightWord) => {
                                     const regex = new RegExp(highlightWord.trim(), "gi");
-                                    typeOfListText.innerHTML = typeOfListText.innerHTML.replace(regex, `<span style="color: #ff0096;">${highlightWord.trim()}</span>`);
+                                    typeOfListText.innerHTML = typeOfListText.innerHTML.replace(regex, `<span style="color: ${mainColor};">${highlightWord.trim()}</span>`);
+
                                 });
                             }
 
@@ -994,7 +996,7 @@ function searchDynamicParagraphs(keyWords) {
                     if (index < parts.length - 1) {
                         const searchTermSpan = document.createElement('span');
                         searchTermSpan.textContent = searchTerm;
-                        searchTermSpan.style.color = '#ff0096'; // Apply blue color
+                        searchTermSpan.style.color = mainColor; // Apply blue color
                         fragment.appendChild(searchTermSpan);
                     }
                 });
