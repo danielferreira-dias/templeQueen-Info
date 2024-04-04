@@ -8,7 +8,8 @@
                     "FR": "PAIEMENT DES SYMBOLES",
                     "ZH": "符号支付",
                     "US": "SYMBOL PAYOUT",
-                    "PT": "PAGAMENTO DE SÍMBOLOS"
+                    "PT": "PAGAMENTO DE SÍMBOLOS",
+                    "IT": "PAGAMENTO DEI SIMBOLI"
                 },
                 "Type": "Title",
                 "sectionType": "symbolPayout",
@@ -252,7 +253,8 @@
                     "FR": "DISPOSITION DES LIGNES",
                     "ZH": "线路布局",
                     "US": "LINE LAYOUT",
-                    "PT": "LAYOUT DA LINHA"
+                    "PT": "LAYOUT DA LINHA",
+                    "IT": "LAYOUT DELLE LINEE"
                 },
                 "sectionType": "lineLayout",
                 "Type": "Title",
@@ -419,11 +421,12 @@
             {
                 "Title": {
                     "EN": "FEATURES",
-                    "RU": "ОСОБЕННОСТИ",
-                    "FR": "FONCTIONNALITÉS",
-                    "ZH": "特点",
+                    "RU": "FEATURES",
+                    "FR": "FEATURES",
+                    "ZH": "FEATURES",
                     "US": "FEATURES",
-                    "PT": "RECURSOS"
+                    "PT": "FEATURES",
+                    "IT": "FEATURES"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -494,17 +497,17 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "100,00",
+                                                "value": "100.00",
                                                 "specialContent": null
                                             },
                                             {
                                                 "multipliers": "x4",
-                                                "value": "10,00",
+                                                "value": "10.00",
                                                 "specialContent": null
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "1,00",
+                                                "value": "1.00",
                                                 "specialContent": null
                                             }
                                         ],
@@ -609,7 +612,8 @@
                     "FR": "FREE SPINS",
                     "ZH": "FREE SPINS",
                     "US": "FREE SPINS",
-                    "PT": "FREE SPINS"
+                    "PT": "FREE SPINS",
+                    "IT": "FREE SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -686,7 +690,8 @@
                     "FR": "EXTRA SPINS",
                     "ZH": "EXTRA SPINS",
                     "US": "EXTRA SPINS",
-                    "PT": "EXTRA SPINS"
+                    "PT": "EXTRA SPINS",
+                    "IT": "EXTRA SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -844,7 +849,8 @@
                     "FR": "FREE SPINS",
                     "ZH": "FREE SPINS",
                     "US": "FREE SPINS",
-                    "PT": "FREE SPINS"
+                    "PT": "FREE SPINS",
+                    "IT": "FREE SPINS"
                 },
                 "sectionType": "Feature",
                 "Type": "Title",
@@ -935,7 +941,8 @@
                     "FR": "RÈGLES",
                     "ZH": "规则",
                     "US": "RULES",
-                    "PT": "REGRAS"
+                    "PT": "REGRAS",
+                    "IT": "REGOLE"
                 },
                 "sectionType": "Rules",
                 "Type": "Title",
@@ -1098,7 +1105,8 @@
                     "FR": "CRISTAL SHOP",
                     "ZH": "CRISTAL SHOP",
                     "US": "CRISTAL SHOP",
-                    "PT": "CRISTAL SHOP"
+                    "PT": "CRISTAL SHOP",
+                    "IT": "CRISTAL SHOP"
                 },
                 "sectionType": "BuyBonus",
                 "Type": "Title",
@@ -1215,7 +1223,8 @@
                     "FR": "BOUTONS",
                     "ZH": "按钮",
                     "US": "BUTTONS",
-                    "PT": "BOTÕES"
+                    "PT": "BOTÕES",
+                    "IT": "PULSANTI"
                 },
                 "sectionType": "Button",
                 "Type": "Title",

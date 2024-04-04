@@ -1,4 +1,4 @@
-let currentLanguage = "ZH"
+let currentLanguage = "EN"
 let currentCurrency = "EUR"
 let gameHasBuyBonus = false
 
@@ -135,7 +135,7 @@ function createHTMLFromJSON() {
                     createNewSections(section, subSection, subContainer)
 
                     // Rule Section
-                    createRuleSection(subSection, subContainer)
+                    createRuleSection(section, subSection, subContainer)
 
                     // Button Page
                     createButtonSection(section, subSection, subContainer)
@@ -365,51 +365,118 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
 
 }
 
-// Call The Function to create Rules Section
-function createRuleSection(subSection, subContainer) {
-    if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
-        subSection.displayContent.forEach((contentDisplay) => {
-            if (contentDisplay.wording && Array.isArray(contentDisplay.wording)) {
-                contentDisplay.wording.forEach((word) => {
-                    if (word.Type === "text" && word.content[currentLanguage]) {
-                        let typeOfList;
+function createRuleSection(mainSection, subSection, subContainer) {
+    if (mainSection.sectionType == 'Rules') {
+        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+            subSection.displayContent.forEach((contentDisplay) => {
+                if (contentDisplay.wording && Array.isArray(contentDisplay.wording)) {
+                    contentDisplay.wording.forEach((word) => {
+                        if (word.Type === "text" && word.content[currentLanguage]) {
+                            let typeOfListText;
+                            let typeOfListValue;
+                            let rtpValue;
+                            let containerRTP;
 
-                        if (contentDisplay.listType == "li") {
-                            typeOfList = document.createElement("li");
-                        } else {
-                            typeOfList = document.createElement("p");
+                            if (contentDisplay.listType == "li") {
+                                typeOfListText = document.createElement("li");
+                                typeOfListValue = document.createElement("li");
+                            } else {
+                                typeOfListText = document.createElement("p");
+                                typeOfListValue = document.createElement("p");
+                            }
+
+                            containerRTP = document.createElement("div")
+
+                            containerRTP.style.display = "flex"
+                            containerRTP.style.justifyContent = "center"
+
+                            // Format the text content based on valueType
+                            switch (word.valueType) {
+                                case "puntataMinima":
+                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = `${word.value} ${currentCurrency}`;
+
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.appendChild(typeOfListValue)
+
+
+
+                                    containerRTP.style.flexDirection = "row"
+                                case "puntataMaxima":
+                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = `${word.value} ${currentCurrency}`;
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.appendChild(typeOfListValue)
+                                    containerRTP.style.flexDirection = "row"
+                                    break;
+                                case "maxWinValue":
+                                    typeOfListText.textContent = `${word.content[currentLanguage]}`;
+                                    subContainer.appendChild(typeOfListText);
+
+                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = `${word.value}x the bet`;
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.appendChild(typeOfListValue)
+                                    containerRTP.style.flexDirection = "row"
+
+                                    break;
+                                case "rtpValue":
+
+                                    rtpValue = document.createElement("p");
+                                    typeOfListText.textContent = `${word.content[currentLanguage]}`;
+                                    rtpValue.textContent = `${word.value}`
+
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.appendChild(rtpValue)
+
+                                    rtpValue.style.textAlign = "center"
+                                    rtpValue.style.fontSize = "3.0rem"
+                                    rtpValue.style.color = "#ff0096"
+                                    containerRTP.style.flexDirection = "column"
+
+                                    break;
+                                case "maxWinValueLimit":
+                                    typeOfListText.textContent = `${word.content[currentLanguage]}`;
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.style.flexDirection = "row"
+                                    break;
+                                default:
+                                    typeOfListText.textContent = word.Text;
+                                    containerRTP.appendChild(typeOfListText)
+                                    containerRTP.style.flexDirection = "row"
+                            }
+
+                            if (currentLanguage == 'IT') {
+                                highlightWords = ["Minima", "Massima", "valore massimo"]
+                            } else if (currentLanguage == 'EN') {
+                                highlightWords = ["Minimum", "Maximum value", "Max", "win"]
+                            }
+
+                            // Highlight specific words
+                            if (highlightWords && Array.isArray(highlightWords)) {
+                                highlightWords.forEach((highlightWord) => {
+                                    const regex = new RegExp(highlightWord.trim(), "gi");
+                                    typeOfListText.innerHTML = typeOfListText.innerHTML.replace(regex, `<span style="color: #ff0096;">${highlightWord.trim()}</span>`);
+                                });
+                            }
+
+                            // Apply common styling and append to the container
+                            subContainer.style.flexDirection = "column";
+                            subContainer.classList.add("sub-container-flex");
+                            typeOfListText.style.textAlign = "center";
+                            typeOfListValue.style.textAlign = "center";
+
+                            subContainer.appendChild(containerRTP);
+
                         }
-
-                        // Format the text content based on valueType
-                        switch (word.valueType) {
-                            case "puntataMinima":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currentCurrency}`;
-                            case "puntataMaxima":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value} ${currentCurrency}`;
-                                break;
-                            case "maxWinValue":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}x the bet`;
-                                break;
-                            case "rtpValue":
-                                typeOfList.textContent = `${word.content[currentLanguage]} ${word.value}`;
-                                break;
-                            case "maxWinValueLimit":
-                                typeOfList.textContent = `${word.content[currentLanguage]}`;
-                                break;
-                            default:
-                                typeOfList.textContent = word.Text;
-                        }
-
-                        // Apply common styling and append to the container
-                        subContainer.style.flexDirection = "column";
-                        subContainer.classList.add("sub-container-flex");
-                        subContainer.appendChild(typeOfList);
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
+        }
     }
 }
+
+
 
 // Call to create New Sections
 function createNewSections(mainSection, subSection, subContainer) {
@@ -445,6 +512,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            let imageCount = contentDisplay.featureContent[j].url.length;
+                            if (imageCount > 1) {
+                                let imageWidth = `calc(100% / ${imageCount})`;
+                                contentDivImage.style.width = imageWidth;
+                            }
                             if (contentDisplay.featureContent[j].imageType == "big") {
                                 contentDivImage.classList.add("big-image")
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
@@ -479,6 +551,11 @@ function createNewSections(mainSection, subSection, subContainer) {
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            let imageCount = contentDisplay.featureContent[j].url.length;
+                            if (imageCount > 1) {
+                                let imageWidth = `calc(100% / ${imageCount})`;
+                                contentDivImage.style.width = imageWidth;
+                            }
                             if (contentDisplay.featureContent[j].imageType == "big") {
                                 contentDivImage.classList.add("big-image")
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
@@ -604,9 +681,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                             borderDiv.appendChild(borderText);
                         }
                     }
-                    if (contentDisplay.featureContent[j].divWith == "small") {
-                        singularDiv.classList.add("div-small-type")
-                    }
+
                     singularDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
 
 
@@ -614,22 +689,21 @@ function createNewSections(mainSection, subSection, subContainer) {
 
                 subContainer.appendChild(singularDiv);
 
-                // Enter Words to Search based on current language
-                if (currentLanguage === "UK") {
-                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
+                // // Enter Words to Search based on current language
+                if (currentLanguage === "EN") {
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
                 } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["野生", "FREE SPINS", "额外旋转"]);
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
                 } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["ДИКИЙ", "FREE SPINS", "ДОПОЛНИТЕЛЬНЫЕ ВРНЩЕНИЯ"]);
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
                 } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["WILD", "FREE SPINS", "GIROS EXTRA"]);
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
                 } else if (currentLanguage === "FR") {
-                    searchDynamicParagraphs(["SAUVAGE", "FREE SPINS", "TOURS SUPPLÉMENTAIRES"]);
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
                 } else if (currentLanguage === "US") {
-                    searchDynamicParagraphs(["WILD", "FREE SPINS", "EXTRA SPINS"]);
-
-                } else if (currentLanguage == "CHIN") {
-                    searchDynamicParagraphs("")
+                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
+                } else if (currentLanguage === "IT") {
+                    searchDynamicParagraphs(["FREE SPINS", "WILD", "Minima", "Massima"]);
                 }
 
             });
@@ -875,9 +949,6 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             borderDiv.appendChild(borderText);
                         }
                     }
-                    if (contentDisplay.featureContent[j].divWith == "small") {
-                        singularDiv.classList.add("div-small-type")
-                    }
                     singularDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
 
 
@@ -885,36 +956,23 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
                 subContainer.appendChild(singularDiv);
 
-                // Enter Words to Search based on current language
-                if (currentLanguage === "UK") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                } else if (currentLanguage === "FR") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                } else if (currentLanguage === "US") {
-                    searchDynamicParagraphs(["FREE SPINS"]);
-                }
-
             });
         }
     }
 }
 
-// Function to search for the search terms within dynamically generated <p> elements
 function searchDynamicParagraphs(keyWords) {
-    // Get all <p> elements on the page
+    // Get all <p> elements within the section
     const paragraphs = document.querySelectorAll('p');
 
     // Iterate over each <p> element
     paragraphs.forEach(paragraph => {
+
         // Iterate over each search term
         keyWords.forEach(searchTerm => {
             // Check if the text content of the <p> element contains the search term
+            console.log(paragraph.textContent)
+
             if (paragraph.textContent.includes(searchTerm)) {
                 // Split the paragraph's text content into parts based on the search term
                 const parts = paragraph.textContent.split(searchTerm);
@@ -941,49 +999,10 @@ function searchDynamicParagraphs(keyWords) {
                 });
 
                 // Clear the paragraph's content and append the modified content
-                paragraph.textContent = '';
+                paragraph.innerHTML = '';
                 paragraph.appendChild(fragment);
             }
         });
-    });
-}
-
-// Function to search for words in caps lock within dynamically generated <p> elements
-function colorWordsInCapsLock() {
-    // Get all <p> elements on the page
-    const paragraphs = document.querySelectorAll('p');
-
-    // Iterate over each <p> element
-    paragraphs.forEach(paragraph => {
-        // Split the paragraph's text content into words
-        const words = paragraph.textContent.split(/\s+/);
-
-        // Create a new fragment to hold the modified content
-        const fragment = document.createDocumentFragment();
-
-        // Iterate over the words
-        words.forEach(word => {
-            // Check if the word is in caps lock
-            if (word === word.toUpperCase() && /[A-Z]/.test(word)) {
-                // Create a new span element for the word
-                const span = document.createElement('span');
-                span.textContent = word;
-                span.style.color = 'blue'; // Apply blue color
-
-                // Append the span to the fragment
-                fragment.appendChild(span);
-            } else {
-                // Create a new text node for the word
-                const textNode = document.createTextNode(word + ' ');
-
-                // Append the text node to the fragment
-                fragment.appendChild(textNode);
-            }
-        });
-
-        // Clear the paragraph's content and append the modified content
-        paragraph.textContent = '';
-        paragraph.appendChild(fragment);
     });
 }
 
