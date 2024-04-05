@@ -449,9 +449,9 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             }
 
                             if (currentLanguage == 'IT') {
-                                highlightWords = ["Minima", "Massima", "valore massimo"]
+                                highlightWords = ["Minima", "Massima", "valore massimo", "RTP", "FREE SPINS"]
                             } else if (currentLanguage == 'EN') {
-                                highlightWords = ["Minimum", "Maximum value", "Max", "win"]
+                                highlightWords = ["Minimum", "Maximum value", "Max", "win", "RTP", "FREE SPINS"]
                             }
 
                             // Highlight specific words
