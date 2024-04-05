@@ -717,7 +717,7 @@ function createButtonSection(section, subSection, subContainer) {
 
                         const buttonImage = document.createElement("img");
                         buttonImage.src = button.img;
-                        buttonImage.style.width = '80%'
+                        buttonImage.style.width = '60%'
 
                         const buttonDesc = document.createElement("p");
                         buttonDesc.innerText = button.content[currentLanguage];
