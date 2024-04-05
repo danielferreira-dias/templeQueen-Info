@@ -394,58 +394,42 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             // Format the text content based on valueType
                             switch (word.valueType) {
                                 case "puntataMinima":
-                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
-                                    typeOfListValue.textContent = `${word.value} ${currentCurrency}`;
-
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.appendChild(typeOfListValue)
-
-
-
-                                    containerRTP.style.flexDirection = "row"
                                 case "puntataMaxima":
                                     typeOfListText.textContent = `${word.content[currentLanguage]} `;
                                     typeOfListValue.textContent = `${word.value} ${currentCurrency}`;
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.appendChild(typeOfListValue)
-                                    containerRTP.style.flexDirection = "row"
+                                    containerRTP.appendChild(typeOfListText);
+                                    containerRTP.appendChild(typeOfListValue);
+                                    containerRTP.style.flexDirection = "row";
                                     break;
                                 case "maxWinValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    subContainer.appendChild(typeOfListText);
-
-                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
                                     typeOfListValue.textContent = `${word.value}x the bet`;
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.appendChild(typeOfListValue)
-                                    containerRTP.style.flexDirection = "row"
-
+                                    subContainer.appendChild(typeOfListText);
+                                    containerRTP.appendChild(typeOfListText);
+                                    containerRTP.appendChild(typeOfListValue);
+                                    containerRTP.style.flexDirection = "row";
                                     break;
                                 case "rtpValue":
-
-                                    rtpValue = document.createElement("p");
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    rtpValue.textContent = `${word.value}`
-
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.appendChild(rtpValue)
-
-                                    rtpValue.style.textAlign = "center"
-                                    rtpValue.style.fontSize = "3.0rem"
-                                    rtpValue.style.color = mainColor
-                                    containerRTP.style.flexDirection = "column"
-                                    containerRTP.style.flexWrap = "wrap"
-
+                                    rtpValue = document.createElement("p");
+                                    rtpValue.textContent = `${word.value}`;
+                                    containerRTP.appendChild(typeOfListText);
+                                    containerRTP.appendChild(rtpValue);
+                                    rtpValue.style.textAlign = "center";
+                                    rtpValue.style.fontSize = "3.0rem";
+                                    rtpValue.style.color = mainColor;
+                                    containerRTP.style.flexDirection = "column";
+                                    containerRTP.style.flexWrap = "wrap";
                                     break;
                                 case "maxWinValueLimit":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.style.flexDirection = "row"
+                                    containerRTP.appendChild(typeOfListText);
+                                    containerRTP.style.flexDirection = "row";
                                     break;
                                 default:
                                     typeOfListText.textContent = word.Text;
-                                    containerRTP.appendChild(typeOfListText)
-                                    containerRTP.style.flexDirection = "row"
+                                    containerRTP.appendChild(typeOfListText);
+                                    containerRTP.style.flexDirection = "row";
                             }
 
                             if (currentLanguage == 'IT') {
