@@ -15,12 +15,9 @@ function createHeadingSection() {
     // Create Heading Section
     const headingSectionTitle = document.createElement("h1");
     const versionDateWrapper = document.createElement("div"); // Create a wrapper for version and date
+    headingSectionTitle.style.marginTop = "1.25rem";
     versionDateWrapper.style.textAlign = "center";
-    versionDateWrapper.style.display = "flex";
-    versionDateWrapper.style.flexDirection = "row";
-    versionDateWrapper.style.justifyContent = "center";
     const headingSectionVersion = document.createElement("h3");
-    const headingSectionData = document.createElement("h3");
 
     // Set text content
     headingSectionTitle.textContent = "7Diamond";
@@ -31,7 +28,7 @@ function createHeadingSection() {
 
     // Append version and date into wrapper
     versionDateWrapper.appendChild(headingSectionVersion);
-    versionDateWrapper.appendChild(headingSectionData);
+    // versionDateWrapper.appendChild(headingSectionData);
 
     // Append wrapper to headingSection
     headingSection.appendChild(versionDateWrapper);
@@ -72,10 +69,12 @@ function createHTMLFromJSON() {
                                 title.style.border = "groove"
                                 title.style.borderWidth = "2px 0px 1px 0px"
                                 title.style.borderColor = mainColor
+                                title.style.padding = "25px 0"
                             } else {
                                 title.style.border = "groove"
                                 title.style.borderWidth = "0px 0px 1px 0px"
                                 title.style.borderColor = mainColor
+                                title.style.paddingBottom = "25px"
                             }
 
                             title.textContent = section.Title[currentLanguage];
@@ -88,10 +87,13 @@ function createHTMLFromJSON() {
                             title.style.border = "groove"
                             title.style.borderWidth = "2px 0px 1px 0px"
                             title.style.borderColor = mainColor
+                            title.style.padding = "25px 0"
+
                         } else {
                             title.style.border = "groove"
                             title.style.borderWidth = "0px 0px 1px 0px"
                             title.style.borderColor = mainColor
+                            title.style.paddingBottom = "25px"
                         }
 
                         title.textContent = section.Title[currentLanguage];
@@ -212,7 +214,8 @@ function createSymbolSection(section, subSection, subContainer) {
                     // Right Div Parent
                     const rightDivParent = document.createElement("div");
                     rightDivParent.style.display = "flex";
-                    rightDivParent.style.flexDirection = "row";
+                    rightDivParent.style.marginLeft = "1rem";
+                    // rightDivParent.style.flexDirection = "row";
                     rightDivParent.style.flex = 1;
 
                     // Right Div contains Multipliers
@@ -234,8 +237,8 @@ function createSymbolSection(section, subSection, subContainer) {
                         multiplierText.innerText = dataInfo.multipliers;
 
                         // Apply CSS to control text overflow
-                        multiplierText.style.overflow = "hidden";
-                        multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
+                        // multiplierText.style.overflow = "hidden";
+                        // multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
 
                         listDiv.appendChild(multiplierText);
                         rightDivMultiplierCol.appendChild(listDiv);
@@ -249,8 +252,8 @@ function createSymbolSection(section, subSection, subContainer) {
                         }
 
                         // Apply CSS to control text overflow
-                        valueText.style.overflow = "hidden";
-                        valueText.style.textOverflow = "ellipsis"; // or any other desired style
+                        // valueText.style.overflow = "hidden";
+                        // valueText.style.textOverflow = "ellipsis"; // or any other desired style
 
                         // Create a div to contain both value and special content
                         const valueSpecialContentDiv = document.createElement("div");
@@ -266,8 +269,8 @@ function createSymbolSection(section, subSection, subContainer) {
                             specialContentText.innerText = dataInfo.specialContent;
 
                             // Apply CSS to control text overflow
-                            specialContentText.style.overflow = "hidden";
-                            specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+                            // specialContentText.style.overflow = "hidden";
+                            // specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
 
                             // Append special content text to the div
                             valueSpecialContentDiv.appendChild(specialContentText);
@@ -515,9 +518,9 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 contentDivImage.style.width = imageWidth;
                             }
                             if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.classList.add("big-image")
+                                contentDivImage.style.maxWidth = '75%'
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.classList.add("small-image")
+                                contentDivImage.style.maxWidth = '75%'
                             }
                             singularDiv.appendChild(contentDivImage);
                         }
@@ -554,9 +557,9 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 contentDivImage.style.width = imageWidth;
                             }
                             if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.classList.add("big-image")
+                                contentDivImage.style.maxWidth = '75%'
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.classList.add("small-image")
+                                contentDivImage.style.maxWidth = '75%'
                             }
                             contentDiv.appendChild(contentDivImage);
                         }
@@ -795,9 +798,9 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.classList.add("big-image")
+                                contentDivImage.style.maxWidth = '75%'
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.classList.add("small-image")
+                                contentDivImage.style.maxWidth = '75%'
                             }
                             singularDiv.appendChild(contentDivImage);
                         }
@@ -827,9 +830,9 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
                             if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.classList.add("big-image")
+                                contentDivImage.style.maxWidth = '75%'
                             } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.classList.add("small-image")
+                                contentDivImage.style.maxWidth = '75%'
                             }
                             singularDiv.appendChild(contentDivImage);
                         }
