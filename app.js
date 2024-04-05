@@ -52,6 +52,7 @@ function createHTMLFromJSON() {
             // Create Sections
             const main = document.querySelector(".symbol-section");
 
+            console.log(data.Info)
 
             data.Info.Section.forEach((section) => {
 
@@ -148,8 +149,15 @@ function createHTMLFromJSON() {
 
                 })
 
+                if (section.sectionType === "BuyBonus") {
+                    if (gameHasBuyBonus == true) {
+                        main.appendChild(container)
+                    }
+                } else {
+                    main.appendChild(container)
+                }
 
-                main.appendChild(container)
+
             });
         })
         .catch((error) => {
@@ -303,7 +311,7 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
                                 if (j == 0) {
                                     const number = document.createElement('p');
                                     column.classList.add('line-number');
-                                    number.style.fontSize = "1.5rem"
+                                    number.style.fontSize = "1.2rem"
                                     number.textContent = n + 1
                                     column.appendChild(number)
                                 }
@@ -352,6 +360,7 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
                         } else {
                             typeOfList = document.createElement("p");
                         }
+
                         typeOfList.textContent = text;
 
                         linetContent.appendChild(typeOfList);
@@ -390,6 +399,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
 
                             containerRTP.style.display = "flex"
                             containerRTP.style.justifyContent = "center"
+                            containerRTP.style.flexWrap = "wrap"
 
                             // Format the text content based on valueType
                             switch (word.valueType) {
@@ -730,7 +740,6 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDiv.style.margin = " 10px 0px "
                         buttonDiv.style.flex = '0 0 30%'
                         buttonDesc.style.textAlign = 'left'
-                        buttonDesc.style.fontSize = '1.7rem'
 
                         const buttonDivText = document.createElement("div");
                         buttonDivText.style.display = "flex"
@@ -738,6 +747,7 @@ function createButtonSection(section, subSection, subContainer) {
                         buttonDivText.style.justifyContent = "center"
                         buttonDivText.style.margin = " 10px 0px "
                         buttonDivText.style.flex = 1
+                        buttonDivText.style.textAlign = "left"
 
                         buttonDiv.appendChild(buttonImage);
                         buttonDivText.appendChild(buttonDesc);
