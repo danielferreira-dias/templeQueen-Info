@@ -268,7 +268,6 @@
                                 "lineRows": 3,
                                 "lineCols": 5,
                                 "lines": {
-                                    "Type": "img",
                                     "formation": [
                                         [
                                             1,
@@ -442,7 +441,7 @@
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divWith": "small",
+                                        "divMaxWith": "bigMaxWidth",
                                         "imageType": "big",
                                         "wrap": "wrap",
                                         "url": [
@@ -488,7 +487,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divWith": "small",
+                                        "divMaxWith": "bigMaxWidth",
                                         "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/10.png"
@@ -708,7 +707,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divWith": "small",
+                                        "divMaxWith": "smallMaxWidth",
                                         "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/9.png"
@@ -784,7 +783,7 @@
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divWith": "small",
+                                        "divMaxWith": "smallMaxWidth",
                                         "imageType": "big",
                                         "wrap": "",
                                         "url": [
@@ -1119,11 +1118,11 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divWith": "60%",
+                                "divMaxWith": "smallMaxWidth",
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divWith": "100%",
+                                        "divMaxWith": "smallMaxWidth",
                                         "imageType": "big",
                                         "wrap": "",
                                         "url": [

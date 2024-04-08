@@ -517,10 +517,10 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 let imageWidth = `calc(100% / ${imageCount})`;
                                 contentDivImage.style.width = imageWidth;
                             }
-                            if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.style.maxWidth = '75%'
-                            } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.style.maxWidth = '75%'
+                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
+                                contentDivImage.classList.add('bigMaxWidth')
+                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
+                                contentDivImage.classList.add('smallMaxWidth')
                             }
                             singularDiv.appendChild(contentDivImage);
                         }
@@ -556,10 +556,10 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 let imageWidth = `calc(100% / ${imageCount})`;
                                 contentDivImage.style.width = imageWidth;
                             }
-                            if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.style.maxWidth = '75%'
-                            } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.style.maxWidth = '75%'
+                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
+                                contentDivImage.classList.add('bigMaxWidth')
+                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
+                                contentDivImage.classList.add('smallMaxWidth')
                             }
                             contentDiv.appendChild(contentDivImage);
                         }
@@ -797,10 +797,10 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.style.maxWidth = '75%'
-                            } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.style.maxWidth = '75%'
+                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
+                                contentDivImage.classList.add('bigMaxWidth')
+                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
+                                contentDivImage.classList.add('smallMaxWidth')
                             }
                             singularDiv.appendChild(contentDivImage);
                         }
@@ -829,10 +829,10 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            if (contentDisplay.featureContent[j].imageType == "big") {
-                                contentDivImage.style.maxWidth = '75%'
-                            } else if (contentDisplay.featureContent[j].imageType == "small") {
-                                contentDivImage.style.maxWidth = '75%'
+                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
+                                contentDivImage.classList.add('bigMaxWidth')
+                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
+                                contentDivImage.classList.add('smallMaxWidth')
                             }
                             singularDiv.appendChild(contentDivImage);
                         }

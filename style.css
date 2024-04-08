@@ -374,18 +374,23 @@ p.sub-container-content-flex {
 
 /* Image Section */
 
-.div-big-type {
-    min-width: 50%;
+.smallMaxWidth {
+    max-width: 70%;
 }
 
-.big-image {
-    object-fit: contain;
+.bigMaxWidth {
+    max-width: 75%;
 }
 
-.small-image {
-    max-width: 50%;
-    object-fit: contain;
+@media (max-width: 600px) {
+    .smallMaxWidth{
+        max-width: 55%;
+    }
+    .bigMaxWidth {
+        max-width: 80%;
+    }
 }
+
 
 /* Button Section */
 
