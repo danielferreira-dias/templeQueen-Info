@@ -1,6 +1,6 @@
-let currentLanguage = "IT"
+let currentLanguage = "EN"
 let currentCurrency = "EUR"
-let gameHasBuyBonus = false
+let gameHasBuyBonus = true
 let mainColor = "#ff0096"
 
 function closeInfo() {
@@ -20,7 +20,7 @@ function createHeadingSection() {
     const headingSectionVersion = document.createElement("h3");
 
     // Set text content
-    headingSectionTitle.textContent = "7Diamond";
+    headingSectionTitle.textContent = "Temple Queen";
     headingSectionVersion.textContent = "Game Version: v1.0.0";
 
     // Append elements
@@ -44,12 +44,11 @@ function createHTMLFromJSON() {
         .then((data) => {
 
             // Title of the Game
-            document.title = "7Diamond";
+            document.title = "Temple Queen";
 
             // Create Sections
             const main = document.querySelector(".symbol-section");
 
-            console.log(data.Info)
 
             data.Info.Section.forEach((section) => {
 
@@ -135,11 +134,13 @@ function createHTMLFromJSON() {
                     // Line Layout Section
                     createLineLayoutSection(container, section, subSection, subContainer)
 
+                    // Rule Section
+                    createRuleSection(section, subSection, subContainer)
+
                     // Features Section
                     createNewSections(section, subSection, subContainer)
 
-                    // Rule Section
-                    createRuleSection(section, subSection, subContainer)
+
 
                     // Button Page
                     createButtonSection(section, subSection, subContainer)
@@ -263,10 +264,10 @@ function createSymbolSection(section, subSection, subContainer) {
                         valueSpecialContentDiv.appendChild(valueText);
 
                         // Check if special content exists
-                        if (dataInfo.specialContent != null) {
+                        if (dataInfo.specialContent[currentLanguage] != null) {
                             const specialContentText = document.createElement("p");
                             specialContentText.classList.add("symbol-specialContent-text");
-                            specialContentText.innerText = dataInfo.specialContent;
+                            specialContentText.innerText = dataInfo.specialContent[currentLanguage];
 
                             // Apply CSS to control text overflow
                             // specialContentText.style.overflow = "hidden";
@@ -408,15 +409,15 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             switch (word.valueType) {
                                 case "puntataMinima":
                                 case "puntataMaxima":
-                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
-                                    typeOfListValue.textContent = `${word.value} ${currentCurrency}`;
+                                    typeOfListText.textContent = ' ' + `${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = ' ' + `${word.value} ${currentCurrency}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListValue);
                                     containerRTP.style.flexDirection = "row";
                                     break;
                                 case "maxWinValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    typeOfListValue.textContent = `${word.value}x the bet`;
+                                    typeOfListValue.textContent = ' ' + `${word.value}x the bet`;
                                     subContainer.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListValue);
@@ -425,7 +426,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                 case "rtpValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
                                     rtpValue = document.createElement("p");
-                                    rtpValue.textContent = `${word.value}`;
+                                    rtpValue.textContent = ' ' + `${word.value}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(rtpValue);
                                     rtpValue.style.textAlign = "center";
@@ -435,7 +436,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                     containerRTP.style.flexWrap = "wrap";
                                     break;
                                 case "maxWinValueLimit":
-                                    typeOfListText.textContent = `${word.content[currentLanguage]}`;
+                                    typeOfListText.textContent = ' ' + `${word.content[currentLanguage]}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.style.flexDirection = "row";
                                     break;
@@ -455,7 +456,7 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             if (highlightWords && Array.isArray(highlightWords)) {
                                 highlightWords.forEach((highlightWord) => {
                                     const regex = new RegExp(highlightWord.trim(), "gi");
-                                    typeOfListText.innerHTML = typeOfListText.innerHTML.replace(regex, `<span style="color: ${mainColor};">${highlightWord.trim()}</span>`);
+                                    typeOfListText.innerHTML = typeOfListText.innerHTML.replace(regex, `<span style="color: ${mainColor};">${highlightWord.trim()} </span>`);
 
                                 });
                             }
@@ -503,48 +504,13 @@ function createNewSections(mainSection, subSection, subContainer) {
                 }
 
                 for (let j = 0; j < contentDisplay.featureContent.length; j++) {
+
+
                     singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
-                        singularDiv.classList.add("content-div-class-flex-img");
-                        singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
-
-                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
-                            const contentDivImage = document.createElement("img");
-                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            let imageCount = contentDisplay.featureContent[j].url.length;
-                            if (imageCount > 1) {
-                                let imageWidth = `calc(100% / ${imageCount})`;
-                                contentDivImage.style.width = imageWidth;
-                            }
-                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
-                                contentDivImage.classList.add('bigMaxWidth')
-                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
-                                contentDivImage.classList.add('smallMaxWidth')
-                            }
-                            singularDiv.appendChild(contentDivImage);
-                        }
-                    } else if (contentDisplay.featureContent[j].type === "text") {
-                        singularDiv.classList.add("content-div-class-flex-text");
-                        const textParagraph = document.createElement("p");
-                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
-
-                        singularDiv.appendChild(textParagraph);
-                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
-
-                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
-
-                            singularDiv.classList.add("content-div-class-flex-text");
-
-                            const textParagraph = document.createElement("p");
-                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
-
-                            singularDiv.appendChild(textParagraph);
-                        }
-                    } else if (contentDisplay.featureContent[j].type === "img_text") {
 
                         contentDiv = document.createElement("div");
-
                         contentDiv.classList.add("content-div-class-flex-img");
                         contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
@@ -563,6 +529,50 @@ function createNewSections(mainSection, subSection, subContainer) {
                             }
                             contentDiv.appendChild(contentDivImage);
                         }
+                        singularDiv.appendChild(contentDiv);
+                    } else if (contentDisplay.featureContent[j].type === "text") {
+                        singularDiv.classList.add("content-div-class-flex-text");
+                        const textParagraph = document.createElement("p");
+                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
+
+                        singularDiv.appendChild(textParagraph);
+                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
+                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
+                            singularDiv.classList.add("content-div-class-flex-text");
+                            const textParagraph = document.createElement("p");
+                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
+                            singularDiv.appendChild(textParagraph);
+
+                            // Add \n\n after each paragraph except the last one
+                            if (i < contentDisplay.featureContent[j].content[currentLanguage].length - 1) {
+                                singularDiv.appendChild(document.createElement("br"));
+                                singularDiv.appendChild(document.createElement("br"));
+                            }
+                        }
+                    } else if (contentDisplay.featureContent[j].type === "img_text") {
+
+                        contentDiv = document.createElement("div");
+
+                        contentDiv.classList.add("content-div-class-flex-img");
+                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
+                        contentDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
+
+                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
+                            const contentDivImage = document.createElement("img");
+                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            let imageCount = contentDisplay.featureContent[j].url.length;
+                            if (imageCount > 1) {
+                                let imageWidth = `calc(100% / ${imageCount})`;
+                                contentDivImage.style.width = imageWidth;
+                            }
+                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
+                                contentDivImage.classList.add('bigMaxWidth')
+                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
+                                contentDivImage.classList.add('smallMaxWidth')
+                            }
+                            contentDiv.appendChild(contentDivImage);
+                        }
+
 
                         const numberOfTextsDiv = document.createElement("div");
                         numberOfTextsDiv.style.display = "flex"
@@ -584,60 +594,68 @@ function createNewSections(mainSection, subSection, subContainer) {
 
 
                         // Iterate over symbols and display multipliers, values, and special content
-                        contentDisplay.featureContent[j].data.forEach((dataInfo) => {
-                            const listDiv = document.createElement("div");
-                            listDiv.classList.add("list-div");
+                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
+                            contentDisplay.featureContent[j].data.forEach((dataInfo) => {
+                                const listDiv = document.createElement("div");
+                                listDiv.classList.add("list-div");
 
-                            const multiplierText = document.createElement("p");
-                            multiplierText.classList.add("multiplier-symbol-value-text");
-                            multiplierText.innerText = dataInfo.multipliers;
-
-                            // Apply CSS to control text overflow
-                            multiplierText.style.overflow = "hidden";
-                            multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                            listDiv.appendChild(multiplierText);
-                            rightDivMultiplierCol.appendChild(listDiv);
-
-                            const valueText = document.createElement("p");
-                            valueText.classList.add("symbol-value-text");
-                            valueText.innerText = dataInfo.value + '' + currentCurrency;
-
-                            // Apply CSS to control text overflow
-                            valueText.style.overflow = "hidden";
-                            valueText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                            // Create a div to contain both value and special content
-                            const valueSpecialContentDiv = document.createElement("div");
-                            valueSpecialContentDiv.classList.add("value-special-content-div");
-
-                            // Append value text to the div
-                            valueSpecialContentDiv.appendChild(valueText);
-
-                            // Check if special content exists
-                            if (dataInfo.specialContent != null) {
-                                const specialContentText = document.createElement("p");
-                                specialContentText.classList.add("symbol-specialContent-text");
-                                specialContentText.innerText = dataInfo.specialContent;
+                                const multiplierText = document.createElement("p");
+                                multiplierText.classList.add("multiplier-symbol-value-text");
+                                multiplierText.innerText = dataInfo.multipliers;
 
                                 // Apply CSS to control text overflow
-                                specialContentText.style.overflow = "hidden";
-                                specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+                                multiplierText.style.overflow = "hidden";
+                                multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
 
-                                // Append special content text to the div
-                                valueSpecialContentDiv.appendChild(specialContentText);
-                            }
+                                listDiv.appendChild(multiplierText);
+                                rightDivMultiplierCol.appendChild(listDiv);
 
-                            // Append the div containing both value and special content to the column
-                            rightDivValueCol.appendChild(valueSpecialContentDiv);
-                        })
-                        numberOfTextsDiv.appendChild(rightDivValueCol)
+                                const valueText = document.createElement("p");
+                                valueText.classList.add("symbol-value-text");
+                                if (dataInfo.value != "") {
+                                    valueText.innerText = dataInfo.value + '' + currentCurrency;
+                                } else {
+                                    valueText.innerText = dataInfo.value
+                                }
 
-                        // Append columns to parent
-                        rightDivParent.appendChild(rightDivMultiplierCol);
-                        rightDivParent.appendChild(rightDivValueCol);
+                                // Apply CSS to control text overflow
+                                valueText.style.overflow = "hidden";
+                                valueText.style.textOverflow = "ellipsis"; // or any other desired style
 
-                        contentDiv.appendChild(rightDivParent)
+                                // Create a div to contain both value and special content
+                                const valueSpecialContentDiv = document.createElement("div");
+                                valueSpecialContentDiv.classList.add("value-special-content-div");
+
+                                // Append value text to the div
+                                valueSpecialContentDiv.appendChild(valueText);
+
+                                // Check if special content exists
+                                if (dataInfo.specialContent[0][currentLanguage] != null) {
+                                    const specialContentText = document.createElement("p");
+                                    specialContentText.classList.add("symbol-specialContent-text");
+                                    specialContentText.innerText = dataInfo.specialContent[0][currentLanguage];
+
+                                    // Apply CSS to control text overflow
+                                    specialContentText.style.overflow = "hidden";
+                                    specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                                    // Append special content text to the div
+                                    valueSpecialContentDiv.appendChild(specialContentText);
+                                }
+
+                                // Append the div containing both value and special content to the column
+                                rightDivValueCol.appendChild(valueSpecialContentDiv);
+                            })
+                        }
+                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
+                            numberOfTextsDiv.appendChild(rightDivValueCol)
+
+                            // Append columns to parent
+                            rightDivParent.appendChild(rightDivMultiplierCol);
+                            rightDivParent.appendChild(rightDivValueCol);
+
+                            contentDiv.appendChild(rightDivParent)
+                        }
 
                         singularDiv.appendChild(contentDiv);
 
@@ -786,24 +804,31 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                 }
 
                 for (let j = 0; j < contentDisplay.featureContent.length; j++) {
-                    const singularDiv = document.createElement("div");
 
                     singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
-                        singularDiv.classList.add("content-div-class-flex-img");
-                        singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
+
+                        contentDiv = document.createElement("div");
+                        contentDiv.classList.add("content-div-class-flex-img");
+                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
+                            let imageCount = contentDisplay.featureContent[j].url.length;
+                            if (imageCount > 1) {
+                                let imageWidth = `calc(100% / ${imageCount})`;
+                                contentDivImage.style.width = imageWidth;
+                            }
                             if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
                                 contentDivImage.classList.add('bigMaxWidth')
                             } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
                                 contentDivImage.classList.add('smallMaxWidth')
                             }
-                            singularDiv.appendChild(contentDivImage);
+                            contentDiv.appendChild(contentDivImage);
                         }
+                        singularDiv.appendChild(contentDiv);
                     } else if (contentDisplay.featureContent[j].type === "text") {
                         singularDiv.classList.add("content-div-class-flex-text");
                         const textParagraph = document.createElement("p");
@@ -811,24 +836,33 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
                         singularDiv.appendChild(textParagraph);
                     } else if (contentDisplay.featureContent[j].type === "plural_text") {
-
                         for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
-
                             singularDiv.classList.add("content-div-class-flex-text");
-
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
-
                             singularDiv.appendChild(textParagraph);
+
+                            // Add \n\n after each paragraph except the last one
+                            if (i < contentDisplay.featureContent[j].content[currentLanguage].length - 1) {
+                                singularDiv.appendChild(document.createElement("br"));
+                                singularDiv.appendChild(document.createElement("br"));
+                            }
                         }
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
-
+                        console.log("teste")
                         singularDiv.classList.add("content-div-class-flex-img");
                         singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
+                        singularDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");
                             contentDivImage.src = contentDisplay.featureContent[j].url[i];
+
+                            let imageCount = contentDisplay.featureContent[j].url.length;
+                            if (imageCount > 1) {
+                                let imageWidth = `calc(100% / ${imageCount})`;
+                                contentDivImage.style.width = imageWidth;
+                            }
                             if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
                                 contentDivImage.classList.add('bigMaxWidth')
                             } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
@@ -857,59 +891,71 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
 
                         // Iterate over symbols and display multipliers, values, and special content
-                        contentDisplay.featureContent[j].data.forEach((dataInfo) => {
-                            const listDiv = document.createElement("div");
-                            listDiv.classList.add("list-div");
+                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
+                            contentDisplay.featureContent[j].data.forEach((dataInfo) => {
+                                const listDiv = document.createElement("div");
+                                listDiv.classList.add("list-div");
 
-                            const multiplierText = document.createElement("p");
-                            multiplierText.classList.add("multiplier-symbol-value-text");
-                            multiplierText.innerText = dataInfo.multipliers;
-
-                            // Apply CSS to control text overflow
-                            multiplierText.style.overflow = "hidden";
-                            multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                            listDiv.appendChild(multiplierText);
-                            rightDivMultiplierCol.appendChild(listDiv);
-
-                            const valueText = document.createElement("p");
-                            valueText.classList.add("symbol-value-text");
-                            valueText.innerText = dataInfo.value + currentCurrency;
-
-                            // Apply CSS to control text overflow
-                            valueText.style.overflow = "hidden";
-                            valueText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                            // Create a div to contain both value and special content
-                            const valueSpecialContentDiv = document.createElement("div");
-                            valueSpecialContentDiv.classList.add("value-special-content-div");
-
-                            // Append value text to the div
-                            valueSpecialContentDiv.appendChild(valueText);
-
-                            // Check if special content exists
-                            if (dataInfo.specialContent != null) {
-                                const specialContentText = document.createElement("p");
-                                specialContentText.classList.add("symbol-specialContent-text");
-                                specialContentText.innerText = dataInfo.specialContent;
+                                const multiplierText = document.createElement("p");
+                                multiplierText.classList.add("multiplier-symbol-value-text");
+                                multiplierText.innerText = dataInfo.multipliers;
 
                                 // Apply CSS to control text overflow
-                                specialContentText.style.overflow = "hidden";
-                                specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+                                multiplierText.style.overflow = "hidden";
+                                multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
 
-                                // Append special content text to the div
-                                valueSpecialContentDiv.appendChild(specialContentText);
-                            }
+                                listDiv.appendChild(multiplierText);
+                                rightDivMultiplierCol.appendChild(listDiv);
 
-                            // Append the div containing both value and special content to the column
-                            rightDivValueCol.appendChild(valueSpecialContentDiv);
-                        })
-                        numberOfTextsDiv.appendChild(rightDivValueCol)
+                                const valueText = document.createElement("p");
+                                valueText.classList.add("symbol-value-text");
+                                if (dataInfo.value != "") {
+                                    valueText.innerText = dataInfo.value + '' + currentCurrency;
+                                } else {
+                                    valueText.innerText = dataInfo.value
+                                }
 
-                        // Append columns to parent
-                        rightDivParent.appendChild(rightDivMultiplierCol);
-                        rightDivParent.appendChild(rightDivValueCol);
-                        singularDiv.appendChild(rightDivParent);
+                                // Apply CSS to control text overflow
+                                valueText.style.overflow = "hidden";
+                                valueText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                                // Create a div to contain both value and special content
+                                const valueSpecialContentDiv = document.createElement("div");
+                                valueSpecialContentDiv.classList.add("value-special-content-div");
+
+                                // Append value text to the div
+                                valueSpecialContentDiv.appendChild(valueText);
+
+                                // Check if special content exists
+                                if (dataInfo.specialContent[0][currentLanguage] != null) {
+                                    const specialContentText = document.createElement("p");
+                                    specialContentText.classList.add("symbol-specialContent-text");
+                                    specialContentText.innerText = dataInfo.specialContent[0][currentLanguage];
+
+                                    // Apply CSS to control text overflow
+                                    specialContentText.style.overflow = "hidden";
+                                    specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+
+                                    // Append special content text to the div
+                                    valueSpecialContentDiv.appendChild(specialContentText);
+                                }
+
+                                // Append the div containing both value and special content to the column
+                                rightDivValueCol.appendChild(valueSpecialContentDiv);
+                            })
+                        }
+
+                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
+                            numberOfTextsDiv.appendChild(rightDivValueCol)
+
+                            // Append columns to parent
+                            rightDivParent.appendChild(rightDivMultiplierCol);
+                            rightDivParent.appendChild(rightDivValueCol);
+
+                            contentDiv.appendChild(rightDivParent)
+                        }
+
+                        singularDiv.appendChild(contentDiv);
 
                     } else if (contentDisplay.featureContent[j].type == "divContent") {
                         singularDiv.classList.add("content-div-class-flex-div");

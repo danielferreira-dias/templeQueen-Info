@@ -183,7 +183,7 @@ p.sub-container-content-flex {
 }
 
 .symbol-specialContent-text {
-    color: gold;
+    color: white;
     margin: 0px;
 }
 
@@ -326,6 +326,8 @@ p.sub-container-content-flex {
     flex-direction: row;
     align-items: center;
     flex: 1;
+    gap: 10px;
+    margin: 10px 0px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -334,6 +336,7 @@ p.sub-container-content-flex {
     flex-direction: column;
     flex: 1;
     align-items: center;
+    margin: 30px 0px;
     justify-content: center;
 }
 
@@ -352,7 +355,6 @@ p.sub-container-content-flex {
 
 .content-div-class-flex-img {
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
 }
@@ -413,3 +415,4 @@ p.sub-container-content-flex {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+

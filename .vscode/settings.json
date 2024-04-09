@@ -1,3 +1,4 @@
 {
-    "debug.internalConsoleOptions": "neverOpen"
+    "debug.internalConsoleOptions": "neverOpen",
+    "liveServer.settings.port": 5501
 }
