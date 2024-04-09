@@ -26,7 +26,7 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "4,00",
+                                                "value": "3,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -84,7 +84,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "0,50",
+                                                "value": "0,20",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -120,7 +120,7 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "4,00",
+                                                "value": "3,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -178,101 +178,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "0,50",
-                                                "specialContent": [
-                                                    {
-                                                        "EN": [
-                                                            null
-                                                        ],
-                                                        "IT": [
-                                                            null
-                                                        ],
-                                                        "RU": [
-                                                            null
-                                                        ],
-                                                        "FR": [
-                                                            null
-                                                        ],
-                                                        "ZH": [
-                                                            null
-                                                        ],
-                                                        "US": [
-                                                            null
-                                                        ],
-                                                        "PT": [
-                                                            null
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "Layout": "flex",
-                                        "layoutStyle": "flex-direction: column;",
-                                        "hasSpecialContent": true
-                                    },
-                                    {
-                                        "data": [
-                                            {
-                                                "multipliers": "x5",
-                                                "value": "4,00",
-                                                "specialContent": [
-                                                    {
-                                                        "EN": [
-                                                            null
-                                                        ],
-                                                        "IT": [
-                                                            null
-                                                        ],
-                                                        "RU": [
-                                                            null
-                                                        ],
-                                                        "FR": [
-                                                            null
-                                                        ],
-                                                        "ZH": [
-                                                            null
-                                                        ],
-                                                        "US": [
-                                                            null
-                                                        ],
-                                                        "PT": [
-                                                            null
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "multipliers": "x4",
-                                                "value": "1,00",
-                                                "specialContent": [
-                                                    {
-                                                        "EN": [
-                                                            null
-                                                        ],
-                                                        "IT": [
-                                                            null
-                                                        ],
-                                                        "RU": [
-                                                            null
-                                                        ],
-                                                        "FR": [
-                                                            null
-                                                        ],
-                                                        "ZH": [
-                                                            null
-                                                        ],
-                                                        "US": [
-                                                            null
-                                                        ],
-                                                        "PT": [
-                                                            null
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "multipliers": "x3",
-                                                "value": "0,50",
+                                                "value": "0,20",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -337,7 +243,7 @@
                                             },
                                             {
                                                 "multipliers": "x4",
-                                                "value": "2,50",
+                                                "value": "2,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -366,7 +272,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "1,00",
+                                                "value": "0,40",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -431,7 +337,7 @@
                                             },
                                             {
                                                 "multipliers": "x4",
-                                                "value": "2,50",
+                                                "value": "2,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -460,7 +366,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "1,00",
+                                                "value": "0,40",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -496,7 +402,101 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "40,00",
+                                                "value": "8,00",
+                                                "specialContent": [
+                                                    {
+                                                        "EN": [
+                                                            null
+                                                        ],
+                                                        "IT": [
+                                                            null
+                                                        ],
+                                                        "RU": [
+                                                            null
+                                                        ],
+                                                        "FR": [
+                                                            null
+                                                        ],
+                                                        "ZH": [
+                                                            null
+                                                        ],
+                                                        "US": [
+                                                            null
+                                                        ],
+                                                        "PT": [
+                                                            null
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "multipliers": "x4",
+                                                "value": "3,00",
+                                                "specialContent": [
+                                                    {
+                                                        "EN": [
+                                                            null
+                                                        ],
+                                                        "IT": [
+                                                            null
+                                                        ],
+                                                        "RU": [
+                                                            null
+                                                        ],
+                                                        "FR": [
+                                                            null
+                                                        ],
+                                                        "ZH": [
+                                                            null
+                                                        ],
+                                                        "US": [
+                                                            null
+                                                        ],
+                                                        "PT": [
+                                                            null
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "multipliers": "x3",
+                                                "value": "0,60",
+                                                "specialContent": [
+                                                    {
+                                                        "EN": [
+                                                            null
+                                                        ],
+                                                        "IT": [
+                                                            null
+                                                        ],
+                                                        "RU": [
+                                                            null
+                                                        ],
+                                                        "FR": [
+                                                            null
+                                                        ],
+                                                        "ZH": [
+                                                            null
+                                                        ],
+                                                        "US": [
+                                                            null
+                                                        ],
+                                                        "PT": [
+                                                            null
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "Layout": "flex",
+                                        "layoutStyle": "flex-direction: column;",
+                                        "hasSpecialContent": true
+                                    },
+                                    {
+                                        "data": [
+                                            {
+                                                "multipliers": "x5",
+                                                "value": "10,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -554,7 +554,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "1,00",
+                                                "value": "0,60",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -590,7 +590,7 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "40,00",
+                                                "value": "15,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -619,7 +619,7 @@
                                             },
                                             {
                                                 "multipliers": "x4",
-                                                "value": "4,50",
+                                                "value": "6,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -648,7 +648,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "1,50",
+                                                "value": "0,80",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -684,35 +684,6 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "100,00",
-                                                "specialContent": [
-                                                    {
-                                                        "EN": [
-                                                            null
-                                                        ],
-                                                        "IT": [
-                                                            null
-                                                        ],
-                                                        "RU": [
-                                                            null
-                                                        ],
-                                                        "FR": [
-                                                            null
-                                                        ],
-                                                        "ZH": [
-                                                            null
-                                                        ],
-                                                        "US": [
-                                                            null
-                                                        ],
-                                                        "PT": [
-                                                            null
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "multipliers": "x4",
                                                 "value": "20,00",
                                                 "specialContent": [
                                                     {
@@ -741,8 +712,37 @@
                                                 ]
                                             },
                                             {
+                                                "multipliers": "x4",
+                                                "value": "8,00",
+                                                "specialContent": [
+                                                    {
+                                                        "EN": [
+                                                            null
+                                                        ],
+                                                        "IT": [
+                                                            null
+                                                        ],
+                                                        "RU": [
+                                                            null
+                                                        ],
+                                                        "FR": [
+                                                            null
+                                                        ],
+                                                        "ZH": [
+                                                            null
+                                                        ],
+                                                        "US": [
+                                                            null
+                                                        ],
+                                                        "PT": [
+                                                            null
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
                                                 "multipliers": "x3",
-                                                "value": "2,00",
+                                                "value": "0,80",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -778,7 +778,7 @@
                                         "data": [
                                             {
                                                 "multipliers": "x5",
-                                                "value": "250,00",
+                                                "value": "25,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -807,7 +807,7 @@
                                             },
                                             {
                                                 "multipliers": "x4",
-                                                "value": "50,00",
+                                                "value": "10,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
@@ -836,7 +836,7 @@
                                             },
                                             {
                                                 "multipliers": "x3",
-                                                "value": "5,00",
+                                                "value": "1,00",
                                                 "specialContent": [
                                                     {
                                                         "EN": [
