@@ -424,17 +424,19 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListValue);
                                     containerRTP.style.flexDirection = "row";
-                                    containerRTP.style.marginBottom = "0px";
+                                    containerRTP.style.marginBottom = "10px";
                                     break;
                                 case "rtpValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    rtpValue = document.createElement("p");
-                                    rtpValue.textContent = ` ${word.value}`;
                                     containerRTP.appendChild(typeOfListText);
-                                    containerRTP.appendChild(rtpValue);
-                                    rtpValue.style.textAlign = "center";
-                                    rtpValue.style.fontSize = "3.0rem";
-                                    rtpValue.style.color = mainColor;
+                                    for (let i = 0; i < word.value[currentLanguage].length; i++) {
+                                        rtpValue = document.createElement("p");
+                                        rtpValue.textContent = ` ${word.value[currentLanguage][i]}`;
+                                        containerRTP.appendChild(rtpValue);
+                                        rtpValue.style.textAlign = "center";
+                                        rtpValue.style.fontSize = "3.0rem";
+                                        rtpValue.style.color = mainColor;
+                                    }
                                     containerRTP.style.flexDirection = "column";
                                     containerRTP.style.flexWrap = "wrap";
                                     containerRTP.style.marginBottom = "10px";
