@@ -610,11 +610,17 @@ function createNewSections(mainSection, subSection, subContainer) {
                     case "text":
                     case "plural_text":
                         contentDiv.classList.add("content-div-class-flex-text");
-                        feature.content[currentLanguage].forEach((text) => {
+                        feature.content[currentLanguage].forEach((text, index) => {
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = text;
                             contentDiv.appendChild(textParagraph);
+
+                            if (index < feature.content[currentLanguage].length - 1) {
+                                contentDiv.appendChild(document.createElement("br"));
+                            }
                         });
+
+
                         break;
 
                     case "divContent":
