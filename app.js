@@ -485,104 +485,46 @@ function createRuleSection(mainSection, subSection, subContainer) {
 
 
 
-// Call to create New Sections
 function createNewSections(mainSection, subSection, subContainer) {
     subContainer.style.display = subSection.typeDisplay;
     subContainer.style.flexDirection = subSection.direction;
+
     if (subSection.typeDisplay === "flex") {
         subContainer.style.justifyContent = subSection.justifyContent;
-        subContainer.classList.add("sub-container-flex")
+        subContainer.classList.add("sub-container-flex");
     }
 
-    if (mainSection.sectionType === "Feature") {
-        if (subSection.features && Array.isArray(subSection.features)) {
-            subSection.features.forEach((contentDisplay) => {
-                const singularDiv = document.createElement("div");
-                singularDiv.style.display = contentDisplay.typeDisplay;
+    if (mainSection.sectionType === "Feature" && subSection.features && Array.isArray(subSection.features)) {
+        subSection.features.forEach((contentDisplay) => {
+            const singularDiv = document.createElement("div");
+            singularDiv.style.display = contentDisplay.typeDisplay;
 
-                if (contentDisplay.typeDisplay === "flex") {
-                    singularDiv.style.maxWidth = "100%"
-                    if (contentDisplay.direction == "row") {
-                        singularDiv.classList.add("singular-div-row")
-                    } else {
-                        singularDiv.classList.add("singular-div-column")
-                    }
-                }
+            if (contentDisplay.typeDisplay === "flex") {
+                singularDiv.style.maxWidth = "100%";
+                singularDiv.classList.add(contentDisplay.direction === "row" ? "singular-div-row" : "singular-div-column");
+            }
 
-                for (let j = 0; j < contentDisplay.featureContent.length; j++) {
+            contentDisplay.featureContent.forEach((feature) => {
+                const contentDiv = document.createElement("div");
+                contentDiv.style.flexDirection = feature.direction;
 
-
-                    singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
-
-                    if (contentDisplay.featureContent[j].type === "img") {
-
-                        contentDiv = document.createElement("div");
+                switch (feature.type) {
+                    case "img":
+                    case "img_text":
                         contentDiv.classList.add("content-div-class-flex-img");
-                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
+                        contentDiv.style.flexWrap = feature.wrap;
 
-                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
+                        feature.url.forEach((url) => {
                             const contentDivImage = document.createElement("img");
-                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            let imageCount = contentDisplay.featureContent[j].url.length;
-                            if (imageCount > 1) {
-                                let imageWidth = `calc(100% / ${imageCount})`;
-                                contentDivImage.style.width = imageWidth;
-                            }
-                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
-                                contentDivImage.classList.add('bigMaxWidth')
-                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
-                                contentDivImage.classList.add('smallMaxWidth')
-                            }
+                            contentDivImage.src = url;
+                            contentDivImage.style.width = feature.url.length > 1 ? `calc(100% / ${feature.url.length})` : "auto";
+                            contentDivImage.classList.add(feature.divMaxWith);
                             contentDiv.appendChild(contentDivImage);
-                        }
-                        singularDiv.appendChild(contentDiv);
-                    } else if (contentDisplay.featureContent[j].type === "text") {
-                        singularDiv.classList.add("content-div-class-flex-text");
-                        const textParagraph = document.createElement("p");
-                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
-
-                        singularDiv.appendChild(textParagraph);
-                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
-                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
-                            singularDiv.classList.add("content-div-class-flex-text");
-                            const textParagraph = document.createElement("p");
-                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
-                            singularDiv.appendChild(textParagraph);
-
-                            // Add \n\n after each paragraph except the last one
-                            if (i < contentDisplay.featureContent[j].content[currentLanguage].length - 1) {
-                                singularDiv.appendChild(document.createElement("br"));
-                                singularDiv.appendChild(document.createElement("br"));
-                            }
-                        }
-                    } else if (contentDisplay.featureContent[j].type === "img_text") {
-
-                        contentDiv = document.createElement("div");
-
-                        contentDiv.classList.add("content-div-class-flex-img");
-                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
-                        contentDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
-
-                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
-                            const contentDivImage = document.createElement("img");
-                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            let imageCount = contentDisplay.featureContent[j].url.length;
-                            if (imageCount > 1) {
-                                let imageWidth = `calc(100% / ${imageCount})`;
-                                contentDivImage.style.width = imageWidth;
-                            }
-                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
-                                contentDivImage.classList.add('bigMaxWidth')
-                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
-                                contentDivImage.classList.add('smallMaxWidth')
-                            }
-                            contentDiv.appendChild(contentDivImage);
-                        }
-
+                        });
 
                         const numberOfTextsDiv = document.createElement("div");
                         numberOfTextsDiv.style.display = "flex"
-                        numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
+                        numberOfTextsDiv.style.flexDirection = feature.contentDirection
 
                         // Right Div Parent
                         const rightDivParent = document.createElement("div");
@@ -600,8 +542,8 @@ function createNewSections(mainSection, subSection, subContainer) {
 
 
                         // Iterate over symbols and display multipliers, values, and special content
-                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
-                            contentDisplay.featureContent[j].data.forEach((dataInfo) => {
+                        if (feature.hasSpecialData == true) {
+                            feature.data.forEach((dataInfo) => {
                                 const listDiv = document.createElement("div");
                                 listDiv.classList.add("list-div");
 
@@ -653,7 +595,7 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 rightDivValueCol.appendChild(valueSpecialContentDiv);
                             })
                         }
-                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
+                        if (feature.hasSpecialData == true) {
                             numberOfTextsDiv.appendChild(rightDivValueCol)
 
                             // Append columns to parent
@@ -663,76 +605,46 @@ function createNewSections(mainSection, subSection, subContainer) {
                             contentDiv.appendChild(rightDivParent)
                         }
 
-                        singularDiv.appendChild(contentDiv);
+                        break;
 
+                    case "text":
+                    case "plural_text":
+                        contentDiv.classList.add("content-div-class-flex-text");
+                        feature.content[currentLanguage].forEach((text) => {
+                            const textParagraph = document.createElement("p");
+                            textParagraph.textContent = text;
+                            contentDiv.appendChild(textParagraph);
+                        });
+                        break;
 
-                    } else if (contentDisplay.featureContent[j].type == "divContent") {
-                        singularDiv.classList.add("content-div-class-flex-div");
-                        // Check if numberOfDivsContent is defined
-                        const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
-
+                    case "divContent":
+                        contentDiv.classList.add("content-div-class-flex-div");
+                        const numberOfDivsContent = feature.numberOfDivs || 1;
                         for (let i = 0; i < numberOfDivsContent; i++) {
-                            // Create a new div element for each iteration
                             const borderDiv = document.createElement("div");
 
-                            // Apply CSS to the Borders
-                            borderDiv.style.borderStyle = "solid";
-                            borderDiv.style.margin = "10px";
-                            borderDiv.style.height = "150px";
-                            borderDiv.style.width = "150px";
-                            borderDiv.style.borderWidth = "5px";
-                            borderDiv.style.borderColor = "	#FFD700"
-
-                            // Apply Flexbox to align text vertically
-                            borderDiv.style.display = "flex";
-                            borderDiv.style.justifyContent = "center"; // Align horizontally
-                            borderDiv.style.alignItems = "center"; // Align vertically
-
-                            // Append the new div to the main contentDiv
-                            singularDiv.appendChild(borderDiv);
-
-                            // Access the text array for the current border div
-                            const textArray = contentDisplay.featureContent[j].divContentBorder[i];
-
-                            // Inside The Border Divs, Apply Text
+                            const textArray = feature.divContentBorder[i];
                             const borderText = document.createElement("p");
-                            borderText.style.fontSize = "1.0rem";
-                            borderText.style.textAlign = "center";
 
                             borderText.textContent = textArray.contentInside;
-
-                            // Append the text to the current borderDiv
                             borderDiv.appendChild(borderText);
+                            contentDiv.appendChild(borderDiv);
                         }
-                    }
-
-                    singularDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
-
-
+                        break;
                 }
 
-                subContainer.appendChild(singularDiv);
-
-                // // Enter Words to Search based on current language
-                if (currentLanguage === "EN") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "ZH") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "RUS") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "PT") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "FR") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "US") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD"]);
-                } else if (currentLanguage === "IT") {
-                    searchDynamicParagraphs(["FREE SPINS", "WILD", "Minima", "Massima"]);
-                }
-
+                contentDiv.style.textAlign = feature.textAlignment;
+                singularDiv.appendChild(contentDiv);
             });
-        }
+
+            subContainer.appendChild(singularDiv);
+        });
     }
+
+    // Enter Words to Search based on current language
+    const wordsToSearch = ["FREE SPINS", "WILD"];
+    if (currentLanguage === "IT") wordsToSearch.push("Minima", "Massima");
+    searchDynamicParagraphs(wordsToSearch);
 }
 
 // Create Button Page
@@ -811,7 +723,7 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
 
                 for (let j = 0; j < contentDisplay.featureContent.length; j++) {
 
-                    singularDiv.style.flexDirection = contentDisplay.featureContent[j].direction;
+                    singularDiv.style.flexDirection = contentDisplay.direction;
 
                     if (contentDisplay.featureContent[j].type === "img") {
 
@@ -855,10 +767,9 @@ function createbuyBonusSection(mainSection, subSection, subContainer) {
                             }
                         }
                     } else if (contentDisplay.featureContent[j].type === "img_text") {
-                        console.log("teste")
                         singularDiv.classList.add("content-div-class-flex-img");
                         singularDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
-                        singularDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
+                        singularDiv.style.flexDirection = contentDisplay.direction;
 
                         for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
                             const contentDivImage = document.createElement("img");

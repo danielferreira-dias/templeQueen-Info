@@ -1687,7 +1687,7 @@
                         "features": [
                             {
                                 "typeDisplay": "flex",
-                                "direction": "row",
+                                "direction": "column",
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
@@ -1729,7 +1729,7 @@
                                                 "Preste atenção no TOTTEM principal, ele pode lhe dar uma surpresa e duplicar até 3 MULTIPLICADORES DE MOEDA existentes na tela, além de revelar alguns novos."
                                             ]
                                         },
-                                        "direction": "row",
+                                        "direction": "column",
                                         "customFormat": ""
                                     }
                                 ]
@@ -1836,7 +1836,7 @@
                                                 "RTP - 93,91%"
                                             ]
                                         },
-                                        "direction": "row",
+                                        "direction": "column",
                                         "customFormat": ""
                                     }
                                 ]
@@ -1928,7 +1928,14 @@
                                         "Type": "text",
                                         "Text": "The Max win is ",
                                         "value": "20,000x"
-                                    },
+                                    }
+                                ]
+                            },
+                            {
+                                "typeDisplay": "flex",
+                                "direction": "row",
+                                "divMaxWith": "smallMaxWidth",
+                                "featureContent": [
                                     {
                                         "type": "divContent",
                                         "numberOfDivs": 4,
