@@ -409,24 +409,27 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             switch (word.valueType) {
                                 case "puntataMinima":
                                 case "puntataMaxima":
-                                    typeOfListText.textContent = ' ' + `${word.content[currentLanguage]} `;
-                                    typeOfListValue.textContent = ' ' + `${word.value} ${currentCurrency}`;
+                                case "puntataMinimaGoldenBet":
+                                case "puntataMaximaGoldenBet":
+                                    typeOfListText.textContent = ` ${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = ` ${word.value} ${currentCurrency}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListValue);
                                     containerRTP.style.flexDirection = "row";
+                                    containerRTP.style.marginBottom = word.valueType.includes("Maxima") ? "10px" : "0px"; // Set margin based on valueType
                                     break;
                                 case "maxWinValue":
-                                    typeOfListText.textContent = `${word.content[currentLanguage]}`;
-                                    typeOfListValue.textContent = ' ' + `${word.value}x the bet`;
-                                    subContainer.appendChild(typeOfListText);
+                                    typeOfListText.textContent = `${word.content[currentLanguage]} `;
+                                    typeOfListValue.textContent = ` ${word.value}x the bet`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(typeOfListValue);
                                     containerRTP.style.flexDirection = "row";
+                                    containerRTP.style.marginBottom = "0px";
                                     break;
                                 case "rtpValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]}`;
                                     rtpValue = document.createElement("p");
-                                    rtpValue.textContent = ' ' + `${word.value}`;
+                                    rtpValue.textContent = ` ${word.value}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.appendChild(rtpValue);
                                     rtpValue.style.textAlign = "center";
@@ -434,9 +437,10 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                     rtpValue.style.color = mainColor;
                                     containerRTP.style.flexDirection = "column";
                                     containerRTP.style.flexWrap = "wrap";
+                                    containerRTP.style.marginBottom = "10px";
                                     break;
                                 case "maxWinValueLimit":
-                                    typeOfListText.textContent = ' ' + `${word.content[currentLanguage]}`;
+                                    typeOfListText.textContent = ` ${word.content[currentLanguage]}`;
                                     containerRTP.appendChild(typeOfListText);
                                     containerRTP.style.flexDirection = "row";
                                     break;
