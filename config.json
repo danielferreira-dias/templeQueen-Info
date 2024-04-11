@@ -1938,35 +1938,142 @@
                                 "featureContent": [
                                     {
                                         "type": "divContent",
-                                        "numberOfDivs": 4,
+                                        "numberOfDivs": 5,
                                         "direction": "row",
                                         "divContentBorder": [
                                             {
                                                 "direction": "column",
-                                                "contentInside": [
-                                                    "SUPER FREE SPINS 400x BET"
-                                                ],
+                                                "contentInside": {
+                                                    "EN": [
+                                                        "SUPER FREE SPINS 400x BET"
+                                                    ],
+                                                    "IT": [
+                                                        "SUPER FREE SPINS 400x PUNTATA"
+                                                    ],
+                                                    "RU": [
+                                                        "SUPER FREE SPINS 400x СТАВКА "
+                                                    ],
+                                                    "FR": [
+                                                        "SUPER FREE SPINS 400x MISE"
+                                                    ],
+                                                    "ZH": [
+                                                        "SUPER FREE SPINS 400x 倍投注"
+                                                    ],
+                                                    "US": [
+                                                        "SUPER FREE SPINS 400x BET"
+                                                    ],
+                                                    "PT": [
+                                                        "SUPER FREE SPINS 400x APOSTA"
+                                                    ]
+                                                },
                                                 "content": "RTP - 93,13%"
                                             },
                                             {
                                                 "direction": "column",
-                                                "contentInside": [
-                                                    "FREE SPINS 100x BET"
-                                                ],
+                                                "contentInside": {
+                                                    "EN": [
+                                                        "FREE SPINS 100x BET"
+                                                    ],
+                                                    "IT": [
+                                                        "FREE SPINS 100x PUNTATA"
+                                                    ],
+                                                    "RU": [
+                                                        "FREE SPINS 100x СТАВКА "
+                                                    ],
+                                                    "FR": [
+                                                        "FREE SPINS 100x MISE"
+                                                    ],
+                                                    "ZH": [
+                                                        "FREE SPINS 100x 倍投注"
+                                                    ],
+                                                    "US": [
+                                                        "FREE SPINS 100x BET"
+                                                    ],
+                                                    "PT": [
+                                                        "FREE SPINS 100x APOSTA"
+                                                    ]
+                                                },
                                                 "content": "RTP - 93,96%"
                                             },
                                             {
                                                 "direction": "column",
-                                                "contentInside": [
-                                                    "FEATURE 10x BET"
-                                                ],
+                                                "contentInside": {
+                                                    "EN": [
+                                                        "FEATURE 10x BET"
+                                                    ],
+                                                    "IT": [
+                                                        "FEATURE 10x PUNTATA"
+                                                    ],
+                                                    "RU": [
+                                                        "FEATURE 10x СТАВКА "
+                                                    ],
+                                                    "FR": [
+                                                        "FEATURE 10x MISE"
+                                                    ],
+                                                    "ZH": [
+                                                        "FEATURE 10x 倍投注"
+                                                    ],
+                                                    "US": [
+                                                        "FEATURE 10x BET"
+                                                    ],
+                                                    "PT": [
+                                                        "FEATURE 10x APOSTA"
+                                                    ]
+                                                },
                                                 "content": "RTP - 94,03%"
                                             },
                                             {
                                                 "direction": "column",
-                                                "contentInside": [
-                                                    "SUPER FEATURE 15x BET"
-                                                ],
+                                                "contentInside": {
+                                                    "EN": [
+                                                        "SUPER FEATURE 15x BET"
+                                                    ],
+                                                    "IT": [
+                                                        "SUPER FEATURE 15x PUNTATA"
+                                                    ],
+                                                    "RU": [
+                                                        "SUPER FEATURE 15x СТАВКА "
+                                                    ],
+                                                    "FR": [
+                                                        "SUPER FEATURE 15x MISE"
+                                                    ],
+                                                    "ZH": [
+                                                        "SUPER FEATURE 15x 倍投注"
+                                                    ],
+                                                    "US": [
+                                                        "SUPER FEATURE 15x BET"
+                                                    ],
+                                                    "PT": [
+                                                        "SUPER FEATURE 15x APOSTA"
+                                                    ]
+                                                },
+                                                "content": "RTP - 94,03%"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "contentInside": {
+                                                    "EN": [
+                                                        "SUPER FEATURE 15x BET"
+                                                    ],
+                                                    "IT": [
+                                                        "SUPER FEATURE 15x PUNTATA"
+                                                    ],
+                                                    "RU": [
+                                                        "SUPER FEATURE 15x СТАВКА "
+                                                    ],
+                                                    "FR": [
+                                                        "SUPER FEATURE 15x MISE"
+                                                    ],
+                                                    "ZH": [
+                                                        "SUPER FEATURE 15x 倍投注"
+                                                    ],
+                                                    "US": [
+                                                        "SUPER FEATURE 15x BET"
+                                                    ],
+                                                    "PT": [
+                                                        "SUPER FEATURE 15x APOSTA"
+                                                    ]
+                                                },
                                                 "content": "RTP - 94,03%"
                                             }
                                         ]
