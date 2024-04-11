@@ -1938,7 +1938,7 @@
                                 "featureContent": [
                                     {
                                         "type": "divContent",
-                                        "numberOfDivs": 5,
+                                        "numberOfDivs": 4,
                                         "direction": "row",
                                         "divContentBorder": [
                                             {
@@ -2018,33 +2018,6 @@
                                                     ],
                                                     "PT": [
                                                         "FEATURE 10x APOSTA"
-                                                    ]
-                                                },
-                                                "content": "RTP - 94,03%"
-                                            },
-                                            {
-                                                "direction": "column",
-                                                "contentInside": {
-                                                    "EN": [
-                                                        "SUPER FEATURE 15x BET"
-                                                    ],
-                                                    "IT": [
-                                                        "SUPER FEATURE 15x PUNTATA"
-                                                    ],
-                                                    "RU": [
-                                                        "SUPER FEATURE 15x СТАВКА "
-                                                    ],
-                                                    "FR": [
-                                                        "SUPER FEATURE 15x MISE"
-                                                    ],
-                                                    "ZH": [
-                                                        "SUPER FEATURE 15x 倍投注"
-                                                    ],
-                                                    "US": [
-                                                        "SUPER FEATURE 15x BET"
-                                                    ],
-                                                    "PT": [
-                                                        "SUPER FEATURE 15x APOSTA"
                                                     ]
                                                 },
                                                 "content": "RTP - 94,03%"
