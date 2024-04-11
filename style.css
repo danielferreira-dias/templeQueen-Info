@@ -231,9 +231,7 @@ p.sub-container-content-flex {
         font-size: 2rem;
     }
 
-    p {
-        font-size: 1.5rem;
-    }
+
 
 }
 
@@ -251,6 +249,32 @@ p.sub-container-content-flex {
     h2 {
         font-size: 3rem;
     }
+    p {
+        font-size: 1.5rem;
+    }
+
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1700px) {
+    .sub-container-grid-line-layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2.5rem;
+    }
+
+    
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -390,6 +414,15 @@ p.sub-container-content-flex {
     }
     .bigMaxWidth {
         max-width: 80%;
+    }
+}
+
+@media (min-width: 900px) {
+    .smallMaxWidth{
+        max-width: 100%;
+    }
+    .bigMaxWidth {
+        max-width: 90%;
     }
 }
 
