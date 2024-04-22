@@ -1249,7 +1249,7 @@
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "imageType": "big",
                                         "wrap": "wrap",
                                         "url": [
@@ -1295,7 +1295,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "wrap": "wrap",
                                         "url": [
                                             "images/Settings/Symbol/10.png",
@@ -1365,7 +1365,7 @@
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "screenWidth",
                                         "imageType": "big",
                                         "wrap": "wrap",
                                         "url": [
@@ -1559,7 +1559,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divMaxWith": "smallMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "url": [
                                             "images/Settings/Assets/COIN.png"
                                         ],
@@ -1602,7 +1602,7 @@
                                     {
                                         "type": "img",
                                         "imageType": "big",
-                                        "divMaxWith": "smallMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "url": [
                                             "images/Settings/Assets/PLUS.png",
                                             "images/Settings/Assets/NORMAL_BIRD.png"
@@ -1612,7 +1612,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divMaxWith": "smallMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "url": [
                                             "images/Settings/Assets/SUPER_BIRD.png"
                                         ],
@@ -1655,7 +1655,7 @@
                                     {
                                         "type": "img",
                                         "imageType": "big",
-                                        "divMaxWith": "smallMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "url": [
                                             "images/Settings/Assets/TOTEM.png"
                                         ],
@@ -1741,7 +1741,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "screenWidth",
                                         "url": [
                                             "images/Settings/Assets/SUPER_FREE_SPINS.png"
                                         ],
@@ -1781,7 +1781,7 @@
                                     {
                                         "type": "img_text",
                                         "imageType": "big",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "url": [
                                             "images/Settings/Assets/DOUBLE_CHANCE.png"
                                         ],
@@ -1866,11 +1866,10 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divMaxWith": "smallMaxWidth",
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divMaxWith": "smallMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "imageType": "big",
                                         "wrap": "",
                                         "url": [
@@ -1887,7 +1886,7 @@
                             {
                                 "typeDisplay": "flex",
                                 "direction": "column",
-                                "divMaxWith": "smallMaxWidth",
+                                "divMaxWidth": "smallMaxWidth",
                                 "featureContent": [
                                     {
                                         "type": "plural_text",
@@ -1923,18 +1922,14 @@
                                             ]
                                         },
                                         "direction": "column",
-                                        "customFormat": "",
-                                        "valueType": "maxWinValue",
-                                        "Type": "text",
-                                        "Text": "The Max win is ",
-                                        "value": "20,000x"
+                                        "customFormat": ""
                                     }
                                 ]
                             },
                             {
                                 "typeDisplay": "flex",
                                 "direction": "row",
-                                "divMaxWith": "smallMaxWidth",
+                                "divMaxWidth": "smallMaxWidth",
                                 "featureContent": [
                                     {
                                         "type": "divContent",
@@ -2067,7 +2062,7 @@
                     "PT": "HUNTER MODE",
                     "IT": "HUNTER MODE"
                 },
-                "sectionType": "Feature",
+                "sectionType": "hunterMode",
                 "Type": "Title",
                 "SubSection": [
                     {
@@ -2081,7 +2076,7 @@
                                 "featureContent": [
                                     {
                                         "type": "img",
-                                        "divMaxWith": "bigMaxWidth",
+                                        "divMaxWidth": "symbolWidth",
                                         "imageType": "big",
                                         "wrap": "",
                                         "url": [

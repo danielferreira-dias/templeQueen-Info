@@ -1,6 +1,9 @@
 let currentLanguage = "EN"
 let currentCurrency = "EUR"
-let gameHasBuyBonus = true
+let gameHasBuyBonus = false
+let gameHasBurningMode = true
+let gameHasdoubleChance = true
+let gameHasHunterMode = true
 let mainColor = "#ff0096"
 
 function closeInfo() {
@@ -8,6 +11,12 @@ function closeInfo() {
 }
 
 // ----------------------------------------------------
+
+function startupInfoPage() {
+    getRandomColor()
+    setCurrency(currentCurrency)
+    setLenguage(currentLanguage)
+}
 
 function createHeadingSection() {
     const headingSection = document.querySelector(".heading-section-div");
@@ -49,118 +58,91 @@ function createHTMLFromJSON() {
             // Create Sections
             const main = document.querySelector(".symbol-section");
 
-
             data.Info.Section.forEach((section) => {
-
                 // Create Section Container
-                const container = document.createElement("div")
-                container.classList.add("container")
+                const container = document.createElement("div");
+                container.classList.add("container");
                 container.style.display = "flex";
                 container.style.flexDirection = "column";
-                container.style.alignItems = "center"
+                container.style.alignItems = "center";
 
-                // Section Title
-                if (section.Type === "Title") {
-                    if (section.Title[currentLanguage] == 'CRISTAL SHOP') {
-                        if (gameHasBuyBonus == true) {
-                            const title = document.createElement("h2");
-                            if (section.sectionType != "symbolPayout") {
-                                title.style.border = "groove"
-                                title.style.borderWidth = "2px 0px 1px 0px"
-                                title.style.borderColor = mainColor
-                                title.style.padding = "25px 0"
-                            } else {
-                                title.style.border = "groove"
-                                title.style.borderWidth = "0px 0px 1px 0px"
-                                title.style.borderColor = mainColor
-                                title.style.paddingBottom = "25px"
-                            }
+                const title = document.createElement("h2");
+                title.style.border = "groove";
+                title.style.borderWidth = "2px 0px 1px 0px";
+                title.style.borderColor = mainColor;
+                title.style.padding = "5px 0";
+                title.textContent = section.Title[currentLanguage];
 
-                            title.textContent = section.Title[currentLanguage];
-                            container.appendChild(title);
-                        }
+                const isBuyBonusEnabled = section.sectionType === "BuyBonus" && gameHasBuyBonus;
+                const isTripleChanceEnabled = section.sectionType === "tripleChance" && gameHasdoubleChance;
+                const isBurningModeEnabled = section.sectionType === "burningMode" && gameHasBurningMode;
+                const isHunterModeEnabled = section.sectionType === "hunterMode" && gameHasHunterMode;
+                const isRuleSection = section.sectionType === "Rules"
+                const isFeature = section.sectionType === "Feature"
+                const isSymbolSection = section.sectionType === "lineLayout"
+                const isLineSection = section.sectionType === "symbolPayout"
+                const isButtonSection = section.sectionType === "Button"
 
-                    } else {
-                        const title = document.createElement("h2");
-                        if (section.sectionType != "symbolPayout") {
-                            title.style.border = "groove"
-                            title.style.borderWidth = "2px 0px 1px 0px"
-                            title.style.borderColor = mainColor
-                            title.style.padding = "25px 0"
-
-                        } else {
-                            title.style.border = "groove"
-                            title.style.borderWidth = "0px 0px 1px 0px"
-                            title.style.borderColor = mainColor
-                            title.style.paddingBottom = "25px"
-                        }
-
-                        title.textContent = section.Title[currentLanguage];
-                        container.appendChild(title);
-                    }
-
-                    // border: inset;
-                    // border - width: 0px 0px 1px 0px;
-                    // border - color: #ff0096;
-
+                if (isBuyBonusEnabled || isTripleChanceEnabled || isBurningModeEnabled || isHunterModeEnabled) {
+                    container.appendChild(title);
+                } else if (isRuleSection || isFeature || isSymbolSection || isLineSection || isButtonSection) {
+                    container.appendChild(title);
                 }
+
+
+
                 // Create a Sub-Section Container for each Container
                 section.SubSection.forEach((subSection) => {
-                    const subContainer = document.createElement("div")
+                    const subContainer = document.createElement("div");
 
                     // Display Type of each Sub-Section
                     subContainer.style.display = subSection.Layout;
                     if (section.sectionType != "Feature") {
                         if (subSection.Layout == "grid") {
                             if (section.sectionType == "lineLayout") {
-                                subContainer.classList.add("sub-container-grid-line-layout")
+                                subContainer.classList.add("sub-container-grid-line-layout");
                             } else {
-                                subContainer.classList.add("sub-container-grid")
+                                subContainer.classList.add("sub-container-grid");
+                                subContainer.style.width = "fit-content"
                             }
+                        } else if (subSection.Layout == "flex") {
+                            subContainer.classList.add("sub-container-flex");
                         }
-                        else if (subSection.Layout == "flex") {
-                            subContainer.classList.add("sub-container-flex")
-                        }
-
                     } else {
-
                     }
-                    container.append(subContainer)
-
+                    container.append(subContainer);
 
                     // Symbol Section
-                    createSymbolSection(section, subSection, subContainer)
+                    createSymbolSection(section, subSection, subContainer);
 
                     // Line Layout Section
-                    createLineLayoutSection(container, section, subSection, subContainer)
+                    createLineLayoutSection(
+                        container,
+                        section,
+                        subSection,
+                        subContainer
+                    );
 
                     // Rule Section
-                    createRuleSection(section, subSection, subContainer)
+                    createRuleSection(section, subSection, subContainer);
 
                     // Features Section
-                    createNewSections(section, subSection, subContainer)
-
-
+                    createNewSections(section, subSection, subContainer);
 
                     // Button Page
-                    createButtonSection(section, subSection, subContainer)
+                    createButtonSection(section, subSection, subContainer);
 
                     // Buy Bonus
-                    if (gameHasBuyBonus == true) {
-                        createbuyBonusSection(section, subSection, subContainer)
-                    }
-
-                })
+                    createbuyBonusSection(section, subSection, subContainer);
+                });
 
                 if (section.sectionType === "BuyBonus") {
                     if (gameHasBuyBonus == true) {
-                        main.appendChild(container)
+                        main.appendChild(container);
                     }
                 } else {
-                    main.appendChild(container)
+                    main.appendChild(container);
                 }
-
-
             });
         })
         .catch((error) => {
@@ -177,18 +159,31 @@ function getRandomColor() {
     return color;
 }
 
+// Backbone Functions
+
 function setCurrency(serverSideCurrency) {
-    currentCurrency = serverSideCurrency
+    currentCurrency = serverSideCurrency;
 }
 
-function setCurrency(serverSideLanguage) {
-    currentLanguage = serverSideLanguage
+function setLanguage(serverSideLanguage) {
+    currentLanguage = serverSideLanguage;
+    if (responseData) {
+        const headContainer = document.getElementById("heading-section");
+        headContainer.innerHTML = "";
+        const symbolContainer = document.getElementById("symbol-section");
+        symbolContainer.innerHTML = "";
+        createHTMLFromJSON(responseData);
+        createHeadingSection();
+    }
 }
 
 // Call The Function to create Symbol Section
 function createSymbolSection(section, subSection, subContainer) {
-    if (section.sectionType == 'symbolPayout') {
-        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+    if (section.sectionType == "symbolPayout") {
+        if (
+            subSection.displayContent &&
+            Array.isArray(subSection.displayContent)
+        ) {
             subSection.displayContent.forEach((contentDisplay) => {
                 // Adds a Div to each Symbol
                 for (let i = contentDisplay.symbols.length - 1; i >= 0; i--) {
@@ -196,19 +191,17 @@ function createSymbolSection(section, subSection, subContainer) {
                     // Add Display Type to Each Symbol Section Div
                     if (contentDisplay.Layout == "grid") {
                         displayContent.classList.add("sub-container-content-grid");
-
-                    }
-                    else if (contentDisplay.Layout == "flex") {
+                    } else if (contentDisplay.Layout == "flex") {
                         displayContent.classList.add("sub-container-content-flex");
                     }
-                    subContainer.appendChild(displayContent)
+                    subContainer.appendChild(displayContent);
 
                     // Left Div contains Symbol Image
                     const leftDiv = document.createElement("div");
                     leftDiv.classList.add("image-container-symbol");
                     leftDiv.style.backgroundImage = `url("./images/Settings/Symbol/${i}.png")`;
-                    const symbolImage = document.createElement("img")
-                    leftDiv.appendChild(symbolImage)
+                    const symbolImage = document.createElement("img");
+                    leftDiv.appendChild(symbolImage);
 
                     displayContent.appendChild(leftDiv);
 
@@ -216,110 +209,85 @@ function createSymbolSection(section, subSection, subContainer) {
                     const rightDivParent = document.createElement("div");
                     rightDivParent.style.display = "flex";
                     rightDivParent.style.marginLeft = "1rem";
+                    rightDivParent.style.flexDirection = "column"
+                    rightDivParent.style.justifyContent = "center"
                     // rightDivParent.style.flexDirection = "row";
                     rightDivParent.style.flex = 1;
 
-                    // Right Div contains Multipliers
-                    const rightDivMultiplierCol = document.createElement("div");
-                    rightDivMultiplierCol.classList.add("list-container-left");
-
-                    // Right Div contains Values
-                    const rightDivValueCol = document.createElement("div");
-                    rightDivValueCol.classList.add("list-container-right");
-
-
                     // Iterate over symbols and display multipliers, values, and special content
                     contentDisplay.symbols[i].data.forEach((dataInfo) => {
-                        const listDiv = document.createElement("div");
-                        listDiv.classList.add("list-div");
+                        const symbolDivLine = document.createElement("div");
+                        symbolDivLine.style.display = "flex"
+                        symbolDivLine.style.flexDirection = "row"
 
-                        const multiplierText = document.createElement("p");
-                        multiplierText.classList.add("multiplier-symbol-value-text");
-                        multiplierText.innerText = dataInfo.multipliers;
+                        const multiplierSymbol = document.createElement("p");
+                        const valueSymbol = document.createElement("p");
+                        const specialContentSymbol = document.createElement("p");
+                        const currencySymbol = document.createElement("p");
 
-                        // Apply CSS to control text overflow
-                        // multiplierText.style.overflow = "hidden";
-                        // multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
+                        multiplierSymbol.innerText = dataInfo.multipliers
+                        multiplierSymbol.style.color = mainColor
 
-                        listDiv.appendChild(multiplierText);
-                        rightDivMultiplierCol.appendChild(listDiv);
+                        valueSymbol.innerText = dataInfo.value
+                        valueSymbol.style.marginLeft = "10px"
+                        currencySymbol.style.marginLeft = "5px"
 
-                        const valueText = document.createElement("p");
-                        valueText.classList.add("symbol-value-text");
+                        currencySymbol.innerText = currentCurrency
 
-                        var normalizedValue = dataInfo.value.replace(',', '.');
-                        if (parseFloat(normalizedValue) > 0.0) {
-                            valueText.innerText = normalizedValue + currentCurrency;
-                        }
-
-                        // Apply CSS to control text overflow
-                        // valueText.style.overflow = "hidden";
-                        // valueText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                        // Create a div to contain both value and special content
-                        const valueSpecialContentDiv = document.createElement("div");
-                        valueSpecialContentDiv.classList.add("value-special-content-div");
-
-                        // Append value text to the div
-                        valueSpecialContentDiv.appendChild(valueText);
+                        symbolDivLine.appendChild(multiplierSymbol)
+                        symbolDivLine.appendChild(valueSymbol)
+                        symbolDivLine.appendChild(currencySymbol)
 
                         // Check if special content exists
-                        if (dataInfo.specialContent[currentLanguage] != null) {
-                            const specialContentText = document.createElement("p");
-                            specialContentText.classList.add("symbol-specialContent-text");
-                            specialContentText.innerText = dataInfo.specialContent[currentLanguage];
-
-                            // Apply CSS to control text overflow
-                            // specialContentText.style.overflow = "hidden";
-                            // specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
+                        if (dataInfo.specialContent[0][currentLanguage] != null) {
+                            specialContentSymbol.classList.add("symbol-specialContent-text");
+                            specialContentSymbol.innerText = dataInfo.specialContent[0][currentLanguage];
+                            specialContentSymbol.style.marginLeft = "10px"
 
                             // Append special content text to the div
-                            valueSpecialContentDiv.appendChild(specialContentText);
+                            symbolDivLine.appendChild(specialContentSymbol);
                         }
 
-                        // Append the div containing both value and special content to the column
-                        rightDivValueCol.appendChild(valueSpecialContentDiv);
+                        rightDivParent.appendChild(symbolDivLine)
                     });
 
                     // Append columns to parent
-                    rightDivParent.appendChild(rightDivMultiplierCol);
-                    rightDivParent.appendChild(rightDivValueCol);
                     displayContent.appendChild(rightDivParent);
-
                 }
             });
         }
     }
-};
+}
+
 
 // Call The Function to create Line Layout Section
 function createLineLayoutSection(mainSection, section, subSection, subContainer) {
-    if (section.sectionType == 'lineLayout') {
-        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
+    if (section.sectionType == "lineLayout") {
+        if (
+            subSection.displayContent &&
+            Array.isArray(subSection.displayContent)
+        ) {
             subSection.displayContent.forEach((contentDisplay) => {
-
                 for (let n = 0; n < contentDisplay.lines.formation.length; n++) {
                     const displayContent = document.createElement("div");
-                    const color = "#" + getRandomColor()
+                    const color = "#ff0096";
                     for (let i = 0; i < contentDisplay.lineRows; i++) {
-                        const row = document.createElement('div');
-                        row.classList.add('line-layout-row');
+                        const row = document.createElement("div");
+                        row.classList.add("line-layout-row");
 
                         for (let j = 0; j < contentDisplay.lineCols; j++) {
-                            const column = document.createElement('div');
+                            const column = document.createElement("div");
 
-                            column.classList.add('line-layout-column');
+                            column.classList.add("line-layout-column");
 
                             if (i == contentDisplay.lines.formation[n][j]) {
                                 column.style.backgroundColor = color;
                                 if (j == 0) {
-                                    const number = document.createElement('p');
-                                    column.classList.add('line-number');
-                                    number.style.fontSize = "1.2rem"
-                                    number.textContent = n + 1
-                                    column.appendChild(number)
+                                    const number = document.createElement("p");
+                                    column.classList.add("line-number");
+                                    number.textContent = n + 1;
+                                    column.appendChild(number);
                                 }
-
                             }
 
                             row.appendChild(column);
@@ -331,30 +299,32 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
                     // Add Display Type to Each Symbol Section Div
                     if (contentDisplay.Layout == "grid") {
                         displayContent.classList.add("sub-container-grid-line-layout");
-
-                    }
-                    else if (contentDisplay.Layout == "flex") {
+                    } else if (contentDisplay.Layout == "flex") {
                         displayContent.classList.add("sub-container-content-flex");
-                        displayContent.style.borderRadius = "10px"
+                        displayContent.style.borderRadius = "10px";
                         displayContent.style.borderStyle = "solid";
-                        displayContent.style.borderWidth = "8px";
-                        displayContent.style.borderColor = "#b72342"
+                        displayContent.style.borderWidth = "2px";
+                        displayContent.style.borderColor = "#ff0096";
                         displayContent.style.flexDirection = "column";
+                        displayContent.style.width = "fit-content";
+                        displayContent.style.height = "fit-content";
+                        displayContent.style.padding = "0.3rem";
                     }
-                    subContainer.appendChild(displayContent)
+                    subContainer.appendChild(displayContent);
                 }
-
-            })
+            });
         }
-        if (subSection.lineTextContent && Array.isArray(subSection.lineTextContent)) {
+        if (
+            subSection.lineTextContent &&
+            Array.isArray(subSection.lineTextContent)
+        ) {
             subSection.lineTextContent.forEach((contentLineDisplay) => {
                 const linetContent = document.createElement("div");
-                linetContent.classList.add("line-layout-text")
-
-
+                linetContent.classList.add("line-layout-text");
 
                 // Access the content for the specified language code
-                const contentForLanguage = contentLineDisplay.content[currentLanguage];
+                const contentForLanguage =
+                    contentLineDisplay.content[currentLanguage];
 
                 if (contentForLanguage && Array.isArray(contentForLanguage)) {
                     contentForLanguage.forEach((text) => {
@@ -371,16 +341,15 @@ function createLineLayoutSection(mainSection, section, subSection, subContainer)
                     });
                 }
 
-                mainSection.appendChild(linetContent)
-            })
+                mainSection.appendChild(linetContent);
+            });
         }
     }
-
-
 }
 
 function createRuleSection(mainSection, subSection, subContainer) {
     if (mainSection.sectionType == 'Rules') {
+
         if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
             subSection.displayContent.forEach((contentDisplay) => {
                 if (contentDisplay.wording && Array.isArray(contentDisplay.wording)) {
@@ -409,15 +378,6 @@ function createRuleSection(mainSection, subSection, subContainer) {
                             switch (word.valueType) {
                                 case "puntataMinima":
                                 case "puntataMaxima":
-                                case "puntataMinimaGoldenBet":
-                                case "puntataMaximaGoldenBet":
-                                    typeOfListText.textContent = ` ${word.content[currentLanguage]} `;
-                                    typeOfListValue.textContent = ` ${word.value} ${currentCurrency}`;
-                                    containerRTP.appendChild(typeOfListText);
-                                    containerRTP.appendChild(typeOfListValue);
-                                    containerRTP.style.flexDirection = "row";
-                                    containerRTP.style.marginBottom = word.valueType.includes("Maxima") ? "10px" : "0px"; // Set margin based on valueType
-                                    break;
                                 case "maxWinValue":
                                     typeOfListText.textContent = `${word.content[currentLanguage]} `;
                                     typeOfListValue.textContent = ` ${word.value}x the bet`;
@@ -434,8 +394,8 @@ function createRuleSection(mainSection, subSection, subContainer) {
                                         rtpValue.textContent = ` ${word.value[currentLanguage][i]}`;
                                         containerRTP.appendChild(rtpValue);
                                         rtpValue.style.textAlign = "center";
-                                        rtpValue.style.fontSize = "3.0rem";
-                                        rtpValue.style.color = mainColor;
+                                        rtpValue.style.fontSize = "3.0rem"
+                                        rtpValue.style.color = mainColor
                                     }
                                     containerRTP.style.flexDirection = "column";
                                     containerRTP.style.flexWrap = "wrap";
@@ -484,24 +444,41 @@ function createRuleSection(mainSection, subSection, subContainer) {
 }
 
 
-
+// create new sections
 function createNewSections(mainSection, subSection, subContainer) {
     subContainer.style.display = subSection.typeDisplay;
     subContainer.style.flexDirection = subSection.direction;
+
+
 
     if (subSection.typeDisplay === "flex") {
         subContainer.style.justifyContent = subSection.justifyContent;
         subContainer.classList.add("sub-container-flex");
     }
 
-    if (mainSection.sectionType === "Feature" && subSection.features && Array.isArray(subSection.features)) {
+    if (
+        mainSection.sectionType === "Feature" &&
+        subSection.features &&
+        Array.isArray(subSection.features)
+
+    ) {
+
+
         subSection.features.forEach((contentDisplay) => {
+
+
+
             const singularDiv = document.createElement("div");
             singularDiv.style.display = contentDisplay.typeDisplay;
 
             if (contentDisplay.typeDisplay === "flex") {
                 singularDiv.style.maxWidth = "100%";
-                singularDiv.classList.add(contentDisplay.direction === "row" ? "singular-div-row" : "singular-div-column");
+                singularDiv.style.width = "100%";
+                singularDiv.classList.add(
+                    contentDisplay.direction === "row"
+                        ? "singular-div-row"
+                        : "singular-div-column"
+                );
             }
 
             contentDisplay.featureContent.forEach((feature) => {
@@ -513,105 +490,70 @@ function createNewSections(mainSection, subSection, subContainer) {
                     case "img_text":
                         contentDiv.classList.add("content-div-class-flex-img");
                         contentDiv.style.flexWrap = feature.wrap;
-                        contentDiv.style.minWidth = "200px"
+                        contentDiv.style.flex = 1;
+                        contentDiv.style.gap = "40px";
+                        contentDiv.style.width = "100%";
 
                         feature.url.forEach((url) => {
                             const contentDivImage = document.createElement("img");
+
                             contentDivImage.src = url;
-                            contentDivImage.style.width = feature.url.length > 1 ? `calc(100% / ${feature.url.length})` : "auto";
-                            contentDivImage.classList.add(feature.divMaxWith);
+                            if (feature.divMaxWidth != "")
+                                contentDivImage.classList.add(feature.divMaxWidth);
                             contentDiv.appendChild(contentDivImage);
                         });
 
                         const numberOfTextsDiv = document.createElement("div");
-                        numberOfTextsDiv.style.display = "flex"
-                        numberOfTextsDiv.style.flexDirection = feature.contentDirection
+                        numberOfTextsDiv.style.display = "flex";
+                        numberOfTextsDiv.style.flexDirection = feature.contentDirection;
 
                         // Right Div Parent
                         const rightDivParent = document.createElement("div");
                         rightDivParent.style.display = "flex";
-                        rightDivParent.style.flexDirection = "row";
+                        rightDivParent.style.flexDirection = feature.contentDirection;
                         rightDivParent.style.flex = 1;
 
-                        // Right Div contains Multipliers
-                        const rightDivMultiplierCol = document.createElement("div");
-                        rightDivMultiplierCol.classList.add("list-container-left");
-
-                        // Right Div contains Values
-                        const rightDivValueCol = document.createElement("div");
-                        rightDivValueCol.classList.add("list-container-right");
-
-
-                        // Iterate over symbols and display multipliers, values, and special content
                         if (feature.hasSpecialData == true) {
+                            console.log(feature.data.length)
                             feature.data.forEach((dataInfo) => {
-                                const listDiv = document.createElement("div");
-                                listDiv.classList.add("list-div");
+                                const rightDivChild = document.createElement("div");
+                                rightDivChild.style.display = "flex"
+                                rightDivChild.style.flexDirection = "row"
 
-                                const multiplierText = document.createElement("p");
-                                multiplierText.classList.add("multiplier-symbol-value-text");
-                                multiplierText.innerText = dataInfo.multipliers;
+                                const multiplierValue = document.createElement("p");
+                                const symbolValue = document.createElement("p");
+                                const specialData = document.createElement("p");
+                                const currencySymbol = document.createElement("p");
 
-                                // Apply CSS to control text overflow
-                                multiplierText.style.overflow = "hidden";
-                                multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
+                                symbolValue.style.marginLeft = "5px"
 
-                                listDiv.appendChild(multiplierText);
-                                rightDivMultiplierCol.appendChild(listDiv);
+                                multiplierValue.innerText = dataInfo.multipliers
+                                symbolValue.innerText = dataInfo.value
+                                currencySymbol.innerText = currentCurrency
+                                specialData.innerText = dataInfo.specialContent[0][currentLanguage];
 
-                                const valueText = document.createElement("p");
-                                valueText.classList.add("symbol-value-text");
-                                if (dataInfo.value != "") {
-                                    valueText.innerText = dataInfo.value + '' + currentCurrency;
+                                if (dataInfo.multipliers != "") rightDivChild.appendChild(multiplierValue)
+                                if (dataInfo.value != "") rightDivChild.appendChild(symbolValue) && rightDivChild.appendChild(currencySymbol)
+                                if (dataInfo.specialContent[0][currentLanguage] != "") rightDivChild.appendChild(specialData)
+
+                                if (feature.data.length > 1) {
+                                    rightDivParent.appendChild(rightDivChild)
                                 } else {
-                                    valueText.innerText = dataInfo.value
+                                    if (dataInfo.multipliers != "") rightDivParent.appendChild(multiplierValue)
+                                    if (dataInfo.value != "") rightDivParent.appendChild(symbolValue) && rightDivParent.appendChild(currencySymbol)
+                                    if (dataInfo.specialContent[0][currentLanguage] != "") rightDivParent.appendChild(specialData)
                                 }
 
-                                // Apply CSS to control text overflow
-                                valueText.style.overflow = "hidden";
-                                valueText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                                // Create a div to contain both value and special content
-                                const valueSpecialContentDiv = document.createElement("div");
-                                valueSpecialContentDiv.classList.add("value-special-content-div");
-
-                                // Append value text to the div
-                                valueSpecialContentDiv.appendChild(valueText);
-
-                                // Check if special content exists
-                                if (dataInfo.specialContent[0][currentLanguage] != null) {
-                                    const specialContentText = document.createElement("p");
-                                    specialContentText.classList.add("symbol-specialContent-text");
-                                    specialContentText.innerText = dataInfo.specialContent[0][currentLanguage];
-
-                                    // Apply CSS to control text overflow
-                                    specialContentText.style.overflow = "hidden";
-                                    specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                                    // Append special content text to the div
-                                    valueSpecialContentDiv.appendChild(specialContentText);
-                                }
-
-                                // Append the div containing both value and special content to the column
-                                rightDivValueCol.appendChild(valueSpecialContentDiv);
                             })
-                        }
-                        if (feature.hasSpecialData == true) {
-                            numberOfTextsDiv.appendChild(rightDivValueCol)
-
-                            // Append columns to parent
-                            rightDivParent.appendChild(rightDivMultiplierCol);
-                            rightDivParent.appendChild(rightDivValueCol);
 
                             contentDiv.appendChild(rightDivParent)
                         }
-
                         break;
 
                     case "text":
                     case "plural_text":
                         contentDiv.classList.add("content-div-class-flex-text");
-                        contentDiv.style.minWidth = "200px"
+                        contentDiv.style.minWidth = "200px";
                         feature.content[currentLanguage].forEach((text, index) => {
                             const textParagraph = document.createElement("p");
                             textParagraph.textContent = text;
@@ -621,8 +563,6 @@ function createNewSections(mainSection, subSection, subContainer) {
                                 contentDiv.appendChild(document.createElement("br"));
                             }
                         });
-
-
                         break;
 
                     case "divContent":
@@ -634,7 +574,8 @@ function createNewSections(mainSection, subSection, subContainer) {
                             const textArray = feature.divContentBorder[i];
                             const borderText = document.createElement("p");
 
-                            borderText.textContent = textArray.contentInside;
+                            borderText.textContent =
+                                textArray.contentInside[currentLanguage][0];
                             borderDiv.appendChild(borderText);
                             contentDiv.appendChild(borderDiv);
                         }
@@ -655,54 +596,47 @@ function createNewSections(mainSection, subSection, subContainer) {
     searchDynamicParagraphs(wordsToSearch);
 }
 
+
 // Create Button Page
 function createButtonSection(section, subSection, subContainer) {
+    if (section.sectionType == "Button") {
+        if (
+            subSection.displayContent &&
+            Array.isArray(subSection.displayContent)
+        ) {
 
-    if (section.sectionType == 'Button') {
-        if (subSection.displayContent && Array.isArray(subSection.displayContent)) {
             subSection.displayContent.forEach((contentDisplay) => {
-
                 const buttonContainerDiv = document.createElement("div");
-                buttonContainerDiv.classList.add('sub-container-grid-button-layout')
+                buttonContainerDiv.classList.add("sub-container-grid-button-layout");
 
                 if (contentDisplay.Buttons && Array.isArray(contentDisplay.Buttons)) {
                     contentDisplay.Buttons.forEach((button) => {
-
                         const mainDivButton = document.createElement("div");
-                        mainDivButton.style.display = "flex"
-                        mainDivButton.style.flexDirection = "row"
+                        mainDivButton.style.display = "flex";
+                        mainDivButton.style.flexDirection = "row";
+                        mainDivButton.style.alignItems = "center";
+                        mainDivButton.style.gap = "2rem";
+                        mainDivButton.style.width = "fit-content";
 
                         const buttonImage = document.createElement("img");
                         buttonImage.src = button.img;
-                        buttonImage.style.width = '60%'
 
                         const buttonDesc = document.createElement("p");
                         buttonDesc.innerText = button.content[currentLanguage];
 
-                        const buttonDiv = document.createElement("div");
-                        buttonDiv.style.display = "flex"
-                        buttonDiv.style.flexDirection = "column"
-                        buttonDiv.style.justifyContent = "center"
-                        buttonDiv.style.alignItems = "center"
-                        buttonDiv.style.margin = " 10px 0px "
-                        buttonDiv.style.flex = '0 0 30%'
-                        buttonDesc.style.textAlign = 'left'
+                        buttonDesc.style.textAlign = "left";
 
-                        const buttonDivText = document.createElement("div");
-                        buttonDivText.style.display = "flex"
-                        buttonDivText.style.flexDirection = "column"
-                        buttonDivText.style.justifyContent = "center"
-                        buttonDivText.style.margin = " 10px 0px "
-                        buttonDivText.style.flex = 1
-                        buttonDivText.style.textAlign = "left"
+                        // mainDivButton.style.display = "flex";
+                        // mainDivButton.style.flexDirection = "column";
+                        // mainDivButton.style.justifyContent = "center";
+                        // mainDivButton.style.gap = "10px";
+                        // mainDivButton.style.flex = 1;
+                        // mainDivButton.style.textAlign = "left";
 
-                        buttonDiv.appendChild(buttonImage);
-                        buttonDivText.appendChild(buttonDesc);
+                        mainDivButton.appendChild(buttonImage);
+                        mainDivButton.appendChild(buttonDesc);
 
-                        mainDivButton.appendChild(buttonDiv);
-                        mainDivButton.appendChild(buttonDivText);
-
-                        buttonContainerDiv.appendChild(mainDivButton)
+                        buttonContainerDiv.appendChild(mainDivButton);
                     });
                 }
 
@@ -712,227 +646,80 @@ function createButtonSection(section, subSection, subContainer) {
     }
 }
 
-// In case the game has buy bonus display the respective section
 function createbuyBonusSection(mainSection, subSection, subContainer) {
-    if (mainSection.sectionType === "BuyBonus" && gameHasBuyBonus == true) {
-        if (subSection.features && Array.isArray(subSection.features)) {
-            subSection.features.forEach((contentDisplay) => {
-                const singularDiv = document.createElement("div");
-                singularDiv.style.flexDirection = contentDisplay.direction;
-                singularDiv.style.display = contentDisplay.typeDisplay;
-                if (contentDisplay.typeDisplay === "flex") {
-                    singularDiv.style.maxWidth = "100%"
-                    if (contentDisplay.direction == "row") {
-                        singularDiv.classList.add("singular-div-row")
+    const isBuyBonusEnabled = mainSection.sectionType === "BuyBonus" && gameHasBuyBonus;
+    const isTripleChanceEnabled = mainSection.sectionType === "tripleChance" && gameHasdoubleChance;
+    const isBurningModeEnabled = mainSection.sectionType === "burningMode" && gameHasBurningMode;
+    const isHunterModeEnabled = mainSection.sectionType === "hunterMode" && gameHasHunterMode;
+
+    if (isBuyBonusEnabled || isTripleChanceEnabled || isBurningModeEnabled || isHunterModeEnabled) {
+        // Section Title
+
+        subSection.features.forEach((feature) => {
+
+            feature.featureContent.forEach((content) => {
+                const featureDiv = document.createElement("div");
+                featureDiv.style.margin = "10px 0";
+
+                if (content.type === "img" || content.type === "img_text") {
+                    featureDiv.classList.add("content-div-class-flex-img");
+                    featureDiv.style.width = "100%";
+
+                    content.url.forEach((url) => {
+                        const img = document.createElement("img");
+                        img.src = url;
+
+                        if (content.divMaxWidth != "")
+                            img.classList.add(content.divMaxWidth);
+                        featureDiv.appendChild(img);
+                    });
+
+                } else if (content.type === "text" || content.type === "plural_text") {
+                    featureDiv.classList.add("content-div-class-flex-text");
+                    featureDiv.style.flexDirection = feature.direction
+
+                    if (content.type === "plural_text") {
+                        content.content[currentLanguage].forEach((paragraph, index) => {
+                            const p = document.createElement("p");
+                            p.textContent = paragraph;
+                            featureDiv.appendChild(p);
+                            if (index < content.content[currentLanguage].length - 1) {
+                                featureDiv.appendChild(document.createElement("br"));
+                                featureDiv.appendChild(document.createElement("br"));
+                            }
+                        });
                     } else {
-                        singularDiv.classList.add("singular-div-column")
+                        const p = document.createElement("p");
+                        p.textContent = content.content[currentLanguage];
+                        featureDiv.appendChild(p);
                     }
+
+                } else if (content.type === "divContent") {
+                    featureDiv.classList.add("content-div-class-flex-div");
+
+                    content.divContentBorder.forEach((border) => {
+                        const borderDiv = document.createElement("div");
+                        borderDiv.style.border = "5px solid #FFD700";
+                        borderDiv.style.margin = "10px";
+                        borderDiv.style.height = "150px";
+                        borderDiv.style.width = "150px";
+                        borderDiv.style.display = "flex";
+                        borderDiv.style.justifyContent = "center";
+                        borderDiv.style.alignItems = "center";
+
+                        const p = document.createElement("p");
+                        p.style.fontSize = "1.0rem";
+                        p.style.textAlign = "center";
+                        p.textContent = border.contentInside[currentLanguage][0];
+
+                        borderDiv.appendChild(p);
+
+                        featureDiv.appendChild(borderDiv);
+                    });
                 }
-                for (let j = 0; j < contentDisplay.featureContent.length; j++) {
-                    contentDiv = document.createElement("div");
-                    contentDiv.style.flexDirection = contentDisplay.direction;
-
-                    if (contentDisplay.featureContent[j].type === "img") {
-                        contentDiv.classList.add("content-div-class-flex-img");
-                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
-
-                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
-                            const contentDivImage = document.createElement("img");
-                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
-                            let imageCount = contentDisplay.featureContent[j].url.length;
-                            if (imageCount > 1) {
-                                let imageWidth = `calc(100% / ${imageCount})`;
-                                contentDivImage.style.width = imageWidth;
-                            }
-                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
-                                contentDivImage.classList.add('bigMaxWidth')
-                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
-                                contentDivImage.classList.add('smallMaxWidth')
-                            }
-                            contentDiv.appendChild(contentDivImage);
-                        }
-                    } else if (contentDisplay.featureContent[j].type === "text") {
-                        contentDiv.classList.add("content-div-class-flex-text");
-                        const textParagraph = document.createElement("p");
-                        textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage];
-
-                        contentDiv.appendChild(textParagraph);
-                    } else if (contentDisplay.featureContent[j].type === "plural_text") {
-                        for (let i = 0; i < contentDisplay.featureContent[j].content[currentLanguage].length; i++) {
-                            contentDiv.classList.add("content-div-class-flex-text");
-                            const textParagraph = document.createElement("p");
-                            textParagraph.textContent = contentDisplay.featureContent[j].content[currentLanguage][i];
-                            contentDiv.appendChild(textParagraph);
-                            // Add \n\n after each paragraph except the last one
-                            if (i < contentDisplay.featureContent[j].content[currentLanguage].length - 1) {
-                                contentDiv.appendChild(document.createElement("br"));
-                                contentDiv.appendChild(document.createElement("br"));
-                            }
-                        }
-                    } else if (contentDisplay.featureContent[j].type === "img_text") {
-                        contentDiv.classList.add("content-div-class-flex-img");
-                        contentDiv.style.flexWrap = contentDisplay.featureContent[j].wrap;
-
-                        for (let i = 0; i < contentDisplay.featureContent[j].url.length; i++) {
-                            const contentDivImage = document.createElement("img");
-                            contentDivImage.src = contentDisplay.featureContent[j].url[i];
-
-                            let imageCount = contentDisplay.featureContent[j].url.length;
-                            if (imageCount > 1) {
-                                let imageWidth = `calc(100% / ${imageCount})`;
-                                contentDivImage.style.width = imageWidth;
-                            }
-                            if (contentDisplay.featureContent[j].divMaxWith == "bigMaxWidth") {
-                                contentDivImage.classList.add('bigMaxWidth')
-                            } else if (contentDisplay.featureContent[j].divMaxWith == "smallMaxWidth") {
-                                contentDivImage.classList.add('smallMaxWidth')
-                            }
-                            contentDiv.appendChild(contentDivImage);
-                        }
-
-                        const numberOfTextsDiv = document.createElement("div");
-                        numberOfTextsDiv.style.display = "flex"
-                        numberOfTextsDiv.style.flexDirection = contentDisplay.featureContent[j].contentDirection
-
-                        // Right Div Parent
-                        const rightDivParent = document.createElement("div");
-                        rightDivParent.style.display = "flex";
-                        rightDivParent.style.flexDirection = "row";
-                        rightDivParent.style.flex = 1;
-
-                        // Right Div contains Multipliers
-                        const rightDivMultiplierCol = document.createElement("div");
-                        rightDivMultiplierCol.classList.add("list-container-left");
-
-                        // Right Div contains Values
-                        const rightDivValueCol = document.createElement("div");
-                        rightDivValueCol.classList.add("list-container-right");
-
-
-                        // Iterate over symbols and display multipliers, values, and special content
-                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
-                            contentDisplay.featureContent[j].data.forEach((dataInfo) => {
-                                const listDiv = document.createElement("div");
-                                listDiv.classList.add("list-div");
-
-                                const multiplierText = document.createElement("p");
-                                multiplierText.classList.add("multiplier-symbol-value-text");
-                                multiplierText.innerText = dataInfo.multipliers;
-
-                                // Apply CSS to control text overflow
-                                multiplierText.style.overflow = "hidden";
-                                multiplierText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                                listDiv.appendChild(multiplierText);
-                                rightDivMultiplierCol.appendChild(listDiv);
-
-                                const valueText = document.createElement("p");
-                                valueText.classList.add("symbol-value-text");
-                                if (dataInfo.value != "") {
-                                    valueText.innerText = dataInfo.value + '' + currentCurrency;
-                                } else {
-                                    valueText.innerText = dataInfo.value
-                                }
-
-                                // Apply CSS to control text overflow
-                                valueText.style.overflow = "hidden";
-                                valueText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                                // Create a div to contain both value and special content
-                                const valueSpecialContentDiv = document.createElement("div");
-                                valueSpecialContentDiv.classList.add("value-special-content-div");
-
-                                // Append value text to the div
-                                valueSpecialContentDiv.appendChild(valueText);
-
-                                // Check if special content exists
-                                if (dataInfo.specialContent[0][currentLanguage] != null) {
-                                    const specialContentText = document.createElement("p");
-                                    specialContentText.classList.add("symbol-specialContent-text");
-                                    specialContentText.innerText = dataInfo.specialContent[0][currentLanguage];
-
-                                    // Apply CSS to control text overflow
-                                    specialContentText.style.overflow = "hidden";
-                                    specialContentText.style.textOverflow = "ellipsis"; // or any other desired style
-
-                                    // Append special content text to the div
-                                    valueSpecialContentDiv.appendChild(specialContentText);
-                                }
-
-                                // Append the div containing both value and special content to the column
-                                rightDivValueCol.appendChild(valueSpecialContentDiv);
-                            })
-                        }
-
-                        if (contentDisplay.featureContent[j].hasSpecialData == true) {
-                            numberOfTextsDiv.appendChild(rightDivValueCol)
-
-                            // Append columns to parent
-                            rightDivParent.appendChild(rightDivMultiplierCol);
-                            rightDivParent.appendChild(rightDivValueCol);
-
-                            contentDiv.appendChild(rightDivParent)
-                        }
-
-
-                    } else if (contentDisplay.featureContent[j].type == "divContent") {
-                        contentDiv.classList.add("content-div-class-flex-div");
-                        // Check if numberOfDivsContent is defined
-                        const numberOfDivsContent = contentDisplay.featureContent[j].numberOfDivs || 1;
-
-                        for (let i = 0; i < numberOfDivsContent; i++) {
-                            const mainDiv = document.createElement("div");
-                            mainDiv.style.display = "flex"
-                            mainDiv.style.flexDirection = contentDisplay.featureContent[j].divContentBorder[i].direction
-                            // Create a new div element for each iteration
-                            const borderDiv = document.createElement("div");
-
-                            // Apply CSS to the Borders
-                            borderDiv.style.borderStyle = "solid";
-                            borderDiv.style.margin = "10px";
-                            borderDiv.style.height = "150px";
-                            borderDiv.style.width = "150px";
-                            borderDiv.style.borderWidth = "5px";
-                            borderDiv.style.borderColor = "	#FFD700"
-
-                            // Apply Flexbox to align text vertically
-                            borderDiv.style.display = "flex";
-                            borderDiv.style.justifyContent = "center"; // Align horizontally
-                            borderDiv.style.alignItems = "center"; // Align vertically
-
-                            // Access the text array for the current border div
-                            const textArray = contentDisplay.featureContent[j].divContentBorder[i];
-
-                            // Inside The Border Divs, Apply Text
-                            const borderText = document.createElement("p");
-                            borderText.style.fontSize = "1.0rem";
-                            borderText.style.textAlign = "center";
-                            borderText.textContent = textArray.contentInside[currentLanguage][0];
-
-                            // Append the text to the current borderDiv
-                            borderDiv.appendChild(borderText);
-
-                            // Inside The Border Divs, Apply Text
-                            const borderTextRTP = document.createElement("p");
-                            borderTextRTP.style.fontSize = "1.0rem";
-                            borderTextRTP.style.textAlign = "center";
-                            borderTextRTP.textContent = textArray.content;
-
-                            // Append the new div to the main contentDiv
-                            mainDiv.appendChild(borderDiv)
-                            mainDiv.appendChild(borderTextRTP)
-                            contentDiv.appendChild(mainDiv)
-
-                        }
-                    }
-                    contentDiv.style.textAlign = contentDisplay.featureContent[j].textAlignment
-                    singularDiv.appendChild(contentDiv);
-                }
-
-                subContainer.appendChild(singularDiv);
-
+                subContainer.appendChild(featureDiv);
             });
-        }
+        });
     }
 }
 
